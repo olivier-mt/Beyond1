@@ -89,7 +89,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUE-ue-dB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3119" y="459"/>
+            <point key="canvasLocation" x="3119" y="-60"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="8B5-ev-5lh">
+            <objects>
+                <viewController id="QhA-un-zt0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Li-mE-CVa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="LFP-ZG-7iU"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="m1R-mA-dd5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZfW-mr-5xZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3107" y="642"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Uwu-oN-cPU">
+            <objects>
+                <viewController id="Fbz-Td-4oM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fn1-1f-yY6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="HD3-vK-MdQ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="4Co-uy-Y95"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rTA-yN-Dza" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3119" y="1428"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="bAH-mb-iDe">
@@ -105,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rrt-rc-yum" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3120" y="-206"/>
+            <point key="canvasLocation" x="3119" y="-788"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4iE-1O-34w">
@@ -119,6 +151,8 @@
                     <connections>
                         <segue destination="pL8-Ja-vQP" kind="relationship" relationship="viewControllers" id="CSb-3N-fA7"/>
                         <segue destination="xe9-6b-AhI" kind="relationship" relationship="viewControllers" id="cXA-WG-P6W"/>
+                        <segue destination="QhA-un-zt0" kind="relationship" relationship="viewControllers" id="dsh-t9-MGT"/>
+                        <segue destination="Fbz-Td-4oM" kind="relationship" relationship="viewControllers" id="y3C-ec-SBU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sMe-xn-din" userLabel="First Responder" sceneMemberID="firstResponder"/>
