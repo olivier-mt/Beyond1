@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class SignUpViewController: UIViewController {
 
@@ -24,6 +26,17 @@ class SignUpViewController: UIViewController {
 
     
     @IBAction func signupPressed(_ sender: Any) {
+        
+        
+        Auth.auth().createUser(withEmail: email.text! , password: password.text!) { (user, error) in
+            if error != nil {
+                print (error!)
+            } else {
+                print("registration successful")
+                
+                self.performSegue(withIdentifier: "signinToTab" , sender: self)
+            }
+        }
         
         
     }

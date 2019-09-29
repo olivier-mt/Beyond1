@@ -58,15 +58,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGd-pp-cm8">
+                                <rect key="frame" x="45" y="137" width="66" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ShowFirstScreenButtonSignup" image="backarrow"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="iho-3g-NcZ"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="email" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vZE-ha-LQt">
                                 <rect key="frame" x="134" y="250" width="168" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password " borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pGp-8e-5vD">
-                                <rect key="frame" x="134" y="324" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -80,14 +81,13 @@
                                     <action selector="signupPressed:" destination="mvI-vi-0Ss" eventType="touchUpInside" id="TEk-qM-jGg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGd-pp-cm8">
-                                <rect key="frame" x="45" y="137" width="66" height="64"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pGp-8e-5vD">
+                                <rect key="frame" x="134" y="312" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="ShowFirstScreenButtonSignup" image="backarrow"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="iho-3g-NcZ"/>
-                                </connections>
-                            </button>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ym1-B1-2xq"/>
@@ -95,6 +95,7 @@
                     <connections>
                         <outlet property="email" destination="vZE-ha-LQt" id="9gv-UV-kQf"/>
                         <outlet property="password" destination="pGp-8e-5vD" id="RDw-Si-jNB"/>
+                        <segue destination="oDc-vi-hy8" kind="show" identifier="signinToTab" id="Zde-xq-I3b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AzK-G9-6C0" userLabel="First Responder" sceneMemberID="firstResponder"/>
