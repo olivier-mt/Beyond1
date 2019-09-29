@@ -7,9 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 class LogInViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,7 +25,20 @@ class LogInViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func logInButton(_ sender: Any) {
+      
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+            if error != nil {
+                print (error!)
+            } else {
+                print("sign in successful")
+                
+                self.performSegue(withIdentifier: "loginToTab" , sender: self)
+            }
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 
