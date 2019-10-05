@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		583190ECCAAB385A9A078BED /* Pods_FIRSTTRY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E06EE33A633B1A771AA2B0C0 /* Pods_FIRSTTRY.framework */; };
 		9016F375233FA66F00E2D3B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9016F374233FA66F00E2D3B8 /* GoogleService-Info.plist */; };
+		901B8F5A23491DB50058F4DA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901B8F5923491DB50058F4DA /* CollectionViewCell.swift */; };
 		903A79CD23360BDE00F4306D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A79CC23360BDE00F4306D /* AppDelegate.swift */; };
 		903A79CF23360BDE00F4306D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A79CE23360BDE00F4306D /* ViewController.swift */; };
 		903A79D223360BDE00F4306D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903A79D023360BDE00F4306D /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		384AA17556EA14B54A53E2A9 /* Pods-FIRSTTRY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIRSTTRY.debug.xcconfig"; path = "Target Support Files/Pods-FIRSTTRY/Pods-FIRSTTRY.debug.xcconfig"; sourceTree = "<group>"; };
 		39C5E91154A46345493F7443 /* Pods-FIRSTTRY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIRSTTRY.release.xcconfig"; path = "Target Support Files/Pods-FIRSTTRY/Pods-FIRSTTRY.release.xcconfig"; sourceTree = "<group>"; };
 		9016F374233FA66F00E2D3B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		901B8F5923491DB50058F4DA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		903A79C923360BDE00F4306D /* FIRSTTRY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FIRSTTRY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		903A79CC23360BDE00F4306D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		903A79CE23360BDE00F4306D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				903A79CC23360BDE00F4306D /* AppDelegate.swift */,
 				903A79CE23360BDE00F4306D /* ViewController.swift */,
 				903A79D023360BDE00F4306D /* Main.storyboard */,
+				901B8F5923491DB50058F4DA /* CollectionViewCell.swift */,
 				903A79E223361E1200F4306D /* SignUpViewController.swift */,
 				903A79E023361C2400F4306D /* LogInViewController.swift */,
 				903A79E4233651A600F4306D /* FollowedViewController.swift */,
@@ -245,6 +248,7 @@
 			files = (
 				903A79EB2336529900F4306D /* ParamsViewController.swift in Sources */,
 				903A79CF23360BDE00F4306D /* ViewController.swift in Sources */,
+				901B8F5A23491DB50058F4DA /* CollectionViewCell.swift in Sources */,
 				903A79CD23360BDE00F4306D /* AppDelegate.swift in Sources */,
 				903A79E92336526600F4306D /* ProfilViewController.swift in Sources */,
 				903A79E5233651A600F4306D /* FollowedViewController.swift in Sources */,
