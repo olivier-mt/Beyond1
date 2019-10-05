@@ -33,6 +33,20 @@ class cityViewController: UIViewController, UICollectionViewDelegate, UICollecti
         // Do any additional setup after loading the view.
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return cities.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)as! CollectionViewCell
+        
+        cell.cityLabel.text = cities[indexPath.item]
+        cell.cityUIimageView.image = cityImages[indexPath.item]
+        
+        return cell
+        
+    }
 
     /*
     // MARK: - Navigation
