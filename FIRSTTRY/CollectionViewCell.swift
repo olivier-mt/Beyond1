@@ -10,5 +10,6 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cityUIimageView: UIImageView!
+    @IBOutlet weak var cityLabel: UILabel!
     
 }

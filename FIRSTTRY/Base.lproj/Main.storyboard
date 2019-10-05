@@ -168,10 +168,10 @@
             </objects>
             <point key="canvasLocation" x="3063" y="2098"/>
         </scene>
-        <!--View Controller-->
+        <!--City View Controller-->
         <scene sceneID="gUy-Kx-ODx">
             <objects>
-                <viewController id="M4S-5c-00x" sceneMemberID="viewController">
+                <viewController id="M4S-5c-00x" customClass="cityViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PxW-PO-QD0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,9 +197,12 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hvl-gu-h5O">
                                                     <rect key="frame" x="0.0" y="69" width="189" height="128"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" image="YES" selected="YES"/>
+                                                    </accessibility>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWB-74-lhf">
-                                                    <rect key="frame" x="58" y="211" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWB-74-lhf">
+                                                    <rect key="frame" x="0.0" y="211" width="189" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -208,6 +211,7 @@
                                             </subviews>
                                         </view>
                                         <connections>
+                                            <outlet property="cityLabel" destination="oWB-74-lhf" id="X6F-rt-FKq"/>
                                             <outlet property="cityUIimageView" destination="Hvl-gu-h5O" id="7Z9-ss-SUi"/>
                                         </connections>
                                     </collectionViewCell>
@@ -218,6 +222,9 @@
                         <viewLayoutGuide key="safeArea" id="nnV-WP-iAo"/>
                     </view>
                     <navigationItem key="navigationItem" id="nE2-bC-KSp"/>
+                    <connections>
+                        <outlet property="collectionView" destination="tea-oy-RBb" id="YTS-yu-94b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQ3-iL-BLD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
