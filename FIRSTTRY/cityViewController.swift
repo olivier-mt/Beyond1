@@ -29,6 +29,10 @@ class cityViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
 
         // Do any additional setup after loading the view.
     }
@@ -48,6 +52,19 @@ class cityViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
     }
 
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.layer.borderColor = UIColor.gray.cgColor
+        cell?.layer.borderWidth = 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.layer.borderColor = UIColor.white.cgColor
+    
+    }
+    }
     /*
     // MARK: - Navigation
 
@@ -58,4 +75,4 @@ class cityViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     */
 
-}
+
