@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class cityViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+ 
+    let db = Firestore.firestore()
 
+    var city = ""
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -57,6 +61,18 @@ class cityViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.layer.borderColor = UIColor.gray.cgColor
         cell?.layer.borderWidth = 2
+        
+        self.city = cities[indexPath.item]
+        performSegue(withIdentifier: "toGroupSView", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        var vc = segue.destination as! GroupSViewController
+        
+        vc.finalCity = self.city
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

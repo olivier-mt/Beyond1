@@ -19,9 +19,9 @@
 		903A79E123361C2400F4306D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A79E023361C2400F4306D /* LogInViewController.swift */; };
 		903A79E323361E1200F4306D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A79E223361E1200F4306D /* SignUpViewController.swift */; };
 		903A79E5233651A600F4306D /* FollowedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A79E4233651A600F4306D /* FollowedViewController.swift */; };
-		903A79E7233651CC00F4306D /* SearchGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A79E6233651CC00F4306D /* SearchGroupViewController.swift */; };
 		903A79E92336526600F4306D /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A79E82336526600F4306D /* ProfilViewController.swift */; };
 		903A79EB2336529900F4306D /* ParamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A79EA2336529900F4306D /* ParamsViewController.swift */; };
+		90DFE1A1234C3127007D3D1C /* GroupSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DFE1A0234C3127007D3D1C /* GroupSViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,9 +40,9 @@
 		903A79E023361C2400F4306D /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		903A79E223361E1200F4306D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		903A79E4233651A600F4306D /* FollowedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowedViewController.swift; sourceTree = "<group>"; };
-		903A79E6233651CC00F4306D /* SearchGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGroupViewController.swift; sourceTree = "<group>"; };
 		903A79E82336526600F4306D /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		903A79EA2336529900F4306D /* ParamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsViewController.swift; sourceTree = "<group>"; };
+		90DFE1A0234C3127007D3D1C /* GroupSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSViewController.swift; sourceTree = "<group>"; };
 		E06EE33A633B1A771AA2B0C0 /* Pods_FIRSTTRY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FIRSTTRY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,12 +91,12 @@
 				903A79CC23360BDE00F4306D /* AppDelegate.swift */,
 				903A79CE23360BDE00F4306D /* ViewController.swift */,
 				903A79D023360BDE00F4306D /* Main.storyboard */,
+				90DFE1A0234C3127007D3D1C /* GroupSViewController.swift */,
 				901B8F5B234920410058F4DA /* cityViewController.swift */,
 				901B8F5923491DB50058F4DA /* CollectionViewCell.swift */,
 				903A79E223361E1200F4306D /* SignUpViewController.swift */,
 				903A79E023361C2400F4306D /* LogInViewController.swift */,
 				903A79E4233651A600F4306D /* FollowedViewController.swift */,
-				903A79E6233651CC00F4306D /* SearchGroupViewController.swift */,
 				903A79E82336526600F4306D /* ProfilViewController.swift */,
 				903A79EA2336529900F4306D /* ParamsViewController.swift */,
 				903A79D323360BE100F4306D /* Assets.xcassets */,
@@ -249,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90DFE1A1234C3127007D3D1C /* GroupSViewController.swift in Sources */,
 				903A79EB2336529900F4306D /* ParamsViewController.swift in Sources */,
 				903A79CF23360BDE00F4306D /* ViewController.swift in Sources */,
 				901B8F5A23491DB50058F4DA /* CollectionViewCell.swift in Sources */,
@@ -256,7 +257,6 @@
 				903A79E92336526600F4306D /* ProfilViewController.swift in Sources */,
 				903A79E5233651A600F4306D /* FollowedViewController.swift in Sources */,
 				903A79E323361E1200F4306D /* SignUpViewController.swift in Sources */,
-				903A79E7233651CC00F4306D /* SearchGroupViewController.swift in Sources */,
 				903A79E123361C2400F4306D /* LogInViewController.swift in Sources */,
 				901B8F5C234920410058F4DA /* cityViewController.swift in Sources */,
 			);
