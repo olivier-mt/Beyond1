@@ -21,6 +21,8 @@
 		903A79E5233651A600F4306D /* FollowedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A79E4233651A600F4306D /* FollowedViewController.swift */; };
 		903A79E92336526600F4306D /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A79E82336526600F4306D /* ProfilViewController.swift */; };
 		903A79EB2336529900F4306D /* ParamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A79EA2336529900F4306D /* ParamsViewController.swift */; };
+		90885483234D5DE9002B52B1 /* groupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90885482234D5DE9002B52B1 /* groupTableViewCell.swift */; };
+		90D50FDA234EA532002937C8 /* groupDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D50FD9234EA532002937C8 /* groupDataModel.swift */; };
 		90DFE1A1234C3127007D3D1C /* GroupSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DFE1A0234C3127007D3D1C /* GroupSViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		903A79E4233651A600F4306D /* FollowedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowedViewController.swift; sourceTree = "<group>"; };
 		903A79E82336526600F4306D /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		903A79EA2336529900F4306D /* ParamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsViewController.swift; sourceTree = "<group>"; };
+		90885482234D5DE9002B52B1 /* groupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupTableViewCell.swift; sourceTree = "<group>"; };
+		90D50FD9234EA532002937C8 /* groupDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupDataModel.swift; sourceTree = "<group>"; };
 		90DFE1A0234C3127007D3D1C /* GroupSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSViewController.swift; sourceTree = "<group>"; };
 		E06EE33A633B1A771AA2B0C0 /* Pods_FIRSTTRY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FIRSTTRY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -91,6 +95,8 @@
 				903A79CC23360BDE00F4306D /* AppDelegate.swift */,
 				903A79CE23360BDE00F4306D /* ViewController.swift */,
 				903A79D023360BDE00F4306D /* Main.storyboard */,
+				90D50FD9234EA532002937C8 /* groupDataModel.swift */,
+				90885482234D5DE9002B52B1 /* groupTableViewCell.swift */,
 				90DFE1A0234C3127007D3D1C /* GroupSViewController.swift */,
 				901B8F5B234920410058F4DA /* cityViewController.swift */,
 				901B8F5923491DB50058F4DA /* CollectionViewCell.swift */,
@@ -252,8 +258,10 @@
 				90DFE1A1234C3127007D3D1C /* GroupSViewController.swift in Sources */,
 				903A79EB2336529900F4306D /* ParamsViewController.swift in Sources */,
 				903A79CF23360BDE00F4306D /* ViewController.swift in Sources */,
+				90D50FDA234EA532002937C8 /* groupDataModel.swift in Sources */,
 				901B8F5A23491DB50058F4DA /* CollectionViewCell.swift in Sources */,
 				903A79CD23360BDE00F4306D /* AppDelegate.swift in Sources */,
+				90885483234D5DE9002B52B1 /* groupTableViewCell.swift in Sources */,
 				903A79E92336526600F4306D /* ProfilViewController.swift in Sources */,
 				903A79E5233651A600F4306D /* FollowedViewController.swift in Sources */,
 				903A79E323361E1200F4306D /* SignUpViewController.swift in Sources */,

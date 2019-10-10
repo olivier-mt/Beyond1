@@ -10,8 +10,6 @@ import UIKit
 import Firebase
 
 class cityViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
- 
-    let db = Firestore.firestore()
 
     var city = ""
     
