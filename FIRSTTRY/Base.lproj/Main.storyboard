@@ -177,9 +177,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tea-oy-RBb">
-                                <rect key="frame" x="20" y="44" width="374" height="718"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tea-oy-RBb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Cmh-Iv-XvU">
                                     <size key="itemSize" width="179" height="266"/>
@@ -232,6 +231,12 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nnV-WP-iAo" firstAttribute="trailing" secondItem="tea-oy-RBb" secondAttribute="trailing" id="Gc7-52-SpR"/>
+                            <constraint firstItem="tea-oy-RBb" firstAttribute="leading" secondItem="nnV-WP-iAo" secondAttribute="leading" id="MAM-9d-kmX"/>
+                            <constraint firstItem="tea-oy-RBb" firstAttribute="top" secondItem="PxW-PO-QD0" secondAttribute="top" id="R5w-Zh-Sjv"/>
+                            <constraint firstItem="nnV-WP-iAo" firstAttribute="bottom" secondItem="tea-oy-RBb" secondAttribute="bottom" id="rLy-KK-WeD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nnV-WP-iAo"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Mme-16-efN"/>
