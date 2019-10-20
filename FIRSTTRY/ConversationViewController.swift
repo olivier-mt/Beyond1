@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 class ConversationViewController: UIViewController {
 
+
+    @IBOutlet weak var ConvertationTableView: UITableView!
+    var finalGroup = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+         print("here Is the final group \(finalGroup)")
         // Do any additional setup after loading the view.
     }
     
