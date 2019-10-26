@@ -9,20 +9,68 @@
 import UIKit
 import Firebase
 
-class ConversationViewController: UIViewController {
-
-
+class ConversationViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate {
+    
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var ConvertationTableView: UITableView!
+    @IBOutlet weak var messageTextField: UITextField!
+    
     var finalGroup = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
          print("here Is the final group \(finalGroup)")
         tabBarController?.tabBar.isHidden = true
-        // Do any additional setup after loading the view.
+        
+        messageTextField.delegate = self
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped)  )
+        
+        ConvertationTableView.addGestureRecognizer(tapGesture)
     }
     
 
+    @objc func tableViewTapped() {
+        self.messageTextField.endEditing(true)
+    }
+    
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        
+        
+        UIView.animate(withDuration: 0.5){
+     
+    self.heightConstraint.constant = 308
+        self.view.layoutIfNeeded()
+            
+        }
+        
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        UIView.animate(withDuration: 0.5){
+            
+            self.heightConstraint.constant = 50
+            self.view.layoutIfNeeded()
+            
+            
+         
+            
+        }
+        
+
+        
+        
+        
+    }
+    
+    
+    
+  
     /*
     // MARK: - Navigation
 
