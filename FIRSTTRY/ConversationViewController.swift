@@ -18,6 +18,7 @@ class ConversationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
          print("here Is the final group \(finalGroup)")
+        tabBarController?.tabBar.isHidden = true
         // Do any additional setup after loading the view.
     }
     
