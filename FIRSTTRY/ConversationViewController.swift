@@ -7,20 +7,34 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseDatabase
 
 class ConversationViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate {
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var ConvertationTableView: UITableView!
     @IBOutlet weak var messageTextField: UITextField!
     
+    @IBOutlet weak var sendButton: UIButton!
+    
+    
     var finalGroup = ""
     
+    var ref: DatabaseReference!
+    
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref = Database.database().reference()
+        
+       // self.ref?.child("conversation").child(finalGroup).childByAutoId().setValue("premier message")
+
+        
+        
          print("here Is the final group \(finalGroup)")
+        
         tabBarController?.tabBar.isHidden = true
         
         messageTextField.delegate = self
@@ -32,13 +46,13 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     
 
     @objc func tableViewTapped() {
-        self.messageTextField.endEditing(true)
+
+self.messageTextField.endEditing(true)
+        
     }
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        
         
         UIView.animate(withDuration: 0.5){
      
@@ -46,31 +60,52 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         self.view.layoutIfNeeded()
             
         }
-        
-        
     }
+    
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         UIView.animate(withDuration: 0.5){
-            
-            self.heightConstraint.constant = 50
+    
+        self.heightConstraint.constant = 50
             self.view.layoutIfNeeded()
-            
-            
-         
-            
         }
         
-
+        
+ 
+    }
+    
+    
+    
+    @IBAction func send(_ sender: Any) {
+        
+        
+        messageTextField.endEditing(true)
+        
+        messageTextField.isEnabled = false
+        sendButton.isEnabled = false
+        
+        let messagesDB = self.ref?.child("conversation").child(finalGroup)
+        
+        let messageDictionary = [  "MessageBody": messageTextField.text]
+        
+        messagesDB?.childByAutoId().setValue(messageDictionary){
+            (error, reference) in
+            
+            if error != nil{
+                print(error)
+            } else {
+                print("message saved successfully")
+                
+                self.messageTextField.isEnabled = true
+                self.sendButton.isEnabled = true
+                self.messageTextField.text = ""
+            }
         
         
         
     }
     
-    
-    
-  
     /*
     // MARK: - Navigation
 
@@ -81,4 +116,5 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     }
     */
 
+}
 }

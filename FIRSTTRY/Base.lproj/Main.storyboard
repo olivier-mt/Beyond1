@@ -355,6 +355,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shc-KL-Ucy">
+                                        <rect key="frame" x="333" y="16" width="73" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="send:" destination="TRo-6e-aoN" eventType="touchUpInside" id="XIS-A9-lwb"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -374,6 +382,7 @@
                         <outlet property="ConvertationTableView" destination="xOW-YE-dQ0" id="9H4-a7-TGb"/>
                         <outlet property="heightConstraint" destination="0zZ-YV-qjE" id="6LH-s0-Q3j"/>
                         <outlet property="messageTextField" destination="DYX-9E-F8e" id="I0k-gH-ghH"/>
+                        <outlet property="sendButton" destination="Shc-KL-Ucy" id="owi-32-w4w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCY-J1-3PL" userLabel="First Responder" sceneMemberID="firstResponder"/>

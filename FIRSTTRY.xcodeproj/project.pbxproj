@@ -25,6 +25,7 @@
 		90885483234D5DE9002B52B1 /* groupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90885482234D5DE9002B52B1 /* groupTableViewCell.swift */; };
 		90D50FDA234EA532002937C8 /* groupDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D50FD9234EA532002937C8 /* groupDataModel.swift */; };
 		90DFE1A1234C3127007D3D1C /* GroupSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DFE1A0234C3127007D3D1C /* GroupSViewController.swift */; };
+		90FC638C2365E74900D308F9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FC638B2365E74900D308F9 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		90885482234D5DE9002B52B1 /* groupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupTableViewCell.swift; sourceTree = "<group>"; };
 		90D50FD9234EA532002937C8 /* groupDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupDataModel.swift; sourceTree = "<group>"; };
 		90DFE1A0234C3127007D3D1C /* GroupSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSViewController.swift; sourceTree = "<group>"; };
+		90FC638B2365E74900D308F9 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E06EE33A633B1A771AA2B0C0 /* Pods_FIRSTTRY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FIRSTTRY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,6 +99,7 @@
 				903A79CC23360BDE00F4306D /* AppDelegate.swift */,
 				903A79CE23360BDE00F4306D /* ViewController.swift */,
 				903A79D023360BDE00F4306D /* Main.storyboard */,
+				90FC638B2365E74900D308F9 /* Message.swift */,
 				902E2E9C2353C61F008357EC /* ConversationViewController.swift */,
 				90D50FD9234EA532002937C8 /* groupDataModel.swift */,
 				90885482234D5DE9002B52B1 /* groupTableViewCell.swift */,
@@ -271,6 +274,7 @@
 				903A79E323361E1200F4306D /* SignUpViewController.swift in Sources */,
 				903A79E123361C2400F4306D /* LogInViewController.swift in Sources */,
 				901B8F5C234920410058F4DA /* cityViewController.swift in Sources */,
+				90FC638C2365E74900D308F9 /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
