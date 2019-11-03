@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let myDatabase = Database.database().reference()
         
-        let db = Firestore.firestore()
+  //      let db = Firestore.firestore()
         
-        myDatabase.setValue("We've got Dataa")
+    //    myDatabase.setValue("We've got Dataa")
         return true
     }
 

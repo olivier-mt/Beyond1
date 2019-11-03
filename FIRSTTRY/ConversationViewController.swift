@@ -9,7 +9,11 @@
 import UIKit
 import FirebaseDatabase
 
-class ConversationViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate {
+class ConversationViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
+    
+    var messageArray : [Message] = [Message]()
+  
+    
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var ConvertationTableView: UITableView!
@@ -27,6 +31,9 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ConvertationTableView.delegate = self
+        ConvertationTableView.dataSource = self
+        
         ref = Database.database().reference()
         
        // self.ref?.child("conversation").child(finalGroup).childByAutoId().setValue("premier message")
@@ -42,8 +49,36 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped)  )
         
         ConvertationTableView.addGestureRecognizer(tapGesture)
+        
+        ConvertationTableView.register(UINib(nibName: "CustomMessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
+        
+        configureTableView()
+        retrieveMessages()
+        
     }
     
+    
+    
+   
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
+        
+       cell.messageBody.text = messageArray[indexPath.row].messageBody
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messageArray.count
+    }
+    
+    func configureTableView(){
+    
+        ConvertationTableView.rowHeight = UITableView.automaticDimension
+        
+        ConvertationTableView.estimatedRowHeight = 120.0
+    }
 
     @objc func tableViewTapped() {
 
@@ -75,7 +110,26 @@ self.messageTextField.endEditing(true)
  
     }
     
-    
+    func retrieveMessages(){
+        
+        let messagesDB = self.ref?.child("conversation").child(finalGroup)
+        
+        messagesDB?.observe(.childAdded, with: { (snapshot) in
+            
+            let snapshotValue = snapshot.value as! Dictionary<String,String>
+            
+            let text = snapshotValue["MessageBody"]!
+            
+            let message = Message()
+            message.messageBody = text
+            
+            self.messageArray.append(message)
+            
+            self.configureTableView()
+            self.ConvertationTableView.reloadData()
+        })
+        
+    }
     
     @IBAction func send(_ sender: Any) {
         
@@ -87,7 +141,7 @@ self.messageTextField.endEditing(true)
         
         let messagesDB = self.ref?.child("conversation").child(finalGroup)
         
-        let messageDictionary = [  "MessageBody": messageTextField.text]
+        let messageDictionary = ["MessageBody": messageTextField.text]
         
         messagesDB?.childByAutoId().setValue(messageDictionary){
             (error, reference) in
@@ -102,6 +156,8 @@ self.messageTextField.endEditing(true)
                 self.messageTextField.text = ""
             }
         
+            
+            
         
         
     }
