@@ -316,11 +316,36 @@
                     <connections>
                         <outlet property="groupTableView" destination="iFO-1l-rjk" id="J6y-fE-bQn"/>
                         <segue destination="TRo-6e-aoN" kind="show" identifier="toConversationControler" id="QWs-zl-rKJ"/>
+                        <segue destination="CfJ-pa-3g7" kind="show" identifier="toNewConvVC" id="isn-LU-Egx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kDQ-Eg-XOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2102.898550724638" y="2552.6785714285711"/>
+        </scene>
+        <!--New Group View Controller-->
+        <scene sceneID="GLN-XX-xIY">
+            <objects>
+                <viewController id="CfJ-pa-3g7" customClass="NewGroupViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rL5-aL-4Rp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="génial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrO-bo-jdb">
+                                <rect key="frame" x="101" y="291" width="216" height="129"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wVS-Yx-7ko"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gcY-yc-Ofp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2868.115942028986" y="2548.6607142857142"/>
         </scene>
         <!--Conversation View Controller-->
         <scene sceneID="9Iy-AI-V6o">

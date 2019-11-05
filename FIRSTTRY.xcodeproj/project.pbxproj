@@ -22,6 +22,7 @@
 		903A79E5233651A600F4306D /* FollowedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A79E4233651A600F4306D /* FollowedViewController.swift */; };
 		903A79E92336526600F4306D /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A79E82336526600F4306D /* ProfilViewController.swift */; };
 		903A79EB2336529900F4306D /* ParamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A79EA2336529900F4306D /* ParamsViewController.swift */; };
+		903BEBDC237224D6009DA68D /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BEBDB237224D6009DA68D /* NewGroupViewController.swift */; };
 		90885483234D5DE9002B52B1 /* groupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90885482234D5DE9002B52B1 /* groupTableViewCell.swift */; };
 		90D50FDA234EA532002937C8 /* groupDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D50FD9234EA532002937C8 /* groupDataModel.swift */; };
 		90D7E6C6236EF48B00220908 /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D7E6C4236EF48A00220908 /* CustomMessageCell.swift */; };
@@ -49,6 +50,7 @@
 		903A79E4233651A600F4306D /* FollowedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowedViewController.swift; sourceTree = "<group>"; };
 		903A79E82336526600F4306D /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		903A79EA2336529900F4306D /* ParamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsViewController.swift; sourceTree = "<group>"; };
+		903BEBDB237224D6009DA68D /* NewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupViewController.swift; sourceTree = "<group>"; };
 		90885482234D5DE9002B52B1 /* groupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupTableViewCell.swift; sourceTree = "<group>"; };
 		90D50FD9234EA532002937C8 /* groupDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupDataModel.swift; sourceTree = "<group>"; };
 		90D7E6C4236EF48A00220908 /* CustomMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				903A79CC23360BDE00F4306D /* AppDelegate.swift */,
 				903A79CE23360BDE00F4306D /* ViewController.swift */,
 				903A79D023360BDE00F4306D /* Main.storyboard */,
+				903BEBDB237224D6009DA68D /* NewGroupViewController.swift */,
 				90D7E6C4236EF48A00220908 /* CustomMessageCell.swift */,
 				90D7E6C5236EF48A00220908 /* CustomMessageCell.xib */,
 				90FC638B2365E74900D308F9 /* Message.swift */,
@@ -281,6 +284,7 @@
 				903A79E5233651A600F4306D /* FollowedViewController.swift in Sources */,
 				903A79E323361E1200F4306D /* SignUpViewController.swift in Sources */,
 				903A79E123361C2400F4306D /* LogInViewController.swift in Sources */,
+				903BEBDC237224D6009DA68D /* NewGroupViewController.swift in Sources */,
 				901B8F5C234920410058F4DA /* cityViewController.swift in Sources */,
 				90FC638C2365E74900D308F9 /* Message.swift in Sources */,
 			);
