@@ -29,8 +29,13 @@ extension UIViewController{
 
 class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     
+    
+    
+    @IBOutlet weak var btnSelect: UIButton!
+
     @IBOutlet weak var groupNameTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +49,18 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
     descriptionTextView.textColor = UIColor.lightGray
         
     self.HideKeyboard()
-        // MARK:- UITextViewDelegate
-        // Do any additional setup after loading the view.
+        
+        // Mark : button city
+        
+        btnSelect.backgroundColor = .clear
+        btnSelect.layer.cornerRadius = 5
+        btnSelect.layer.borderWidth = 0.5
+        btnSelect.layer.borderColor = UIColor.lightGray.cgColor
+        
+        let cn : String = Shared.shared.companyName ?? "Choose a city"
+        btnSelect.setTitle(cn,for: .normal)
+
+       
     }
     
     
