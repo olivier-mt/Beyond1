@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 extension UIViewController{
     
@@ -35,12 +36,26 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
 
     @IBOutlet weak var groupNameTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var cityLabel: UILabel!
     
+    
+    @IBOutlet weak var languageTextField: UITextField!
+    
+    @IBOutlet weak var creationButton: UIButton!
+    
+    
+    
+    var city = ""
+    var db : Firestore!
+
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.title = "Creat a new group"
+       
+        cityLabel.text = city
         
     descriptionTextView.delegate = self
     groupNameTextField.delegate = self
@@ -50,6 +65,7 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
         
     self.HideKeyboard()
         
+        db = Firestore.firestore()
         // Mark : button city
         
         btnSelect.backgroundColor = .clear
@@ -62,6 +78,7 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
 
        
     }
+    
     
     
     
@@ -89,9 +106,39 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
         
     }
     
+    @IBAction func languageChosenTextField(_ sender: Any) {
+    }
+    
+    @IBAction func creatGroupTapped(_ sender: Any) {
+        
+         let descritption = descriptionTextView.text
+        let name = groupNameTextField.text
+        let language = languageTextField.text
+        
+        let newGroupRef = db.collection("GROUPS").document()
+        let documentID = newGroupRef.documentID
+       
+        
+        newGroupRef.setData([
+            "city" : city,
+            "description" : descritption as Any,
+            "language" : language as Any,
+            "name" : name as Any,
+            "documentID" : documentID
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(newGroupRef.documentID)")
+            }
+        }
+        
+        
+    }
 
-    /*
-    // MARK: - Navigation
+}
+    
+    /*// MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -100,4 +147,5 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
     }
     */
 
-}
+
+
