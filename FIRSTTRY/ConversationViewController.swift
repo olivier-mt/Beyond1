@@ -79,6 +79,9 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         ConvertationTableView.rowHeight = UITableView.automaticDimension
         
         ConvertationTableView.estimatedRowHeight = 120.0
+        ConvertationTableView.rowHeight = UITableView.automaticDimension
+        
+        
     }
 
     @objc func tableViewTapped() {

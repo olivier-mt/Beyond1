@@ -431,7 +431,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xOW-YE-dQ0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xOW-YE-dQ0">
                                 <rect key="frame" x="0.0" y="88" width="414" height="654"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -440,7 +440,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vBl-SB-1qQ" id="ntL-nl-MOl">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -449,16 +449,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dP1-5u-M9g">
                                 <rect key="frame" x="0.0" y="750" width="414" height="63"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DYX-9E-F8e">
-                                        <rect key="frame" x="8" y="16" width="317" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LZL-q0-6AU">
+                                        <rect key="frame" x="8" y="16" width="314" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="314" id="Hbp-Up-fwh"/>
+                                            <constraint firstAttribute="height" constant="30" id="Nhf-rF-GAt"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shc-KL-Ucy">
-                                        <rect key="frame" x="333" y="16" width="73" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shc-KL-Ucy">
+                                        <rect key="frame" x="326" y="14" width="55" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="55" id="Dt7-hK-PEz"/>
+                                        </constraints>
                                         <state key="normal" title="Send"/>
                                         <connections>
                                             <action selector="send:" destination="TRo-6e-aoN" eventType="touchUpInside" id="XIS-A9-lwb"/>
@@ -468,6 +473,10 @@
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="0zZ-YV-qjE"/>
+                                    <constraint firstItem="Shc-KL-Ucy" firstAttribute="top" secondItem="dP1-5u-M9g" secondAttribute="top" constant="14" id="NeD-uH-Jta"/>
+                                    <constraint firstItem="Shc-KL-Ucy" firstAttribute="leading" secondItem="LZL-q0-6AU" secondAttribute="trailing" constant="4" id="t4W-dh-jvT"/>
+                                    <constraint firstItem="LZL-q0-6AU" firstAttribute="leading" secondItem="dP1-5u-M9g" secondAttribute="leading" constant="8" id="u5z-nO-OPy"/>
+                                    <constraint firstItem="LZL-q0-6AU" firstAttribute="top" secondItem="dP1-5u-M9g" secondAttribute="top" constant="16" id="yYB-Cn-AV7"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -475,6 +484,8 @@
                         <constraints>
                             <constraint firstItem="dP1-5u-M9g" firstAttribute="trailing" secondItem="hM8-z2-4o4" secondAttribute="trailing" id="MOV-1s-QTm"/>
                             <constraint firstItem="dP1-5u-M9g" firstAttribute="leading" secondItem="hM8-z2-4o4" secondAttribute="leading" id="S96-1Z-UYe"/>
+                            <constraint firstItem="dP1-5u-M9g" firstAttribute="leading" secondItem="Y8E-Ad-A1n" secondAttribute="leading" id="av8-yq-sL7"/>
+                            <constraint firstAttribute="trailing" secondItem="dP1-5u-M9g" secondAttribute="trailing" id="kEm-MT-lgM"/>
                             <constraint firstItem="dP1-5u-M9g" firstAttribute="bottom" secondItem="hM8-z2-4o4" secondAttribute="bottom" id="qDX-Tz-byC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hM8-z2-4o4"/>
@@ -482,7 +493,7 @@
                     <connections>
                         <outlet property="ConvertationTableView" destination="xOW-YE-dQ0" id="9H4-a7-TGb"/>
                         <outlet property="heightConstraint" destination="0zZ-YV-qjE" id="6LH-s0-Q3j"/>
-                        <outlet property="messageTextField" destination="DYX-9E-F8e" id="I0k-gH-ghH"/>
+                        <outlet property="messageTextField" destination="LZL-q0-6AU" id="LAf-j1-ftv"/>
                         <outlet property="sendButton" destination="Shc-KL-Ucy" id="owi-32-w4w"/>
                     </connections>
                 </viewController>
