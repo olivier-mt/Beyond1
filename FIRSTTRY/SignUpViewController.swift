@@ -15,6 +15,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
+    @IBOutlet weak var UserNameTextfield: UITextField!
     
     
     override func viewDidLoad() {
@@ -27,6 +28,17 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signupPressed(_ sender: Any) {
         
+        let userName = UserNameTextfield.text
+
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = userName
+        changeRequest?.commitChanges{
+            error in
+            if error == nil {
+                print("User display name change!")
+                
+            }
+        }
         
         Auth.auth().createUser(withEmail: email.text! , password: password.text!) { (user, error) in
             if error != nil {

@@ -29,10 +29,6 @@ extension UIViewController{
 
 
 class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
-    
-    
-    
-    @IBOutlet weak var btnSelect: UIButton!
 
     @IBOutlet weak var groupNameTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -66,16 +62,7 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
     self.HideKeyboard()
         
         db = Firestore.firestore()
-        // Mark : button city
-        
-        btnSelect.backgroundColor = .clear
-        btnSelect.layer.cornerRadius = 5
-        btnSelect.layer.borderWidth = 0.5
-        btnSelect.layer.borderColor = UIColor.lightGray.cgColor
-        
-        let cn : String = Shared.shared.companyName ?? "Choose a city"
-        btnSelect.setTitle(cn,for: .normal)
-
+    
        
     }
     
