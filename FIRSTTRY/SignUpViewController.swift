@@ -17,11 +17,16 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var UserNameTextfield: UITextField!
     
+    var ref: DatabaseReference!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+         ref = Database.database().reference()
+
     }
     
 
@@ -40,10 +45,35 @@ class SignUpViewController: UIViewController {
             }
         }
         
+        
+        
         Auth.auth().createUser(withEmail: email.text! , password: password.text!) { (user, error) in
             if error != nil {
                 print (error!)
             } else {
+    
+                
+                let user = Auth.auth().currentUser
+                if let user = user {
+                    // The user's ID, unique to the Firebase project.
+                    // Do NOT use this value to authenticate with your backend server,
+                    // if you have one. Use getTokenWithCompletion:completion: instead.
+                    let uid = user.uid
+                    let email = user.email
+                    let name = user.displayName
+                    
+                    self.ref.child("users").child(user.uid).setValue(
+                    ["name": name,
+                     "email": email,
+                     "uid": uid]) {
+                        (error:Error?, ref:DatabaseReference) in
+                        if let error = error {
+                            print("Data could not be saved: \(error).")
+                        } else {
+                            print("Data saved successfully!")
+                        }
+                    }
+                    
                 print("registration successful")
                 
                 self.performSegue(withIdentifier: "signinToTab" , sender: self)
@@ -62,4 +92,5 @@ class SignUpViewController: UIViewController {
     }
     */
 
+}
 }

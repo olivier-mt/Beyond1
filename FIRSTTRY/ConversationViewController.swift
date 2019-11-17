@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 
+
 class ConversationViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var messageArray : [Message] = [Message]()
@@ -53,6 +54,9 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
         ConvertationTableView.register(UINib(nibName: "CustomMessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
         
+        // scroll to the bottom 
+        
+        
         configureTableView()
         retrieveMessages()
         
@@ -66,11 +70,13 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
         
        cell.messageBody.text = messageArray[indexPath.row].messageBody
+      
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return messageArray.count
     }
     
@@ -80,6 +86,8 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
         ConvertationTableView.estimatedRowHeight = 120.0
         ConvertationTableView.rowHeight = UITableView.automaticDimension
+        
+        
         
         
     }
@@ -135,6 +143,9 @@ self.messageTextField.endEditing(true)
         
     }
     
+    
+ 
+    
     @IBAction func send(_ sender: Any) {
         
         
@@ -151,7 +162,7 @@ self.messageTextField.endEditing(true)
             (error, reference) in
             
             if error != nil{
-                print(error)
+                print("error")
             } else {
                 print("message saved successfully")
                 
@@ -159,6 +170,9 @@ self.messageTextField.endEditing(true)
                 self.sendButton.isEnabled = true
                 self.messageTextField.text = ""
             }
+            
+            
+          
         
             
             
