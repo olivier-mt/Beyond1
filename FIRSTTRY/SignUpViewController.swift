@@ -35,16 +35,6 @@ class SignUpViewController: UIViewController {
         
         let userName = UserNameTextfield.text
 
-        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-        changeRequest?.displayName = userName
-        changeRequest?.commitChanges{
-            error in
-            if error == nil {
-                print("User display name change!")
-                
-            }
-        }
-        
         
         
         Auth.auth().createUser(withEmail: email.text! , password: password.text!) { (user, error) in
@@ -60,7 +50,7 @@ class SignUpViewController: UIViewController {
                     // if you have one. Use getTokenWithCompletion:completion: instead.
                     let uid = user.uid
                     let email = user.email
-                    let name = user.displayName
+                    let name = userName
                     
                     self.ref.child("users").child(user.uid).setValue(
                     ["name": name,
