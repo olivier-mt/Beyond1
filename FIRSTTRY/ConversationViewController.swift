@@ -71,6 +71,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
         
        cell.messageBody.text = messageArray[indexPath.row].messageBody
+       cell.usernameLabel.text = messageArray[indexPath.row].name
       
         
         return cell
@@ -135,6 +136,7 @@ self.messageTextField.endEditing(true)
             
             let message = Message()
             message.messageBody = text
+            message.name =  snapshotValue["name"]!
             
             self.messageArray.append(message)
             
@@ -161,7 +163,7 @@ self.messageTextField.endEditing(true)
         
         
         
-        let messageDictionary = ["MessageBody": messageTextField.text,"user": user ]
+        let messageDictionary = ["MessageBody": messageTextField.text,"name": user ]
         
         messagesDB?.childByAutoId().setValue(messageDictionary){
             (error, reference) in
