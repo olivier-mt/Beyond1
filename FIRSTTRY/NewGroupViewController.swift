@@ -120,6 +120,8 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
             }
         }
         
+        navigationController?.popViewController(animated: true)
+
         
     }
 
