@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import Firebase
 
 
 class ConversationViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
@@ -156,7 +157,11 @@ self.messageTextField.endEditing(true)
         
         let messagesDB = self.ref?.child("conversation").child(finalGroup)
         
-        let messageDictionary = ["MessageBody": messageTextField.text]
+        var user = Auth.auth().currentUser?.displayName
+        
+        
+        
+        let messageDictionary = ["MessageBody": messageTextField.text,"user": user ]
         
         messagesDB?.childByAutoId().setValue(messageDictionary){
             (error, reference) in
