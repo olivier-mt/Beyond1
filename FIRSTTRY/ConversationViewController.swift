@@ -25,6 +25,9 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     
     
     var finalGroup = ""
+    var groupName = "" 
+    
+    
     
     var ref: DatabaseReference!
     
@@ -38,11 +41,14 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
         ref = Database.database().reference()
         
+        self.title = groupName
+        
        // self.ref?.child("conversation").child(finalGroup).childByAutoId().setValue("premier message")
 
         
         
          print("here Is the final group \(finalGroup)")
+         print("the groupe name is \(groupName)")
         
         
         tabBarController?.tabBar.isHidden = true
