@@ -14,6 +14,8 @@ import Firebase
 class ConversationViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var messageArray : [Message] = [Message]()
+    var db : Firestore!
+
   
     
     
@@ -25,11 +27,13 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     
     
     var finalGroup = ""
-    var groupName = "" 
+    var groupName = ""
     
     
     
     var ref: DatabaseReference!
+    
+    
     
     
 
@@ -40,13 +44,13 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         ConvertationTableView.dataSource = self
         
         ref = Database.database().reference()
-        
-        self.title = groupName
-        
-       // self.ref?.child("conversation").child(finalGroup).childByAutoId().setValue("premier message")
+        db = Firestore.firestore()
 
         
+        self.title = groupName
+
         
+       // self.ref?.child("conversation").child(finalGroup).childByAutoId().setValue("premier message")
          print("here Is the final group \(finalGroup)")
          print("the groupe name is \(groupName)")
         
@@ -61,7 +65,11 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
         ConvertationTableView.register(UINib(nibName: "CustomMessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
         
-        // scroll to the bottom 
+        // scroll to the bottom
+        
+        // Set up righ bar button
+        let button1 = UIBarButtonItem(image: UIImage(named: "favorit"), style: .plain, target: self, action: #selector(tapButton)) // action:#selector(Class.MethodName) for swift 3
+            self.navigationItem.rightBarButtonItem = button1
         
         
         configureTableView()
@@ -69,9 +77,28 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
     }
     
+    let user =  Auth.auth().currentUser?.uid
     
+    @objc func tapButton (){
+        print("you tapped \(finalGroup)")
+        print("the user is \(user!)")
+        
+        db.collection("FOLLOWING").document("\(user!)").collection("GROUP FOLLOWED").document("\(finalGroup)").setData([
+            "name": groupName,
+            "documentID": finalGroup,
+        ], merge: true
+        ) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+        
+        
+    }
+
     
-   
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
