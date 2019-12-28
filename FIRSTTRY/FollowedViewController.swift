@@ -7,16 +7,75 @@
 //
 
 import UIKit
+import Firebase
 
-class FollowedViewController: UIViewController {
+class FollowedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
 
+    @IBOutlet weak var tableView: UITableView!
+    var scheduleIDarray = [fGroup]()
+    var db: Firestore!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        tableView.delegate = self
+        db = Firestore.firestore()
+        loadData()
+        
     }
     
+    func loadData() {
+        
+        let user = Auth.auth().currentUser?.uid
+        
+        db.collection("FOLLOWING").document("\(user!)").collection("GROUP FOLLOWED").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("Cest chargé \(document.documentID) => \(document.data())")
+                    
+                    self.scheduleIDarray = querySnapshot!.documents.compactMap({fGroup(dictionary: $0.data())})
+                    DispatchQueue.main.async {
+                        
+                        self.tableView.reloadData()
 
+                }
+            }
+ print("dans l'array \(self.scheduleIDarray)")
+ self.tableView.reloadData()
+
+        }
+        }
+    }
+    
+    
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+         
+            return scheduleIDarray.count
+            
+        }
+        
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "fCell", for: indexPath) as! fCell
+            
+            let schedule = scheduleIDarray[indexPath.row]
+            
+            cell.name?.text = "\(schedule.name)"
+            cell.id?.text = "\(schedule.documentID)"
+            
+            print("Array is populated \(scheduleIDarray)")
+            
+            return cell
+        }
+        
+}
+
+        
     /*
     // MARK: - Navigation
 
@@ -27,4 +86,5 @@ class FollowedViewController: UIViewController {
     }
     */
 
-}
+
+
