@@ -18,12 +18,11 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
 
   
     
-    
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var ConvertationTableView: UITableView!
     @IBOutlet weak var messageTextField: UITextField!
-    
     @IBOutlet weak var sendButton: UIButton!
+    
     
     
     var finalGroup = ""

@@ -73,6 +73,8 @@ class cityViewController: UIViewController, UICollectionViewDelegate, UICollecti
         vc.finalCity = self.city
     }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.layer.borderColor = UIColor.white.cgColor

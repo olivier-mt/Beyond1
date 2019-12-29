@@ -15,6 +15,12 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableView: UITableView!
     var scheduleIDarray = [fGroup]()
     var db: Firestore!
+    var selectedGroupID = ""
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+        loadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +78,35 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
             
             return cell
         }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(100)
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.selectedGroupID = "\(scheduleIDarray[indexPath.row].documentID)"
+       
+        performSegue(withIdentifier: "fToConvers", sender: Any?.self)
+        
+        print("selected groupe \(self.selectedGroupID)")
+    }
+    
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+            let vc = segue.destination as! ConversationViewController
+        
+            vc.finalGroup = self.selectedGroupID
+     
+    }
+    
+    
+    
+    
         
 }
 
