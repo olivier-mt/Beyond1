@@ -102,9 +102,23 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
         
+       let message = messageArray[indexPath.row]
+        
+        if message.sender == Auth.auth().currentUser?.email{
+            
+            cell.messageBubble.backgroundColor = UIColor.cyan
+            cell.messageBody.backgroundColor = cell.messageBubble.backgroundColor
+            
+            print("\(message.sender) et \(Auth.auth().currentUser?.email)")
+        } else {
+            print("not the same sender \(message.sender)voila ")
+        }
+        
+        
        cell.messageBody.text = messageArray[indexPath.row].messageBody
        cell.usernameLabel.text = messageArray[indexPath.row].name
       
+        
         
         return cell
     }
@@ -169,6 +183,7 @@ self.messageTextField.endEditing(true)
             let message = Message()
             message.messageBody = text
             message.name =  snapshotValue["name"]!
+            message.sender = snapshotValue["sender"]!
             
             self.messageArray.append(message)
             
@@ -193,9 +208,10 @@ self.messageTextField.endEditing(true)
         
         var user = Auth.auth().currentUser?.displayName
         
+        var sender = Auth.auth().currentUser?.email
         
         
-        let messageDictionary = ["MessageBody": messageTextField.text,"name": user ]
+        let messageDictionary = ["MessageBody": messageTextField.text,"name": user, "sender": sender ]
         
         messagesDB?.childByAutoId().setValue(messageDictionary){
             (error, reference) in
