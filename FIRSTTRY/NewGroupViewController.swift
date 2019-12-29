@@ -63,7 +63,6 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
         
         db = Firestore.firestore()
     
-       
     }
     
     

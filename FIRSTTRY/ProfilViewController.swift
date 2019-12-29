@@ -2,16 +2,35 @@
 //  ProfilViewController.swift
 //  FIRSTTRY
 //
-//  Created by Olivier Mountou on 21/09/2019.
+//  Created by Olivier Mountou on 29/12/2019.
 //  Copyright © 2019 Olivier Mountou MT. All rights reserved.
 //
 
 import UIKit
+import Firebase
 
-class ProfilViewController: UIViewController {
 
+
+
+class ProfilViewController: UIViewController, UITextFieldDelegate{
+
+ 
+    @IBOutlet weak var userNameTextField: UITextField!
+    
+    @IBOutlet weak var currentNameLabel: UILabel!
+    
+    
+    @IBOutlet weak var saveButton: UIButton!
+    
+    var db : Firestore!
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        userNameTextField.delegate = self
+        
+        currentNameLabel.text = (Auth.auth().currentUser!.displayName as! String)
 
         // Do any additional setup after loading the view.
     }

@@ -104,6 +104,9 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
        let message = messageArray[indexPath.row]
         
+        
+    // CHANGE TEXT ACCORDING TO SENDER
+        
         if message.sender == Auth.auth().currentUser?.email{
             
             cell.messageBubble.backgroundColor = UIColor.cyan
