@@ -9,6 +9,21 @@
 import UIKit
 import Firebase
 
+extension UIViewController{
+    
+    func HidenKeyboard(){
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DismissedKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func DismissedKeyboard() {
+        
+        view.endEditing(true)
+    }
+    
+}
 
 
 
@@ -32,7 +47,29 @@ class ProfilViewController: UIViewController, UITextFieldDelegate{
         
         currentNameLabel.text = (Auth.auth().currentUser!.displayName as! String)
 
+        self.title = "Profil settings"
         // Do any additional setup after loading the view.
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        currentNameLabel.text = (Auth.auth().currentUser!.displayName as! String)
+        self.title = "Profil settings"
+        
+        self.HidenKeyboard()
+
+    }
+    
+    
+    @IBAction func saveProfilTapped(_ sender: Any) {
+        
+     let username = userNameTextField.text
+        
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = username
+        changeRequest?.commitChanges { (error) in
+        }
+        
     }
     
 

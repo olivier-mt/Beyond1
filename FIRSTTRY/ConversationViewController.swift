@@ -120,7 +120,6 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
             print("not the same sender \(message.sender)voila ")
         }
         
-        
        cell.messageBody.text = messageArray[indexPath.row].messageBody
        cell.usernameLabel.text = messageArray[indexPath.row].name
       
@@ -138,9 +137,6 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
         ConvertationTableView.estimatedRowHeight = 120.0
         ConvertationTableView.rowHeight = UITableView.automaticDimension
-        
-        
-        
         
     }
 
