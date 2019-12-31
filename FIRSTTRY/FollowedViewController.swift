@@ -16,6 +16,7 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
     var scheduleIDarray = [fGroup]()
     var db: Firestore!
     var selectedGroupID = ""
+    var groupName =  ""
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
@@ -87,7 +88,7 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         self.selectedGroupID = "\(scheduleIDarray[indexPath.row].documentID)"
-       
+        self.groupName = "\(scheduleIDarray[indexPath.row].name)"
         performSegue(withIdentifier: "fToConvers", sender: Any?.self)
         
         print("selected groupe \(self.selectedGroupID)")
@@ -101,6 +102,7 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
             let vc = segue.destination as! ConversationViewController
         
             vc.finalGroup = self.selectedGroupID
+            vc.groupName = self.groupName
      
     }
     

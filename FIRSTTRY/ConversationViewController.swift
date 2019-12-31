@@ -93,8 +93,6 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
                 print("Document successfully written!")
             }
         }
-        
-        
     }
 
     
@@ -109,11 +107,16 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
         if message.sender == Auth.auth().currentUser?.email{
             
-            cell.messageBubble.backgroundColor = UIColor.cyan
+            cell.messageBubble.backgroundColor = UIColor(red:0.53, green:0.68, blue:0.94, alpha:1.0)
+            cell.messageBody.textColor = UIColor.white
             cell.messageBody.backgroundColor = cell.messageBubble.backgroundColor
-            
+          
             print("\(message.sender) et \(Auth.auth().currentUser?.email)")
         } else {
+            cell.messageBubble.backgroundColor = UIColor(red:0.94, green:0.94, blue:0.94, alpha:1.0)
+            cell.messageBody.textColor = UIColor.black
+            cell.messageBody.backgroundColor = cell.messageBubble.backgroundColor
+
             print("not the same sender \(message.sender)voila ")
         }
         
@@ -121,8 +124,6 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
        cell.messageBody.text = messageArray[indexPath.row].messageBody
        cell.usernameLabel.text = messageArray[indexPath.row].name
       
-        
-        
         return cell
     }
     
@@ -230,12 +231,6 @@ self.messageTextField.endEditing(true)
             }
             
             
-          
-        
-            
-            
-        
-        
     }
     
     /*
