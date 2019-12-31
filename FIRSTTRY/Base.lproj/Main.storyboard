@@ -509,8 +509,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="id" destination="3J1-s7-TdO" id="ZGl-PL-bhT"/>
-                                            <outlet property="name" destination="1od-4T-7gY" id="ZUK-I6-XOV"/>
+                                            <outlet property="id" destination="3J1-s7-TdO" id="iEo-h7-vLH"/>
+                                            <outlet property="name" destination="1od-4T-7gY" id="2af-gn-RJy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
