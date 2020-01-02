@@ -31,6 +31,8 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
         db = Firestore.firestore()
         loadData()
         
+        self.title = "My groups"
+        
     }
     
     func loadData() {
