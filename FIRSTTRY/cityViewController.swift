@@ -67,6 +67,9 @@ class cityViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
         
         var vc = segue.destination as! GroupSViewController
         
