@@ -74,25 +74,53 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         configureTableView()
         retrieveMessages()
         
+        
     }
     
     let user =  Auth.auth().currentUser?.uid
+  
+    
     
     @objc func tapButton (){
+        
+        
         print("you tapped \(finalGroup)")
         print("the user is \(user!)")
         
-        db.collection("FOLLOWING").document("\(user!)").collection("GROUP FOLLOWED").document("\(finalGroup)").setData([
-            "name": groupName,
-            "documentID": finalGroup,
-        ], merge: true
-        ) { err in
-            if let err = err {
-                print("Error writing document: \(err)")
-            } else {
-                print("Document successfully written!")
+        let docRef = db.collection("FOLLOWING").document("\(user!)").collection("GROUP FOLLOWED").document("\(finalGroup)")
+        
+        // follow and unfollow
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
+                docRef.delete() { err in
+                    if let err = err {
+                        print("Error removing document: \(err)")
+                    } else {
+                        print("Document successfully removed!")
+                    }
+                }
+            }
+                
+            else {
+                print("Document does not exist")
+                docRef.setData([
+                    "name": self.groupName,
+                    "documentID": self.finalGroup,
+                    ], merge: true
+                ) { err in
+                    if let err = err {
+                        print("Error writing document: \(err)")
+                    } else {
+                        print("Document successfully written!")
+                    }
+                }
             }
         }
+        
+       
     }
 
     
