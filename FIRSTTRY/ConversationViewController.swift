@@ -27,6 +27,9 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     
     var finalGroup = ""
     var groupName = ""
+    var info = ""
+    var language = ""
+    var city = ""
     
     
     
@@ -109,6 +112,10 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
                 docRef.setData([
                     "name": self.groupName,
                     "documentID": self.finalGroup,
+                    "city" : self.city,
+                    "description" : self.info,
+                    "language" : self.language,
+                    
                     ], merge: true
                 ) { err in
                     if let err = err {

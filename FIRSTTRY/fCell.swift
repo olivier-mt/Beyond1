@@ -15,7 +15,11 @@ class fCell: UITableViewCell {
     
     @IBOutlet weak var id: UILabel!
     
+    @IBOutlet weak var describ: UILabel!
     
+    @IBOutlet weak var city: UILabel!
+    
+    @IBOutlet weak var language: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

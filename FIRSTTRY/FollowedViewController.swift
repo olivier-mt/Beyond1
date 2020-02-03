@@ -76,6 +76,9 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
             
             cell.name?.text = "\(schedule.name)"
             cell.id?.text = "\(schedule.documentID)"
+            cell.describ?.text = "\(schedule.description)"
+            cell.city?.text = "\(schedule.city)"
+            cell.language?.text = "\(schedule.language)"
             
             print("Array is populated \(scheduleIDarray)")
             
