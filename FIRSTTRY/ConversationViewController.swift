@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import Firebase
+import SPAlert
 
 
 class ConversationViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
@@ -103,6 +104,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
                         print("Error removing document: \(err)")
                     } else {
                         print("Document successfully removed!")
+                        SPAlert.present(title: " group successfully removed!", preset: .done)
                     }
                 }
             }
@@ -122,6 +124,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
                         print("Error writing document: \(err)")
                     } else {
                         print("Document successfully written!")
+                        SPAlert.present(title: " group successfully saved!", preset: .done)
                     }
                 }
             }
