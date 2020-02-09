@@ -121,6 +121,7 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
                        "documentID" : documentID
                        
                    ])
+            SPAlert.present(title: "Your group is created!", preset: .done)
             navigationController?.popViewController(animated: true)
 
             print("Document added with ID: \(newGroupRef.documentID)")
