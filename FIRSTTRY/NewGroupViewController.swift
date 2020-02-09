@@ -127,26 +127,6 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
             print("Document added with ID: \(newGroupRef.documentID)")
 
         }
-        
-       // newGroupRef.setData([
-          //  "city" : city,
-          //  "description" : descritption as Any,
-          //  "language" : language as Any,
-          //  "name" : name as Any,
-          //  "documentID" : documentID
-            
-     //   ]) { err in
-        //    if name == "" ||
-         //      descritption == "" ||
-         //       language == ""
-          //       { let err = err
-          //          print("Error adding document: \(String(describing: err))")
-          //          SPAlert.present(message: "All field have to be fullfielded")
-         //   } else {
-         //       print("Document added with ID: \(newGroupRef.documentID)")
-           // }
-       // }
-        
 
     }
 
