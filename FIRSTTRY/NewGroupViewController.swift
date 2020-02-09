@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SPAlert
 
 extension UIViewController{
     
@@ -105,23 +106,47 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
         let documentID = newGroupRef.documentID
        
         
-        newGroupRef.setData([
-            "city" : city,
-            "description" : descritption as Any,
-            "language" : language as Any,
-            "name" : name as Any,
-            "documentID" : documentID
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(newGroupRef.documentID)")
-            }
+        if name == "" ||
+           descritption == "" ||
+            language == ""
+             { //let err = err
+                print("Error adding document")
+                SPAlert.present(message: "All field have to be fullfielded")
+        } else {
+            newGroupRef.setData([
+                       "city" : city,
+                       "description" : descritption as Any,
+                       "language" : language as Any,
+                       "name" : name as Any,
+                       "documentID" : documentID
+                       
+                   ])
+            navigationController?.popViewController(animated: true)
+
+            print("Document added with ID: \(newGroupRef.documentID)")
+
         }
         
-        navigationController?.popViewController(animated: true)
-
+       // newGroupRef.setData([
+          //  "city" : city,
+          //  "description" : descritption as Any,
+          //  "language" : language as Any,
+          //  "name" : name as Any,
+          //  "documentID" : documentID
+            
+     //   ]) { err in
+        //    if name == "" ||
+         //      descritption == "" ||
+         //       language == ""
+          //       { let err = err
+          //          print("Error adding document: \(String(describing: err))")
+          //          SPAlert.present(message: "All field have to be fullfielded")
+         //   } else {
+         //       print("Document added with ID: \(newGroupRef.documentID)")
+           // }
+       // }
         
+
     }
 
 }

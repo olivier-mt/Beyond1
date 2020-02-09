@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SPAlert
 
 class LogInViewController: UIViewController {
 
@@ -30,9 +31,11 @@ class LogInViewController: UIViewController {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if error != nil {
                 print (error!)
+                SPAlert.present(title: "Email or Password error", preset: .error)
+
             } else {
                 print("sign in successful")
-                
+
                 self.performSegue(withIdentifier: "loginToTab" , sender: self)
             }
         }

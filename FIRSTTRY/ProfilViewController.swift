@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SPAlert
 
 extension UIViewController{
     
@@ -67,6 +68,7 @@ class ProfilViewController: UIViewController, UITextFieldDelegate{
         
         let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
         changeRequest?.displayName = username
+        SPAlert.present(title: "Username changed succefully!", preset: .done)
         changeRequest?.commitChanges { (error) in
         }
         
