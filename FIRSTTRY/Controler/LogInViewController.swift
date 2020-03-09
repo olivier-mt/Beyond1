@@ -16,12 +16,15 @@ class LogInViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
-    
+    // SAVE EMAIL AND PASSWORD
+                   
+                 
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+      
+        
         
         // Do any additional setup after loading the view.
     }
@@ -36,6 +39,8 @@ class LogInViewController: UIViewController {
             } else {
                 print("sign in successful")
 
+                UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                
                 self.performSegue(withIdentifier: "loginToTab" , sender: self)
             }
         }

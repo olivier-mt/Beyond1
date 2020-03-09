@@ -110,34 +110,58 @@
 		903A79CB23360BDE00F4306D /* FIRSTTRY */ = {
 			isa = PBXGroup;
 			children = (
-				903A79CC23360BDE00F4306D /* AppDelegate.swift */,
-				903A79CE23360BDE00F4306D /* ViewController.swift */,
-				903A79D023360BDE00F4306D /* Main.storyboard */,
-				90DA252723BB6B8900FC1723 /* fCell.swift */,
-				90DD6FE323B90D3600878945 /* ProfilViewController.swift */,
-				90DD6FE123B806AA00878945 /* fgroupDataModel.swift */,
-				902711DB237876AF00A1F2ED /* Shared.swift */,
-				902711D723786C0D00A1F2ED /* cityPopOverViewController.swift */,
-				903BEBDB237224D6009DA68D /* NewGroupViewController.swift */,
-				90D7E6C4236EF48A00220908 /* CustomMessageCell.swift */,
-				90D7E6C5236EF48A00220908 /* CustomMessageCell.xib */,
-				90FC638B2365E74900D308F9 /* Message.swift */,
-				902E2E9C2353C61F008357EC /* ConversationViewController.swift */,
-				90D50FD9234EA532002937C8 /* groupDataModel.swift */,
-				90885482234D5DE9002B52B1 /* groupTableViewCell.swift */,
-				90DFE1A0234C3127007D3D1C /* GroupSViewController.swift */,
-				901B8F5B234920410058F4DA /* cityViewController.swift */,
-				901B8F5923491DB50058F4DA /* CollectionViewCell.swift */,
-				903A79E223361E1200F4306D /* SignUpViewController.swift */,
-				903A79E023361C2400F4306D /* LogInViewController.swift */,
-				903A79E4233651A600F4306D /* FollowedViewController.swift */,
-				903A79EA2336529900F4306D /* ParamsViewController.swift */,
-				903A79D323360BE100F4306D /* Assets.xcassets */,
-				903A79D523360BE100F4306D /* LaunchScreen.storyboard */,
+				907A42FF240924CB00605917 /* Controler */,
+				907A42FE240924BA00605917 /* View */,
+				907A42FD240924A200605917 /* Model */,
 				903A79D823360BE100F4306D /* Info.plist */,
 				9016F374233FA66F00E2D3B8 /* GoogleService-Info.plist */,
 			);
 			path = FIRSTTRY;
+			sourceTree = "<group>";
+		};
+		907A42FD240924A200605917 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90DA252723BB6B8900FC1723 /* fCell.swift */,
+				90DD6FE123B806AA00878945 /* fgroupDataModel.swift */,
+				902711DB237876AF00A1F2ED /* Shared.swift */,
+				90D7E6C4236EF48A00220908 /* CustomMessageCell.swift */,
+				90FC638B2365E74900D308F9 /* Message.swift */,
+				90D50FD9234EA532002937C8 /* groupDataModel.swift */,
+				90885482234D5DE9002B52B1 /* groupTableViewCell.swift */,
+				901B8F5923491DB50058F4DA /* CollectionViewCell.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		907A42FE240924BA00605917 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				903A79D023360BDE00F4306D /* Main.storyboard */,
+				90D7E6C5236EF48A00220908 /* CustomMessageCell.xib */,
+				903A79D323360BE100F4306D /* Assets.xcassets */,
+				903A79D523360BE100F4306D /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		907A42FF240924CB00605917 /* Controler */ = {
+			isa = PBXGroup;
+			children = (
+				903A79CE23360BDE00F4306D /* ViewController.swift */,
+				903A79CC23360BDE00F4306D /* AppDelegate.swift */,
+				90DD6FE323B90D3600878945 /* ProfilViewController.swift */,
+				902711D723786C0D00A1F2ED /* cityPopOverViewController.swift */,
+				903BEBDB237224D6009DA68D /* NewGroupViewController.swift */,
+				902E2E9C2353C61F008357EC /* ConversationViewController.swift */,
+				90DFE1A0234C3127007D3D1C /* GroupSViewController.swift */,
+				901B8F5B234920410058F4DA /* cityViewController.swift */,
+				903A79E223361E1200F4306D /* SignUpViewController.swift */,
+				903A79E023361C2400F4306D /* LogInViewController.swift */,
+				903A79E4233651A600F4306D /* FollowedViewController.swift */,
+				903A79EA2336529900F4306D /* ParamsViewController.swift */,
+			);
+			path = Controler;
 			sourceTree = "<group>";
 		};
 		A14D39EB644EE306BCB096CC /* Frameworks */ = {

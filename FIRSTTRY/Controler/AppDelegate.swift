@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import InstantSearchClient
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         let myDatabase = Database.database().reference()
+        
+     
         
   //      let db = Firestore.firestore()
         

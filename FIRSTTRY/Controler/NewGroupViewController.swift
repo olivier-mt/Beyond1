@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import SPAlert
 
+
 extension UIViewController{
     
     func HideKeyboard(){
@@ -125,7 +126,7 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
             navigationController?.popViewController(animated: true)
 
             print("Document added with ID: \(newGroupRef.documentID)")
-
+            
         }
 
     }

@@ -67,7 +67,7 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
             
         }
         
-        
+    
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "fCell", for: indexPath) as! fCell
@@ -110,11 +110,6 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
             vc.groupName = self.groupName
      
     }
-    
-    
-    
-    
-        
 }
 
         

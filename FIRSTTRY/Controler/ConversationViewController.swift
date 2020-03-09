@@ -102,7 +102,8 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
                 docRef.delete() { err in
                     if let err = err {
                         print("Error removing document: \(err)")
-                    } else {
+                    }
+                    else {
                         print("Document successfully removed!")
                         SPAlert.present(message: "You removed this group to your favorit")                    }
                 }
@@ -123,7 +124,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
                         print("Error writing document: \(err)")
                     } else {
                         print("Document successfully written!")
-                        SPAlert.present(title: " group successfully saved!", preset: .done)
+                        SPAlert.present(title: " group successfully saved as favorit!", preset: .done)
                     }
                 }
             }
