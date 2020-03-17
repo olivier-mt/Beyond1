@@ -47,6 +47,30 @@ class LogInViewController: UIViewController {
         
     }
     
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    guard let identifier = segue.identifier else {
+              assertionFailure("Segue had no idientifier")
+              return
+          }
+    
+    
+    if identifier == "loginToTab" {
+        
+        let vc = segue.destination as! cityViewController
+    }
+    
+    else if identifier == "toPasswordLost" {
+        
+        let resetVc = segue.destination as! resetPasswordViewController
+        
+    }
+    
+    
+    
+    
+    }
+    
     /*
     // MARK: - Navigation
 
