@@ -57,7 +57,10 @@ class LogInViewController: UIViewController {
     
     if identifier == "loginToTab" {
         
-        let vc = segue.destination as! 
+        let barViewControllers = segue.destination as! UITabBarController
+        let nav = barViewControllers.viewControllers![2] as! UINavigationController
+        
+        
     }
     
     else if identifier == "toPasswordLost" {
