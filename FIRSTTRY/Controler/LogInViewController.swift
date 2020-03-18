@@ -17,7 +17,8 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     // SAVE EMAIL AND PASSWORD
-                   
+    let userDefault = UserDefaults.standard
+
                  
     
     override func viewDidLoad() {
@@ -39,7 +40,10 @@ class LogInViewController: UIViewController {
             } else {
                 print("sign in successful")
 
-                UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                //STAY LOGGED IN
+                self.userDefault.set(true, forKey: "usersignedin")
+                self.userDefault.synchronize()
+                
                 
                 self.performSegue(withIdentifier: "loginToTab" , sender: self)
             }
@@ -78,6 +82,9 @@ class LogInViewController: UIViewController {
     
     }
     
+    
+
+    }
     /*
     // MARK: - Navigation
 
@@ -89,4 +96,4 @@ class LogInViewController: UIViewController {
     */
     
 
-}
+

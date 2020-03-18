@@ -43,6 +43,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="2Zs-cu-qRT"/>
+                    <connections>
+                        <segue destination="oDc-vi-hy8" kind="show" identifier="firstToTab" id="Vnd-OV-9xr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -1009,7 +1012,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tbJ-4V-qYh"/>
-        <segue reference="hF8-vg-eMy"/>
+        <segue reference="Vnd-OV-9xr"/>
         <segue reference="QWs-zl-rKJ"/>
         <segue reference="fQt-iI-CP2"/>
     </inferredMetricsTieBreakers>
