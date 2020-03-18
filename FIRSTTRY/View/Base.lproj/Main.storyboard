@@ -846,7 +846,7 @@
                                 </constraints>
                                 <state key="normal" title="BackFirstScreenButtonLogin" image="backarrow"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="fQt-iI-CP2"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="loginToFirstScreen" id="fQt-iI-CP2"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dS4-Ef-xC2">
@@ -931,6 +931,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDL-cG-p8m">
                                 <rect key="frame" x="120" y="243" width="174" height="30"/>
                                 <state key="normal" title="send"/>
+                                <connections>
+                                    <action selector="pressSend:" destination="ZXp-x9-uf0" eventType="touchUpInside" id="diX-YG-FPV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17M-nO-pie">
                                 <rect key="frame" x="78" y="111" width="52" height="52"/>
@@ -967,6 +970,10 @@
                         <viewLayoutGuide key="safeArea" id="WBO-7V-wZ1"/>
                     </view>
                     <navigationItem key="navigationItem" id="E7V-ys-pCF"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="JiC-Y0-YfT" id="cux-Po-Gmy"/>
+                        <outlet property="sendButton" destination="HDL-cG-p8m" id="9Fc-jd-sEZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Du-eg-bpy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1001,7 +1008,7 @@
         <image name="user" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="X3q-Ag-T4k"/>
+        <segue reference="tbJ-4V-qYh"/>
         <segue reference="hF8-vg-eMy"/>
         <segue reference="QWs-zl-rKJ"/>
         <segue reference="fQt-iI-CP2"/>

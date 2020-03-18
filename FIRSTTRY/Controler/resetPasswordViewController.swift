@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Firebase
+import SPAlert
 
 class resetPasswordViewController: UIViewController {
-
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +21,31 @@ class resetPasswordViewController: UIViewController {
     }
     
 
+    @IBAction func pressSend(_ sender: Any) {
+        
+        let email = emailTextField.text!
+        
+
+    if email == "" {
+        
+        SPAlert.present(message: "email required")
+        
+    }
+    
+    else {
+        
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+        
+        SPAlert.present(title: "Link sent!", preset: .done)
+
+    }
+    
+    
+        }
+        
+        
+        
+    }
     /*
     // MARK: - Navigation
 

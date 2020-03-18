@@ -57,7 +57,7 @@ class LogInViewController: UIViewController {
     
     if identifier == "loginToTab" {
         
-        let vc = segue.destination as! cityViewController
+        let vc = segue.destination as! 
     }
     
     else if identifier == "toPasswordLost" {
@@ -65,7 +65,11 @@ class LogInViewController: UIViewController {
         let resetVc = segue.destination as! resetPasswordViewController
         
     }
-    
+
+    else if identifier == "loginToFirstScreen" {
+        
+        let firstScreen = segue.destination as! ViewController
+    }
     
     
     
