@@ -153,21 +153,164 @@
             </objects>
             <point key="canvasLocation" x="2051" y="1024"/>
         </scene>
-        <!--settings-->
-        <scene sceneID="Uwu-oN-cPU">
+        <!--Settings -->
+        <scene sceneID="6KL-NF-11s">
             <objects>
-                <viewController id="Fbz-Td-4oM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Fn1-1f-yY6">
+                <tableViewController id="rjg-OX-peS" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Rwr-km-0ug">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="HD3-vK-MdQ"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="settings" image="settings-25" selectedImage="settings-25" id="4Co-uy-Y95"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rTA-yN-Dza" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="SETTINGS" id="bFr-2r-Ka5">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="c1x-13-yet">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c1x-13-yet" id="sGH-1Q-FyV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log out " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewl-0L-WNF">
+                                                    <rect key="frame" x="20" y="11" width="69.5" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ewl-0L-WNF" secondAttribute="bottom" constant="0.5" id="Ge0-oo-0xe"/>
+                                                <constraint firstItem="ewl-0L-WNF" firstAttribute="leading" secondItem="sGH-1Q-FyV" secondAttribute="leadingMargin" id="h7c-QL-fqG"/>
+                                                <constraint firstItem="ewl-0L-WNF" firstAttribute="top" secondItem="sGH-1Q-FyV" secondAttribute="topMargin" id="r2A-bO-vWk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="eq2-WS-ygm" kind="show" id="M1M-MC-hAQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="ACCOUNT SETTINGS" id="XQw-Cf-4Ed">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="l7J-JY-TOx">
+                                        <rect key="frame" x="0.0" y="127.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l7J-JY-TOx" id="umU-HN-dSm">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cancel Account " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNe-Dt-fC1">
+                                                    <rect key="frame" x="20" y="11" width="134" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="UNe-Dt-fC1" firstAttribute="top" secondItem="umU-HN-dSm" secondAttribute="topMargin" id="IMA-Jd-oSY"/>
+                                                <constraint firstItem="UNe-Dt-fC1" firstAttribute="leading" secondItem="umU-HN-dSm" secondAttribute="leadingMargin" id="idP-fo-EVr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="UNe-Dt-fC1" secondAttribute="bottom" id="mro-Qy-r1l"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="oUQ-bw-4mG" kind="show" id="6Qn-NN-Cp8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="rjg-OX-peS" id="JlS-Uq-zYg"/>
+                            <outlet property="delegate" destination="rjg-OX-peS" id="f2i-je-tXb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings " id="8Ta-sN-3JS"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nei-LU-oLu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3786" y="483"/>
+            <point key="canvasLocation" x="4695.652173913044" y="1167.1875"/>
+        </scene>
+        <!--Log out-->
+        <scene sceneID="pRm-VE-mJr">
+            <objects>
+                <viewController id="eq2-WS-ygm" customClass="LogOutViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wPa-zN-faJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want to log out ? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWd-np-2xM">
+                                <rect key="frame" x="30" y="176" width="354" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkN-Qk-sCy">
+                                <rect key="frame" x="0.0" y="257" width="414" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Log out ">
+                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutButton:" destination="eq2-WS-ygm" eventType="touchUpInside" id="GNF-r6-9LT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TWd-np-2xM" firstAttribute="top" secondItem="7xI-2d-afJ" secondAttribute="top" constant="120" id="5gZ-ue-PhH"/>
+                            <constraint firstItem="xkN-Qk-sCy" firstAttribute="top" secondItem="TWd-np-2xM" secondAttribute="bottom" constant="60" id="5tV-g1-GTU"/>
+                            <constraint firstItem="TWd-np-2xM" firstAttribute="leading" secondItem="7xI-2d-afJ" secondAttribute="leading" constant="30" id="CCM-z5-9Dc"/>
+                            <constraint firstItem="xkN-Qk-sCy" firstAttribute="leading" secondItem="7xI-2d-afJ" secondAttribute="leading" id="Zqa-gO-mRw"/>
+                            <constraint firstItem="7xI-2d-afJ" firstAttribute="trailing" secondItem="TWd-np-2xM" secondAttribute="trailing" constant="30" id="nlb-34-oYO"/>
+                            <constraint firstItem="7xI-2d-afJ" firstAttribute="trailing" secondItem="xkN-Qk-sCy" secondAttribute="trailing" id="u2n-3U-oob"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7xI-2d-afJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Log out" id="6VW-pX-qRa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dQz-2j-Q7A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5853.6231884057979" y="812.94642857142856"/>
+        </scene>
+        <!--Cancel my account-->
+        <scene sceneID="6pI-5n-sID">
+            <objects>
+                <viewController id="oUQ-bw-4mG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oS3-vl-Iow">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want to cancel your account ? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wr-6q-RSZ">
+                                <rect key="frame" x="0.0" y="176" width="414" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gr-Bn-Gce">
+                                <rect key="frame" x="0.0" y="257.5" width="414" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Cancel ">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3Sl-PB-4iO" firstAttribute="trailing" secondItem="3wr-6q-RSZ" secondAttribute="trailing" id="0Qm-jQ-GsY"/>
+                            <constraint firstItem="3Sl-PB-4iO" firstAttribute="trailing" secondItem="2gr-Bn-Gce" secondAttribute="trailing" id="DDa-Wf-VOK"/>
+                            <constraint firstItem="2gr-Bn-Gce" firstAttribute="top" secondItem="3wr-6q-RSZ" secondAttribute="bottom" constant="60" id="cft-rO-UDt"/>
+                            <constraint firstItem="3wr-6q-RSZ" firstAttribute="top" secondItem="3Sl-PB-4iO" secondAttribute="top" constant="120" id="fZC-JS-Pwr"/>
+                            <constraint firstItem="2gr-Bn-Gce" firstAttribute="leading" secondItem="3Sl-PB-4iO" secondAttribute="leading" id="rsM-jG-WW5"/>
+                            <constraint firstItem="3wr-6q-RSZ" firstAttribute="leading" secondItem="3Sl-PB-4iO" secondAttribute="leading" id="tgI-qj-9aa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Sl-PB-4iO"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cancel my account" id="Q65-ig-D1j"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZoB-Om-2aU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5817.3913043478269" y="1452.4553571428571"/>
         </scene>
         <!--CHOOSE A CITY-->
         <scene sceneID="gUy-Kx-ODx">
@@ -826,7 +969,7 @@
                         <segue destination="C0w-L1-qUl" kind="relationship" relationship="viewControllers" id="QuI-TA-KQB"/>
                         <segue destination="PJj-hW-zxt" kind="relationship" relationship="viewControllers" id="cXA-WG-P6W"/>
                         <segue destination="nPp-Un-b7U" kind="relationship" relationship="viewControllers" id="EaO-PY-UlJ"/>
-                        <segue destination="Fbz-Td-4oM" kind="relationship" relationship="viewControllers" id="y3C-ec-SBU"/>
+                        <segue destination="Pbg-OV-vyi" kind="relationship" relationship="viewControllers" id="HBt-GA-Ke3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sMe-xn-din" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1000,6 +1143,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbX-OB-eVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3786" y="2549"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="0zK-QG-u5F">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pbg-OV-vyi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings-25" selectedImage="settings-25" id="wgY-Iz-FAn"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p7d-fo-1Yx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rjg-OX-peS" kind="relationship" relationship="rootViewController" id="pRX-9h-EjQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wNA-m4-15W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3785.507246376812" y="1167.1875"/>
         </scene>
     </scenes>
     <resources>

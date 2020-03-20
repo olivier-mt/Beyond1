@@ -24,6 +24,8 @@
 		903A79E5233651A600F4306D /* FollowedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A79E4233651A600F4306D /* FollowedViewController.swift */; };
 		903A79EB2336529900F4306D /* ParamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A79EA2336529900F4306D /* ParamsViewController.swift */; };
 		903BEBDC237224D6009DA68D /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BEBDB237224D6009DA68D /* NewGroupViewController.swift */; };
+		903F997A24240DB5001235F5 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F997924240DB5001235F5 /* LogOutViewController.swift */; };
+		903F997C24240DDC001235F5 /* CancelAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F997B24240DDC001235F5 /* CancelAccountViewController.swift */; };
 		904464C62421615600AAC250 /* resetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904464C52421615600AAC250 /* resetPasswordViewController.swift */; };
 		90885483234D5DE9002B52B1 /* groupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90885482234D5DE9002B52B1 /* groupTableViewCell.swift */; };
 		90D50FDA234EA532002937C8 /* groupDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D50FD9234EA532002937C8 /* groupDataModel.swift */; };
@@ -57,6 +59,8 @@
 		903A79E4233651A600F4306D /* FollowedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowedViewController.swift; sourceTree = "<group>"; };
 		903A79EA2336529900F4306D /* ParamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsViewController.swift; sourceTree = "<group>"; };
 		903BEBDB237224D6009DA68D /* NewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupViewController.swift; sourceTree = "<group>"; };
+		903F997924240DB5001235F5 /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
+		903F997B24240DDC001235F5 /* CancelAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelAccountViewController.swift; sourceTree = "<group>"; };
 		904464C52421615600AAC250 /* resetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resetPasswordViewController.swift; sourceTree = "<group>"; };
 		90885482234D5DE9002B52B1 /* groupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupTableViewCell.swift; sourceTree = "<group>"; };
 		90D50FD9234EA532002937C8 /* groupDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupDataModel.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 				903A79E4233651A600F4306D /* FollowedViewController.swift */,
 				903A79EA2336529900F4306D /* ParamsViewController.swift */,
 				904464C52421615600AAC250 /* resetPasswordViewController.swift */,
+				903F997924240DB5001235F5 /* LogOutViewController.swift */,
+				903F997B24240DDC001235F5 /* CancelAccountViewController.swift */,
 			);
 			path = Controler;
 			sourceTree = "<group>";
@@ -314,6 +320,7 @@
 				903A79EB2336529900F4306D /* ParamsViewController.swift in Sources */,
 				903A79CF23360BDE00F4306D /* ViewController.swift in Sources */,
 				902E2E9D2353C61F008357EC /* ConversationViewController.swift in Sources */,
+				903F997A24240DB5001235F5 /* LogOutViewController.swift in Sources */,
 				90D50FDA234EA532002937C8 /* groupDataModel.swift in Sources */,
 				901B8F5A23491DB50058F4DA /* CollectionViewCell.swift in Sources */,
 				904464C62421615600AAC250 /* resetPasswordViewController.swift in Sources */,
@@ -324,6 +331,7 @@
 				903A79E5233651A600F4306D /* FollowedViewController.swift in Sources */,
 				903A79E323361E1200F4306D /* SignUpViewController.swift in Sources */,
 				90DA252823BB6B8900FC1723 /* fCell.swift in Sources */,
+				903F997C24240DDC001235F5 /* CancelAccountViewController.swift in Sources */,
 				903A79E123361C2400F4306D /* LogInViewController.swift in Sources */,
 				903BEBDC237224D6009DA68D /* NewGroupViewController.swift in Sources */,
 				902711D823786C0D00A1F2ED /* cityPopOverViewController.swift in Sources */,

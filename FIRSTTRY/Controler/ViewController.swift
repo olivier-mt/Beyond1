@@ -17,12 +17,15 @@ class ViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-
+  
+    // LOGGED IN 
+    
     override func viewDidAppear(_ animated: Bool) {
         
         if userDefault.bool(forKey: "usersignedin") {
                    performSegue(withIdentifier: "firstToTab", sender: self)
                    }
+        else {}
     
 }
 
