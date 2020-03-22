@@ -275,7 +275,7 @@
         <!--Cancel my account-->
         <scene sceneID="6pI-5n-sID">
             <objects>
-                <viewController id="oUQ-bw-4mG" sceneMemberID="viewController">
+                <viewController id="oUQ-bw-4mG" customClass="CancelAccountViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oS3-vl-Iow">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -287,28 +287,55 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gr-Bn-Gce">
-                                <rect key="frame" x="0.0" y="257.5" width="414" height="30"/>
+                                <rect key="frame" x="0.0" y="364" width="414" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Cancel ">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelPress:" destination="ZT8-28-OD7" eventType="touchUpInside" id="hcU-OH-t76"/>
+                                    <action selector="cancelPress:" destination="oUQ-bw-4mG" eventType="touchUpInside" id="kBX-b7-RuP"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kAg-qJ-rbA">
+                                <rect key="frame" x="0.0" y="234" width="414" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oy6-9J-hKE">
+                                <rect key="frame" x="0.0" y="276" width="414" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3Sl-PB-4iO" firstAttribute="trailing" secondItem="3wr-6q-RSZ" secondAttribute="trailing" id="0Qm-jQ-GsY"/>
-                            <constraint firstItem="3Sl-PB-4iO" firstAttribute="trailing" secondItem="2gr-Bn-Gce" secondAttribute="trailing" id="DDa-Wf-VOK"/>
-                            <constraint firstItem="2gr-Bn-Gce" firstAttribute="top" secondItem="3wr-6q-RSZ" secondAttribute="bottom" constant="60" id="cft-rO-UDt"/>
+                            <constraint firstItem="kAg-qJ-rbA" firstAttribute="leading" secondItem="3Sl-PB-4iO" secondAttribute="leading" id="1Fw-5J-nfp"/>
+                            <constraint firstItem="2gr-Bn-Gce" firstAttribute="leading" secondItem="3Sl-PB-4iO" secondAttribute="leading" id="31o-Zt-Tsv"/>
+                            <constraint firstItem="kAg-qJ-rbA" firstAttribute="top" secondItem="3wr-6q-RSZ" secondAttribute="bottom" constant="36.5" id="6Rd-Vk-F8H"/>
+                            <constraint firstItem="Oy6-9J-hKE" firstAttribute="trailing" secondItem="3Sl-PB-4iO" secondAttribute="trailing" id="9Ct-vy-2No"/>
+                            <constraint firstItem="2gr-Bn-Gce" firstAttribute="leading" secondItem="3wr-6q-RSZ" secondAttribute="leading" id="DIg-yq-11D"/>
+                            <constraint firstItem="2gr-Bn-Gce" firstAttribute="trailing" secondItem="3wr-6q-RSZ" secondAttribute="trailing" id="GEN-4F-HtI"/>
+                            <constraint firstItem="Oy6-9J-hKE" firstAttribute="leading" secondItem="3Sl-PB-4iO" secondAttribute="leading" id="VKR-uk-1Dv"/>
+                            <constraint firstItem="2gr-Bn-Gce" firstAttribute="top" secondItem="Oy6-9J-hKE" secondAttribute="bottom" constant="54" id="blc-1u-I46"/>
+                            <constraint firstItem="kAg-qJ-rbA" firstAttribute="trailing" secondItem="3Sl-PB-4iO" secondAttribute="trailing" id="d49-KH-Hp6"/>
+                            <constraint firstItem="2gr-Bn-Gce" firstAttribute="trailing" secondItem="3Sl-PB-4iO" secondAttribute="trailing" id="e9N-mX-gCY"/>
                             <constraint firstItem="3wr-6q-RSZ" firstAttribute="top" secondItem="3Sl-PB-4iO" secondAttribute="top" constant="120" id="fZC-JS-Pwr"/>
-                            <constraint firstItem="2gr-Bn-Gce" firstAttribute="leading" secondItem="3Sl-PB-4iO" secondAttribute="leading" id="rsM-jG-WW5"/>
                             <constraint firstItem="3wr-6q-RSZ" firstAttribute="leading" secondItem="3Sl-PB-4iO" secondAttribute="leading" id="tgI-qj-9aa"/>
+                            <constraint firstItem="Oy6-9J-hKE" firstAttribute="top" secondItem="kAg-qJ-rbA" secondAttribute="bottom" constant="8" id="wcW-A8-KdZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Sl-PB-4iO"/>
                     </view>
                     <navigationItem key="navigationItem" title="Cancel my account" id="Q65-ig-D1j"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="kAg-qJ-rbA" id="e9v-h4-dTp"/>
+                        <outlet property="passwordTextField" destination="Oy6-9J-hKE" id="gtp-ed-uRc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZoB-Om-2aU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ZT8-28-OD7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5817.3913043478269" y="1452.4553571428571"/>
         </scene>
