@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class cityViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class cityViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 
     var city = ""
     
@@ -55,6 +55,15 @@ class cityViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return cell
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let height = view.frame.size.height
+        let width = view.frame.size.width
+        // in case you you want the cell to be 40% of your controllers view
+        return CGSize(width: width * 0.4785, height: height * 0.40)
+    }
+    
 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

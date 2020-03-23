@@ -364,9 +364,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="178" height="265"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hvl-gu-h5O">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hvl-gu-h5O">
                                                     <rect key="frame" x="0.0" y="0.0" width="178" height="265"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" image="YES" selected="YES"/>
                                                     </accessibility>
@@ -377,18 +376,17 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWB-74-lhf">
-                                                    <rect key="frame" x="0.0" y="159" width="178" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWB-74-lhf">
+                                                    <rect key="frame" x="40" y="151" width="98" height="36"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.017283818493150686" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </label>
-                                                <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEl-1T-b3Q">
+                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEl-1T-b3Q">
                                                     <rect key="frame" x="0.0" y="0.0" width="178" height="265"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="P26-Z5-kSm">
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="P26-Z5-kSm">
                                                         <rect key="frame" x="0.0" y="0.0" width="178" height="265"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <userDefinedRuntimeAttributes>
@@ -405,6 +403,20 @@
                                                 </visualEffectView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="YEl-1T-b3Q" secondAttribute="trailing" id="0ni-cE-lYs"/>
+                                            <constraint firstAttribute="bottom" secondItem="YEl-1T-b3Q" secondAttribute="bottom" id="1fQ-MR-ASY"/>
+                                            <constraint firstItem="YEl-1T-b3Q" firstAttribute="top" secondItem="W1k-mA-yyV" secondAttribute="top" id="5V7-t8-aUg"/>
+                                            <constraint firstItem="YEl-1T-b3Q" firstAttribute="leading" secondItem="W1k-mA-yyV" secondAttribute="leading" id="BSp-eg-ZTo"/>
+                                            <constraint firstItem="oWB-74-lhf" firstAttribute="leading" secondItem="W1k-mA-yyV" secondAttribute="leading" constant="40" id="K6v-lc-WDQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Hvl-gu-h5O" secondAttribute="trailing" id="RbP-jP-EGb"/>
+                                            <constraint firstAttribute="trailing" secondItem="oWB-74-lhf" secondAttribute="trailing" constant="40" id="ULZ-zw-MZv"/>
+                                            <constraint firstAttribute="bottom" secondItem="oWB-74-lhf" secondAttribute="bottom" constant="78" id="XRg-4d-79l"/>
+                                            <constraint firstItem="oWB-74-lhf" firstAttribute="top" secondItem="W1k-mA-yyV" secondAttribute="top" constant="151" id="h0F-MY-Ngu"/>
+                                            <constraint firstItem="Hvl-gu-h5O" firstAttribute="leading" secondItem="W1k-mA-yyV" secondAttribute="leading" id="lwk-WP-dy5"/>
+                                            <constraint firstAttribute="bottom" secondItem="Hvl-gu-h5O" secondAttribute="bottom" id="oGy-kD-0J8"/>
+                                            <constraint firstItem="Hvl-gu-h5O" firstAttribute="top" secondItem="W1k-mA-yyV" secondAttribute="top" id="pK1-0F-VLq"/>
+                                        </constraints>
                                         <size key="customSize" width="178" height="265"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -490,7 +502,7 @@
                                                             <rect key="frame" x="99" y="75" width="125" height="13"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group image" translatesAutoresizingMaskIntoConstraints="NO" id="fVW-AL-csC">
@@ -799,7 +811,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3J1-s7-TdO">
                                                             <rect key="frame" x="90" y="63" width="75" height="14"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="language" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XjQ-FZ-sam">
@@ -1202,7 +1214,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="tbJ-4V-qYh"/>
         <segue reference="Vnd-OV-9xr"/>
-        <segue reference="QWs-zl-rKJ"/>
+        <segue reference="hhU-dZ-Nzi"/>
         <segue reference="fQt-iI-CP2"/>
     </inferredMetricsTieBreakers>
 </document>
