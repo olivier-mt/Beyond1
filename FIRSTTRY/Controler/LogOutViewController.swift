@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+
 class LogOutViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -26,6 +27,7 @@ class LogOutViewController: UIViewController {
              try Auth.auth().signOut()
             
             self.dismiss(animated: true, completion: nil)
+            
         }
         catch let error as NSError
         {

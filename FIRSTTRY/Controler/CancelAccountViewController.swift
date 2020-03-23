@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SPAlert
 
 class CancelAccountViewController: UIViewController {
 
@@ -69,6 +70,10 @@ class CancelAccountViewController: UIViewController {
         UserDefaults.standard.removeObject(forKey: "usersignedin")
                    
                    self.dismiss(animated: true, completion: nil)
+        
+        SPAlert.present(message: "Account deleted")
+        
+        
         
         
 
