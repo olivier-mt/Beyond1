@@ -138,7 +138,7 @@
         <scene sceneID="7bG-Ov-dMU">
             <objects>
                 <navigationController id="C0w-L1-qUl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="New Groups" image="icons-group-25" selectedImage="icons-group-25" id="bhi-O3-QM4">
+                    <tabBarItem key="tabBarItem" title="New Groups" image="group30" selectedImage="group30" id="bhi-O3-QM4">
                         <color key="badgeColor" cocoaTouchSystemColor="darkTextColor"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vN9-1Z-bUU">
@@ -833,22 +833,25 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shc-KL-Ucy">
-                                        <rect key="frame" x="326" y="14" width="55" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shc-KL-Ucy">
+                                        <rect key="frame" x="325" y="11" width="44" height="41"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="55" id="Dt7-hK-PEz"/>
+                                            <constraint firstAttribute="width" constant="44" id="RcU-AY-Jrk"/>
+                                            <constraint firstAttribute="height" constant="41" id="gpB-2T-vSY"/>
                                         </constraints>
-                                        <state key="normal" title="Send"/>
+                                        <state key="normal" title="send">
+                                            <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="send:" destination="TRo-6e-aoN" eventType="touchUpInside" id="XIS-A9-lwb"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="0zZ-YV-qjE"/>
-                                    <constraint firstItem="Shc-KL-Ucy" firstAttribute="top" secondItem="dP1-5u-M9g" secondAttribute="top" constant="14" id="NeD-uH-Jta"/>
-                                    <constraint firstItem="Shc-KL-Ucy" firstAttribute="leading" secondItem="LZL-q0-6AU" secondAttribute="trailing" constant="4" id="t4W-dh-jvT"/>
+                                    <constraint firstItem="Shc-KL-Ucy" firstAttribute="leading" secondItem="LZL-q0-6AU" secondAttribute="trailing" constant="3" id="NbX-zU-pje"/>
+                                    <constraint firstItem="Shc-KL-Ucy" firstAttribute="top" secondItem="dP1-5u-M9g" secondAttribute="top" constant="11" id="bpH-Z2-xPd"/>
                                     <constraint firstItem="LZL-q0-6AU" firstAttribute="leading" secondItem="dP1-5u-M9g" secondAttribute="leading" constant="8" id="u5z-nO-OPy"/>
                                     <constraint firstItem="LZL-q0-6AU" firstAttribute="top" secondItem="dP1-5u-M9g" secondAttribute="top" constant="16" id="yYB-Cn-AV7"/>
                                 </constraints>
@@ -878,7 +881,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCY-J1-3PL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2103" y="3412"/>
+            <point key="canvasLocation" x="2102.898550724638" y="3411.8303571428569"/>
         </scene>
         <!--Followed View Controller-->
         <scene sceneID="ruE-67-5F0">
@@ -1020,7 +1023,7 @@
         <scene sceneID="tJk-rJ-g8z">
             <objects>
                 <navigationController id="nPp-Un-b7U" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="user" selectedImage="user" id="yeq-ee-PxP"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profil30" selectedImage="profil30" id="yeq-ee-PxP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WJH-RL-IpJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1269,7 +1272,7 @@
         <scene sceneID="5ju-3A-cjB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PJj-hW-zxt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My groups" image="heart-tab-icon" selectedImage="heart-tab-icon" id="uH1-1U-jf1"/>
+                    <tabBarItem key="tabBarItem" title="My groups" image="heart30" selectedImage="heart30" id="uH1-1U-jf1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nCn-DO-QJJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -1288,7 +1291,7 @@
         <scene sceneID="0zK-QG-u5F">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pbg-OV-vyi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings-25" selectedImage="settings-25" id="wgY-Iz-FAn"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings30" selectedImage="settings30" id="wgY-Iz-FAn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p7d-fo-1Yx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -1307,10 +1310,10 @@
     <resources>
         <image name="backarrow" width="100" height="100"/>
         <image name="group image" width="319" height="158"/>
-        <image name="heart-tab-icon" width="25" height="25"/>
-        <image name="icons-group-25" width="25" height="25"/>
-        <image name="settings-25" width="25" height="25"/>
-        <image name="user" width="25" height="25"/>
+        <image name="group30" width="30" height="30"/>
+        <image name="heart30" width="30" height="30"/>
+        <image name="profil30" width="30" height="30"/>
+        <image name="settings30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="X3q-Ag-T4k"/>

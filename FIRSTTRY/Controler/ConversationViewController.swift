@@ -71,7 +71,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         // scroll to the bottom
         
         // Set up righ bar button
-        let button1 = UIBarButtonItem(image: UIImage(named: "favorit rempli"), style: .plain, target: self, action: #selector(tapButton)) // action:#selector(Class.MethodName) for swift 3
+        let button1 = UIBarButtonItem(image: UIImage(named: "heart30"), style: .plain, target: self, action: #selector(tapButton)) // action:#selector(Class.MethodName) for swift 3
             self.navigationItem.rightBarButtonItem = button1
         
         
