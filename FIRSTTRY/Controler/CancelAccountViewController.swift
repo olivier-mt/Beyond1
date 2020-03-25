@@ -34,23 +34,30 @@ class CancelAccountViewController: UIViewController {
     func cancel(){
         user?.delete { error in
       if let error = error {
-        // An error happened.
-      } else {
-        // Account deleted.
+
+      SPAlert.present(title: "Email or Password error", preset: .error)
       }
+      
+      else {
+
+
+        UserDefaults.standard.removeObject(forKey: "usersignedin")
+                              
+        self.dismiss(animated: true, completion: nil)
+                   
+        SPAlert.present(message: "Account deleted")
+                   
+            
+            }
     } }
     
-    func resignin(){
-        
-       
 
-        
-       
-        
-    }
-    
     
     @IBAction func cancelPress(_ sender: Any) {
+        
+        
+        
+        
         
         let email = self.emailTextField.text!
         let password = self.passwordTextField.text!
@@ -67,15 +74,7 @@ class CancelAccountViewController: UIViewController {
 
         cancel()
         
-        UserDefaults.standard.removeObject(forKey: "usersignedin")
-                   
-                   self.dismiss(animated: true, completion: nil)
-        
-        SPAlert.present(message: "Account deleted")
-        
-        
-        
-        
+       
 
          }
     /*

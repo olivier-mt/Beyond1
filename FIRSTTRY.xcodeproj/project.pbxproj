@@ -35,6 +35,8 @@
 		90DD6FE223B806AA00878945 /* fgroupDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DD6FE123B806AA00878945 /* fgroupDataModel.swift */; };
 		90DD6FE423B90D3600878945 /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DD6FE323B90D3600878945 /* ProfilViewController.swift */; };
 		90DFE1A1234C3127007D3D1C /* GroupSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DFE1A0234C3127007D3D1C /* GroupSViewController.swift */; };
+		90E5C3A7242A8C9600571D7E /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E5C3A6242A8C9600571D7E /* Review.swift */; };
+		90E5C3A9242A8DCC00571D7E /* ReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E5C3A8242A8DCC00571D7E /* ReviewVC.swift */; };
 		90FC638C2365E74900D308F9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FC638B2365E74900D308F9 /* Message.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		90DD6FE123B806AA00878945 /* fgroupDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fgroupDataModel.swift; sourceTree = "<group>"; };
 		90DD6FE323B90D3600878945 /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		90DFE1A0234C3127007D3D1C /* GroupSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSViewController.swift; sourceTree = "<group>"; };
+		90E5C3A6242A8C9600571D7E /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		90E5C3A8242A8DCC00571D7E /* ReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewVC.swift; sourceTree = "<group>"; };
 		90FC638B2365E74900D308F9 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E06EE33A633B1A771AA2B0C0 /* Pods_FIRSTTRY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FIRSTTRY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -136,6 +140,7 @@
 				90D50FD9234EA532002937C8 /* groupDataModel.swift */,
 				90885482234D5DE9002B52B1 /* groupTableViewCell.swift */,
 				901B8F5923491DB50058F4DA /* CollectionViewCell.swift */,
+				90E5C3A6242A8C9600571D7E /* Review.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				904464C52421615600AAC250 /* resetPasswordViewController.swift */,
 				903F997924240DB5001235F5 /* LogOutViewController.swift */,
 				903F997B24240DDC001235F5 /* CancelAccountViewController.swift */,
+				90E5C3A8242A8DCC00571D7E /* ReviewVC.swift */,
 			);
 			path = Controler;
 			sourceTree = "<group>";
@@ -327,12 +333,14 @@
 				902711DC237876AF00A1F2ED /* Shared.swift in Sources */,
 				90D7E6C6236EF48B00220908 /* CustomMessageCell.swift in Sources */,
 				903A79CD23360BDE00F4306D /* AppDelegate.swift in Sources */,
+				90E5C3A9242A8DCC00571D7E /* ReviewVC.swift in Sources */,
 				90885483234D5DE9002B52B1 /* groupTableViewCell.swift in Sources */,
 				903A79E5233651A600F4306D /* FollowedViewController.swift in Sources */,
 				903A79E323361E1200F4306D /* SignUpViewController.swift in Sources */,
 				90DA252823BB6B8900FC1723 /* fCell.swift in Sources */,
 				903F997C24240DDC001235F5 /* CancelAccountViewController.swift in Sources */,
 				903A79E123361C2400F4306D /* LogInViewController.swift in Sources */,
+				90E5C3A7242A8C9600571D7E /* Review.swift in Sources */,
 				903BEBDC237224D6009DA68D /* NewGroupViewController.swift in Sources */,
 				902711D823786C0D00A1F2ED /* cityPopOverViewController.swift in Sources */,
 				90DD6FE423B90D3600878945 /* ProfilViewController.swift in Sources */,

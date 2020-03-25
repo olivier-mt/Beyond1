@@ -35,9 +35,21 @@ class resetPasswordViewController: UIViewController {
     else {
         
         Auth.auth().sendPasswordReset(withEmail: email) { error in
-        
-        SPAlert.present(title: "Link sent!", preset: .done)
+            if error != nil {
+                
+                SPAlert.present(message: "wrong email adresse")
+                
+            }
+                
+            else{
+                
+                SPAlert.present(message: "email sent!")
 
+                self.performSegue(withIdentifier: "resetToLogin", sender: self)
+                
+            }
+        
+        
     }
     
     
