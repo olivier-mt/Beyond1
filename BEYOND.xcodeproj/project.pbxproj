@@ -71,6 +71,7 @@
 		90DA252723BB6B8900FC1723 /* fCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fCell.swift; sourceTree = "<group>"; };
 		90DD6FE123B806AA00878945 /* fgroupDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fgroupDataModel.swift; sourceTree = "<group>"; };
 		90DD6FE323B90D3600878945 /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
+		90DFCA6D2434B4E900BA0DAE /* FIRSTTRY.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FIRSTTRY.entitlements; sourceTree = "<group>"; };
 		90DFE1A0234C3127007D3D1C /* GroupSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSViewController.swift; sourceTree = "<group>"; };
 		90E5C3A6242A8C9600571D7E /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		90E5C3A8242A8DCC00571D7E /* ReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewVC.swift; sourceTree = "<group>"; };
@@ -120,6 +121,7 @@
 		903A79CB23360BDE00F4306D /* FIRSTTRY */ = {
 			isa = PBXGroup;
 			children = (
+				90DFCA6D2434B4E900BA0DAE /* FIRSTTRY.entitlements */,
 				907A42FF240924CB00605917 /* Controler */,
 				907A42FE240924BA00605917 /* View */,
 				907A42FD240924A200605917 /* Model */,
@@ -225,7 +227,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 903A79C423360BDE00F4306D /* Build configuration list for PBXProject "FIRSTTRY" */;
+			buildConfigurationList = 903A79C423360BDE00F4306D /* Build configuration list for PBXProject "BEYOND" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -493,6 +495,7 @@
 			baseConfigurationReference = 384AA17556EA14B54A53E2A9 /* Pods-FIRSTTRY.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FIRSTTRY/FIRSTTRY.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4BZMP8PCDP;
 				INFOPLIST_FILE = FIRSTTRY/Info.plist;
@@ -503,7 +506,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliviermountou.FIRSTTRY;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -512,6 +515,7 @@
 			baseConfigurationReference = 39C5E91154A46345493F7443 /* Pods-FIRSTTRY.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FIRSTTRY/FIRSTTRY.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4BZMP8PCDP;
 				INFOPLIST_FILE = FIRSTTRY/Info.plist;
@@ -522,14 +526,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliviermountou.FIRSTTRY;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		903A79C423360BDE00F4306D /* Build configuration list for PBXProject "FIRSTTRY" */ = {
+		903A79C423360BDE00F4306D /* Build configuration list for PBXProject "BEYOND" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				903A79D923360BE100F4306D /* Debug */,

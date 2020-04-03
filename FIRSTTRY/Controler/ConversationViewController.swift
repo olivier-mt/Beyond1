@@ -25,6 +25,12 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     @IBOutlet weak var sendButton: UIButton!
     
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
+    
+    
+    
+    
     
     var finalGroup = ""
     var groupName = ""
@@ -35,6 +41,28 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     
     
     var ref: DatabaseReference!
+    
+    
+    
+    //keyboard pb
+
+  
+
+  
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -68,6 +96,26 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
         ConvertationTableView.register(UINib(nibName: "CustomMessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
         
+        
+        //keyboard
+        
+       NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+             NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        
+    
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
         // scroll to the bottom
         
         // Set up righ bar button
@@ -80,6 +128,29 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
         
     }
+    
+    //keyboard
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+          if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+              if self.view.frame.origin.y == 0 {
+                  self.view.frame.origin.y -= keyboardSize.height
+                
+        
+
+              }
+          }
+      }
+
+      @objc func keyboardWillHide(notification: NSNotification) {
+         if self.view.frame.origin.y != 0 {
+              self.view.frame.origin.y = 0 
+            
+            
+          }
+      }
+    
+    
     
     let user =  Auth.auth().currentUser?.uid
   
@@ -189,8 +260,8 @@ self.messageTextField.endEditing(true)
         
         UIView.animate(withDuration: 0.5){
      
-    self.heightConstraint.constant = 308
-        self.view.layoutIfNeeded()
+    /*self.heightConstraint.constant = 350
+        self.view.layoutIfNeeded()*/
             
         }
     }
@@ -200,9 +271,11 @@ self.messageTextField.endEditing(true)
         
         UIView.animate(withDuration: 0.5){
     
-        self.heightConstraint.constant = 50
-            self.view.layoutIfNeeded()
+       /* self.heightConstraint.constant = 50
+            self.view.layoutIfNeeded()*/
         }
+        
+        
         
         
  
@@ -267,6 +340,9 @@ self.messageTextField.endEditing(true)
             
     }
     
+        
+        
+        
     /*
     // MARK: - Navigation
 
