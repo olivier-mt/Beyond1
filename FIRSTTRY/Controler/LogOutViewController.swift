@@ -23,6 +23,8 @@ class LogOutViewController: UIViewController {
         do
         {
            UserDefaults.standard.removeObject(forKey: "usersignedin")
+            
+            
 
              try Auth.auth().signOut()
             

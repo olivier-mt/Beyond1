@@ -29,9 +29,6 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     
     
     
-    
-    
-    
     var finalGroup = ""
     var groupName = ""
     var info = ""
@@ -47,26 +44,6 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     //keyboard pb
 
   
-
-  
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,19 +81,16 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
         
     
-       
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     
         // scroll to the bottom
+        
+        
+        
+        
+        
+        
+        //let messageNumber = self.messageArray.count
+               
         
         // Set up righ bar button
         let button1 = UIBarButtonItem(image: UIImage(named: "heart30"), style: .plain, target: self, action: #selector(tapButton)) // action:#selector(Class.MethodName) for swift 3
@@ -155,7 +129,6 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     let user =  Auth.auth().currentUser?.uid
   
     
-    
     @objc func tapButton (){
         
         
@@ -176,12 +149,24 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
                     }
                     else {
                         print("Document successfully removed!")
+                        
+                        Messaging.messaging().unsubscribe(fromTopic: self.finalGroup) { error in
+                            print("unsubscribed from \(self.finalGroup) topic")
+                                       }
                         SPAlert.present(message: "You removed this group to your favorit")                    }
                 }
             }
                 
             else {
                 print("Document does not exist")
+                
+                //TOPIC subscription
+                Messaging.messaging().subscribe(toTopic: self.finalGroup) { error in
+                    print("Subscribed to \(self.finalGroup) topic")
+                }
+                
+                
+                
                 docRef.setData([
                     "name": self.groupName,
                     "documentID": self.finalGroup,
@@ -204,6 +189,31 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
        
     }
 
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+     // Scroll down when view open
+        
+        let numberOfSections = self.ConvertationTableView.numberOfSections
+        
+        let numberOfMessages = self.messageArray.count
+        
+        func numberOfMessageCheck(){
+            
+            if numberOfMessages < 1 {
+                
+            }
+            else {
+                
+                let indexPath = IndexPath(row: numberOfMessages-1 , section: numberOfSections-1)
+                self.ConvertationTableView.scrollToRow(at: indexPath, at: .middle, animated: false)}
+            
+        }
+        
+        numberOfMessageCheck()
+
+        
+    }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -275,9 +285,6 @@ self.messageTextField.endEditing(true)
             self.view.layoutIfNeeded()*/
         }
         
-        
-        
-        
  
     }
     
@@ -322,7 +329,7 @@ self.messageTextField.endEditing(true)
         var sender = Auth.auth().currentUser?.email
         
         
-        let messageDictionary = ["MessageBody": messageTextField.text,"name": user, "sender": sender ]
+        let messageDictionary = ["MessageBody": messageTextField.text,"name": user, "sender": sender, "groupName": groupName as Any ]
         
         messagesDB?.childByAutoId().setValue(messageDictionary){
             (error, reference) in
@@ -335,8 +342,17 @@ self.messageTextField.endEditing(true)
                 self.messageTextField.isEnabled = true
                 self.sendButton.isEnabled = true
                 self.messageTextField.text = ""
+                
             }
             
+     //Scroll down when you send a message 
+            
+            let numberOfSections = self.ConvertationTableView.numberOfSections
+                   
+                   let numberOfMessages = self.messageArray.count
+            
+        let indexPath = IndexPath(row: numberOfMessages-1 , section: numberOfSections-1)
+                      self.ConvertationTableView.scrollToRow(at: indexPath, at: .middle, animated: true)}
             
     }
     
@@ -354,4 +370,7 @@ self.messageTextField.endEditing(true)
     */
 
 }
-}
+
+
+
+

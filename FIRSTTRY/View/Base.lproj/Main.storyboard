@@ -603,7 +603,7 @@
                                                             <rect key="frame" x="99" y="75" width="125" height="13"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group image" translatesAutoresizingMaskIntoConstraints="NO" id="fVW-AL-csC">
@@ -1320,7 +1320,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="X3q-Ag-T4k"/>
         <segue reference="Vnd-OV-9xr"/>
-        <segue reference="hhU-dZ-Nzi"/>
+        <segue reference="QWs-zl-rKJ"/>
         <segue reference="fQt-iI-CP2"/>
     </inferredMetricsTieBreakers>
 </document>
