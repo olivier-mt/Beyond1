@@ -43,11 +43,16 @@ class CancelAccountViewController: UIViewController {
 
         UserDefaults.standard.removeObject(forKey: "usersignedin")
                               
-        self.dismiss(animated: true, completion: nil)
                    
         SPAlert.present(message: "Account deleted")
-                   
-            
+        
+        // GO BACK TO FIRST SCREEN
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LOGINOUT") as! ViewController
+                self.show(nextViewController, sender:(Any).self)
+        
+        
             }
     } }
     

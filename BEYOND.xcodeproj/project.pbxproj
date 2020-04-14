@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		583190ECCAAB385A9A078BED /* Pods_FIRSTTRY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E06EE33A633B1A771AA2B0C0 /* Pods_FIRSTTRY.framework */; };
+		900BF8402445C6B800F3A26D /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900BF83F2445C6B800F3A26D /* settingsViewController.swift */; };
+		900BF8422445CC3B00F3A26D /* settingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900BF8412445CC3B00F3A26D /* settingsTableViewController.swift */; };
 		9016F375233FA66F00E2D3B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9016F374233FA66F00E2D3B8 /* GoogleService-Info.plist */; };
 		901B8F5A23491DB50058F4DA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901B8F5923491DB50058F4DA /* CollectionViewCell.swift */; };
 		901B8F5C234920410058F4DA /* cityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901B8F5B234920410058F4DA /* cityViewController.swift */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		384AA17556EA14B54A53E2A9 /* Pods-FIRSTTRY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIRSTTRY.debug.xcconfig"; path = "Target Support Files/Pods-FIRSTTRY/Pods-FIRSTTRY.debug.xcconfig"; sourceTree = "<group>"; };
 		39C5E91154A46345493F7443 /* Pods-FIRSTTRY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIRSTTRY.release.xcconfig"; path = "Target Support Files/Pods-FIRSTTRY/Pods-FIRSTTRY.release.xcconfig"; sourceTree = "<group>"; };
+		900BF83F2445C6B800F3A26D /* settingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
+		900BF8412445CC3B00F3A26D /* settingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsTableViewController.swift; sourceTree = "<group>"; };
 		9016F374233FA66F00E2D3B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		901B8F5923491DB50058F4DA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		901B8F5B234920410058F4DA /* cityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cityViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +181,8 @@
 				903F997924240DB5001235F5 /* LogOutViewController.swift */,
 				903F997B24240DDC001235F5 /* CancelAccountViewController.swift */,
 				90E5C3A8242A8DCC00571D7E /* ReviewVC.swift */,
+				900BF83F2445C6B800F3A26D /* settingsViewController.swift */,
+				900BF8412445CC3B00F3A26D /* settingsTableViewController.swift */,
 			);
 			path = Controler;
 			sourceTree = "<group>";
@@ -326,6 +332,7 @@
 			files = (
 				90DFE1A1234C3127007D3D1C /* GroupSViewController.swift in Sources */,
 				903A79EB2336529900F4306D /* ParamsViewController.swift in Sources */,
+				900BF8422445CC3B00F3A26D /* settingsTableViewController.swift in Sources */,
 				903A79CF23360BDE00F4306D /* ViewController.swift in Sources */,
 				902E2E9D2353C61F008357EC /* ConversationViewController.swift in Sources */,
 				903F997A24240DB5001235F5 /* LogOutViewController.swift in Sources */,
@@ -343,6 +350,7 @@
 				903F997C24240DDC001235F5 /* CancelAccountViewController.swift in Sources */,
 				903A79E123361C2400F4306D /* LogInViewController.swift in Sources */,
 				90E5C3A7242A8C9600571D7E /* Review.swift in Sources */,
+				900BF8402445C6B800F3A26D /* settingsViewController.swift in Sources */,
 				903BEBDC237224D6009DA68D /* NewGroupViewController.swift in Sources */,
 				902711D823786C0D00A1F2ED /* cityPopOverViewController.swift in Sources */,
 				90DD6FE423B90D3600878945 /* ProfilViewController.swift in Sources */,

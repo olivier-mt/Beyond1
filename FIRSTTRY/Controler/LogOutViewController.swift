@@ -28,17 +28,30 @@ class LogOutViewController: UIViewController {
 
              try Auth.auth().signOut()
             
-            self.dismiss(animated: true, completion: nil)
-            
+         // GO BACK TO FIRST SCREEN
+
+     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+     let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LOGINOUT") as! ViewController
+            self.show(nextViewController, sender:(Any).self)
+    
+
         }
         catch let error as NSError
         {
             print (error.localizedDescription)
         }
         
+       
+        
     }
     
+    
+    
+    
+    
     /*
+     
+     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
