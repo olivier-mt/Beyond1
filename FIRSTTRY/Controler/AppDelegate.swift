@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         UNUserNotificationCenter.current().delegate = self
-
+        
         
         if #available(iOS 10.0, *) {
         // For iOS 10 display notification (sent via APNS)
@@ -51,16 +51,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         
+        if let option = launchOptions {
+            let info = option[UIApplication.LaunchOptionsKey.remoteNotification]
+            if (info != nil) {
+        }}
+        
+        
+      
+        
+        
+        
         FirebaseApp.configure()
         
         let myDatabase = Database.database().reference()
         return true
-     
+   
+        
+        
     }
     
     
    
+   func goAnotherVC() {
+      
+  
+       let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                 let conversationVC = storyboard.instantiateViewController(withIdentifier: "conversationVC") as! ConversationViewController
+                 let navigationController = UINavigationController.init(rootViewController: conversationVC)
+                 self.window?.rootViewController = navigationController
+                 self.window?.makeKeyAndVisible()
     
+       
+   }
     
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -92,7 +114,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
       // With swizzling disabled you must let Messaging know about the message, for Analytics
       // Messaging.messaging().appDidReceiveMessage(userInfo)
-
+   goAnotherVC()
       // Print message ID.
       if let messageID = userInfo[gcmMessageIDKey] {
         print("Message ID: \(messageID)")
@@ -109,9 +131,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       // TODO: Handle data of notification
 
       // With swizzling disabled you must let Messaging know about the message, for Analytics
-      // Messaging.messaging().appDidReceiveMessage(userInfo)
+     //  Messaging.messaging().appDidReceiveMessage(userInfo)
 
       // Print message ID.
+        
+        
       if let messageID = userInfo[gcmMessageIDKey] {
         print("Message ID: \(messageID)")
       }
@@ -120,6 +144,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       print(userInfo)
 
       completionHandler(UIBackgroundFetchResult.newData)
+        
+        
+        //  goAnotherVC()
+        
     }
     
     
@@ -162,15 +190,124 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     if let messageID = userInfo[gcmMessageIDKey] {
       print("Message ID: \(messageID)")
     }
+    
+    let groupIdNumber =  userInfo["groupIdNumber"]
+   // let groupName = userInfo["title"]
+    
+    print("Notifdico: \(userInfo)")
+    
+    let gid = groupIdNumber as! String
+   // let gname = groupName as! String
+    
 
     // Print full message.
     print(userInfo)
+    
+    // GO TO CONVERSATION VIEW CONTROLER
+    
+    let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    
+   // let navigationVC = storyboard.instantiateViewController(withIdentifier: "ROOTVC") as? UINavigationController
+    
+     let conversationVC = storyboard.instantiateViewController(withIdentifier: "conversationVC") as! ConversationViewController
+        
+  //  let secondNavController = storyboard.instantiateViewController(withIdentifier: "secondNavController") as! UINavigationController
 
-    completionHandler()
-  }
-}
+  //  let firstNavController = storyboard.instantiateViewController(withIdentifier: "ROOTVC") as! UINavigationController
+    
+     let secondNavController = storyboard.instantiateViewController(withIdentifier: "secondNavController") as! UINavigationController
+    
+    let tabBarVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC") as! UITabBarController
+        
+          //  conversationVC.finalGroup = gid
+        //    conversationVC.groupName = gname
+    
+    window?.rootViewController = tabBarVC
+    
+    
+    tabBarVC.selectedViewController = tabBarVC.viewControllers![1]
+
+
+    //secondNavController.pushViewController(conversationVC, animated: false)
+    
+    let navController = tabBarVC.selectedViewController as? UINavigationController
+        
+    conversationVC.finalGroup = gid
+
+    navController?.pushViewController(conversationVC, animated: false)
+        
+    
+
+       completionHandler()
+    
+ //   for child in (firstNavController.children) {
+ //       child.restorationIdentifier = "secondNavController"/*{
+ //       let FollowedViewController = (child.children[0]) as! FollowedViewController
+ //       let conversationVC = storyboard.instantiateViewController(withIdentifier: "conversationVC") as! ConversationViewController
+        
+
+  //     conversationVC.finalGroup = gid
+
+       // FollowedViewController.navigationController!.pushViewController(conversationVC, animated: false)
+        
+   //     print("done")*/
+        
+       }
+        
+    
+    
+
+   
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  // secondNavController.pushViewController(conversationVC, animated: false)
+
+    
+    
+    
+    
+    }
+    
+
+        
+        //navController.pushViewController(conversationVC, animated: true)
+    
+
+
+    
+    
+    
+                 //  let navigationController = UINavigationController.init(rootViewController: conversationVC)
+                 //  self.window?.rootViewController = navigationController
+                 //  self.window?.makeKeyAndVisible()
+    
+    // SPECIFIED VC FROM PUSH NOTIFICATION
+    
+
+ 
+   
+//}
+  
+
 
 extension AppDelegate : MessagingDelegate {
+    
+    
+    // GO TO CONV VC
+    
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
       print("Firebase registration token: \(fcmToken)")
@@ -183,6 +320,7 @@ extension AppDelegate : MessagingDelegate {
     
     func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
         print("Message data", remoteMessage.appData)
+        goAnotherVC()
     }
     
 }
@@ -201,5 +339,6 @@ extension AppDelegate : MessagingDelegate {
 
 
     
+
 
 

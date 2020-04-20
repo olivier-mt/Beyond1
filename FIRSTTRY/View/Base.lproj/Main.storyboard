@@ -11,7 +11,7 @@
         <!--Navigation Controller-->
         <scene sceneID="YZe-Fr-Lu8">
             <objects>
-                <navigationController storyboardIdentifier="ROOTVC" navigationBarHidden="YES" id="XIu-MU-XJs" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ROOTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="XIu-MU-XJs" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ytp-6P-eXu">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -460,7 +460,7 @@
         <!--CHOOSE A CITY-->
         <scene sceneID="gUy-Kx-ODx">
             <objects>
-                <viewController id="M4S-5c-00x" customClass="cityViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cityViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M4S-5c-00x" customClass="cityViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PxW-PO-QD0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -707,12 +707,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Give a name to your group " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ILF-rM-CgQ">
-                                <rect key="frame" x="27" y="166" width="353" height="34"/>
+                                <rect key="frame" x="27" y="166" width="202" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gEy-8f-GKm">
-                                <rect key="frame" x="27" y="229" width="353" height="55"/>
+                                <rect key="frame" x="27" y="229" width="202" height="55"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="PIn-2r-iHa"/>
@@ -733,7 +733,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEN-qT-VBu">
-                                <rect key="frame" x="27" y="321" width="353" height="20.5"/>
+                                <rect key="frame" x="27" y="321" width="202" height="20.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -756,7 +756,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="choose a language" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mEZ-va-Afr">
-                                <rect key="frame" x="27" y="400" width="353" height="34"/>
+                                <rect key="frame" x="27" y="400" width="202" height="34"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -819,7 +819,7 @@
         <!--Conversation View Controller-->
         <scene sceneID="9Iy-AI-V6o">
             <objects>
-                <viewController id="TRo-6e-aoN" customClass="ConversationViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="conversationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TRo-6e-aoN" customClass="ConversationViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y8E-Ad-A1n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -905,7 +905,7 @@
         <!--Followed View Controller-->
         <scene sceneID="ruE-67-5F0">
             <objects>
-                <viewController id="TqO-uI-WCd" customClass="FollowedViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FollowedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TqO-uI-WCd" customClass="FollowedViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tM8-9X-Ry6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1119,7 +1119,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="4iE-1O-34w">
             <objects>
-                <tabBarController id="oDc-vi-hy8" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oDc-vi-hy8" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="zkv-m9-0nP"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xx5-CE-hDk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -1290,7 +1290,7 @@
         <!--My groups-->
         <scene sceneID="5ju-3A-cjB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PJj-hW-zxt" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="secondNavController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PJj-hW-zxt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My groups" image="heart30" selectedImage="heart30" id="uH1-1U-jf1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nCn-DO-QJJ">
@@ -1298,6 +1298,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="TqO-uI-WCd" kind="relationship" relationship="rootViewController" id="Fe4-wa-2YC"/>
                     </connections>
@@ -1337,7 +1342,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="tbJ-4V-qYh"/>
         <segue reference="Vnd-OV-9xr"/>
-        <segue reference="QWs-zl-rKJ"/>
+        <segue reference="hhU-dZ-Nzi"/>
         <segue reference="bWI-5s-jrq"/>
     </inferredMetricsTieBreakers>
 </document>
