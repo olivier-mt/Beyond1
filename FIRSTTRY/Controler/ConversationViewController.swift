@@ -239,9 +239,22 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
             print("not the same sender \(message.sender)voila ")
         }
         
-       cell.messageBody.text = messageArray[indexPath.row].messageBody
-       cell.usernameLabel.text = messageArray[indexPath.row].name
-      
+       
+        let theTimeStamp = messageArray[indexPath.row].createdAt
+        let doubleTime = Double(theTimeStamp)
+        let myDate = Date(timeIntervalSince1970: doubleTime )
+        let dateToShow = myDate.calenderTimeSinceNow()
+        
+        
+        cell.messageBody.text = messageArray[indexPath.row].messageBody
+        cell.usernameLabel.text = messageArray[indexPath.row].name
+        cell.timeLabel.text = dateToShow
+        
+        
+      //  print("\(dateToShow)")
+        
+        
+
         return cell
     }
     
@@ -294,14 +307,22 @@ self.messageTextField.endEditing(true)
         
         messagesDB?.observe(.childAdded, with: { (snapshot) in
             
-            let snapshotValue = snapshot.value as! Dictionary<String,String>
+            let snapshotValue = snapshot.value as! Dictionary<String,Any>
             
             let text = snapshotValue["MessageBody"]!
             
+            
+            
             let message = Message()
-            message.messageBody = text
-            message.name =  snapshotValue["name"]!
-            message.sender = snapshotValue["sender"]!
+            
+            message.messageBody = text as! String
+            message.name =  snapshotValue["name"]! as! String
+            message.sender = snapshotValue["sender"]! as! String
+            message.createdAt = snapshotValue["createdAt"]! as! Int
+            
+            print("the timestamp is \(message.createdAt)")
+            
+            
             
             self.messageArray.append(message)
             
@@ -328,8 +349,12 @@ self.messageTextField.endEditing(true)
         
         var sender = Auth.auth().currentUser?.email
         
+        let currentDate = Date()
+        let timeInterval = currentDate.timeIntervalSince1970
+        let timeInt = Int(timeInterval)
         
-        let messageDictionary = ["MessageBody": messageTextField.text,"name": user, "sender": sender, "groupName": groupName as Any ]
+        
+        let messageDictionary = ["MessageBody": messageTextField.text,"name": user, "sender": sender, "groupName": groupName as Any, "createdAt": timeInt as Any ]
         
         messagesDB?.childByAutoId().setValue(messageDictionary){
             (error, reference) in
@@ -372,5 +397,37 @@ self.messageTextField.endEditing(true)
 }
 
 
-
-
+extension Date
+{
+    func calenderTimeSinceNow() -> String
+    {
+        let calendar = Calendar.current
+        
+        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self, to: Date())
+        
+        let years = components.year!
+        let months = components.month!
+        let days = components.day!
+        let hours = components.hour!
+        let minutes = components.minute!
+        let seconds = components.second!
+        
+        if years > 0 {
+            return years == 1 ? "1 year ago" : "\(years) years ago"
+        } else if months > 0 {
+            return months == 1 ? "1 month ago" : "\(months) months ago"
+        } else if days >= 7 {
+            let weeks = days / 7
+            return weeks == 1 ? "1 week ago" : "\(weeks) weeks ago"
+        } else if days > 0 {
+            return days == 1 ? "1 day ago" : "\(days) days ago"
+        } else if hours > 0 {
+            return hours == 1 ? "1 hour ago" : "\(hours) hours ago"
+        } else if minutes > 0 {
+            return minutes == 1 ? "1 minute ago" : "\(minutes) minutes ago"
+        } else {
+            return seconds == 1 ? "1 second ago" : "\(seconds) seconds ago"
+        }
+    }
+    
+}
