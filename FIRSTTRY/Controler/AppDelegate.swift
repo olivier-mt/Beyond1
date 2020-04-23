@@ -192,12 +192,12 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     }
     
     let groupIdNumber =  userInfo["groupIdNumber"]
-   // let groupName = userInfo["title"]
+    let groupName = userInfo["name"]
     
     print("Notifdico: \(userInfo)")
     
     let gid = groupIdNumber as! String
-   // let gname = groupName as! String
+    let gname = groupName as! String
     
 
     // Print full message.
@@ -233,6 +233,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     let navController = tabBarVC.selectedViewController as? UINavigationController
         
     conversationVC.finalGroup = gid
+    conversationVC.groupName = gname
 
     navController?.pushViewController(conversationVC, animated: false)
         
@@ -254,23 +255,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         
        }
         
-    
-    
 
-   
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
   // secondNavController.pushViewController(conversationVC, animated: false)

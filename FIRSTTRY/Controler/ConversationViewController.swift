@@ -328,8 +328,22 @@ self.messageTextField.endEditing(true)
             
             self.configureTableView()
             self.ConvertationTableView.reloadData()
+            
+            // Scroll down when receive a message 
+            
+            let numberOfSections = self.ConvertationTableView.numberOfSections
+                       
+                       let numberOfMessages = self.messageArray.count
+                
+            let indexPath = IndexPath(row: numberOfMessages-1 , section: numberOfSections-1)
+                          self.ConvertationTableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+
+                       
         })
         
+        
+        
+
     }
     
     
