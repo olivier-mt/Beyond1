@@ -35,6 +35,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     var language = ""
     var city = ""
     
+    var fromNotif = ""
     
     
     var ref: DatabaseReference!
@@ -82,7 +83,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
     
     
-        // scroll to the bottom
+        // hide Time Label
         
         
         
@@ -222,21 +223,35 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
        let message = messageArray[indexPath.row]
         
         
+    
+        
+        
+        
+        
+        
     // CHANGE TEXT ACCORDING TO SENDER
         
         if message.sender == Auth.auth().currentUser?.email{
             
+   
+            
+            
+            
+            
             cell.messageBubble.backgroundColor = UIColor(red:0.53, green:0.68, blue:0.94, alpha:1.0)
             cell.messageBody.textColor = UIColor.white
+            cell.timeLabel.textColor = UIColor.white
             cell.messageBody.backgroundColor = cell.messageBubble.backgroundColor
-          
+            
             print("\(message.sender) et \(Auth.auth().currentUser?.email)")
         } else {
             cell.messageBubble.backgroundColor = UIColor(red:0.94, green:0.94, blue:0.94, alpha:1.0)
             cell.messageBody.textColor = UIColor.black
+            cell.timeLabel.textColor = UIColor.black
             cell.messageBody.backgroundColor = cell.messageBubble.backgroundColor
 
             print("not the same sender \(message.sender)voila ")
+            
         }
         
        
@@ -245,11 +260,14 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         let myDate = Date(timeIntervalSince1970: doubleTime )
         let dateToShow = myDate.calenderTimeSinceNow()
         
+
         
         cell.messageBody.text = messageArray[indexPath.row].messageBody
         cell.usernameLabel.text = messageArray[indexPath.row].name
         cell.timeLabel.text = dateToShow
         
+        
+      
         
       //  print("\(dateToShow)")
         
@@ -329,14 +347,16 @@ self.messageTextField.endEditing(true)
             self.configureTableView()
             self.ConvertationTableView.reloadData()
             
-            // Scroll down when receive a message 
-            
-            let numberOfSections = self.ConvertationTableView.numberOfSections
-                       
-                       let numberOfMessages = self.messageArray.count
-                
-            let indexPath = IndexPath(row: numberOfMessages-1 , section: numberOfSections-1)
-                          self.ConvertationTableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+            // Scroll down when receive a message
+                  
+                      let numberOfSections = self.ConvertationTableView.numberOfSections
+                                        
+                                        let numberOfMessages = self.messageArray.count
+                                 
+                             let indexPath = IndexPath(row: numberOfMessages-1 , section: numberOfSections-1)
+                                           self.ConvertationTableView.scrollToRow(at: indexPath, at: .middle, animated: false)
+                      
+                     
 
                        
         })
@@ -384,14 +404,21 @@ self.messageTextField.endEditing(true)
                 
             }
             
-     //Scroll down when you send a message 
+     //Scroll down when you send a message
             
-            let numberOfSections = self.ConvertationTableView.numberOfSections
-                   
-                   let numberOfMessages = self.messageArray.count
+    
+                
+                let numberOfSections = self.ConvertationTableView.numberOfSections
+                                  
+                                  let numberOfMessages = self.messageArray.count
+                           
+                       let indexPath = IndexPath(row: numberOfMessages-1 , section: numberOfSections-1)
+                                     self.ConvertationTableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+                
+                
+           
             
-        let indexPath = IndexPath(row: numberOfMessages-1 , section: numberOfSections-1)
-                      self.ConvertationTableView.scrollToRow(at: indexPath, at: .middle, animated: true)}
+            }
             
     }
     
@@ -438,9 +465,12 @@ extension Date
         } else if hours > 0 {
             return hours == 1 ? "1 hour ago" : "\(hours) hours ago"
         } else if minutes > 0 {
-            return minutes == 1 ? "1 minute ago" : "\(minutes) minutes ago"
+            return minutes == 1 ? "1 minute ago" : "\(minutes)min ago"
         } else {
-            return seconds == 1 ? "1 second ago" : "\(seconds) seconds ago"
+            
+            
+            
+            return seconds == 1 ? "1 second ago" : "\(seconds)s ago"
         }
     }
     

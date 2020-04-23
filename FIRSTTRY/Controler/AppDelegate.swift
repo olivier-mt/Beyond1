@@ -193,11 +193,14 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     
     let groupIdNumber =  userInfo["groupIdNumber"]
     let groupName = userInfo["name"]
+    let fromNotif = userInfo["fromNotif"]
     
     print("Notifdico: \(userInfo)")
     
     let gid = groupIdNumber as! String
     let gname = groupName as! String
+    let checkNotif = fromNotif as! String
+    
     
 
     // Print full message.
@@ -234,6 +237,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         
     conversationVC.finalGroup = gid
     conversationVC.groupName = gname
+    conversationVC.fromNotif = checkNotif
 
     navController?.pushViewController(conversationVC, animated: false)
         
