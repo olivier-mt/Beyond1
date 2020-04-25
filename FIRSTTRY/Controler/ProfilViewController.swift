@@ -68,9 +68,13 @@ class ProfilViewController: UIViewController, UITextFieldDelegate{
         
         let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
         changeRequest?.displayName = username
+        currentNameLabel.text = username
+        
+        
         SPAlert.present(title: "Username changed succefully!", preset: .done)
         changeRequest?.commitChanges { (error) in
         }
+        
         
     }
     
