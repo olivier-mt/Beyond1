@@ -56,9 +56,6 @@ class GroupSViewController: UIViewController, UITableViewDelegate, UITableViewDa
         db = Firestore.firestore()
         
         
-        //let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped)  )
-             
-           //  groupTableView.addGestureRecognizer(tapGesture)
         
         
         loadData()

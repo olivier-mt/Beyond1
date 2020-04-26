@@ -11,12 +11,16 @@ import Firebase
 
 class FollowedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     @IBOutlet weak var tableView: UITableView!
     var scheduleIDarray = [fGroup]()
     var db: Firestore!
     var selectedGroupID = ""
     var groupName =  ""
+    var searchGroup = [fGroup]()
+    var searching = false
+
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
@@ -34,6 +38,13 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
         self.title = "My groups"
         
     }
+    
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+           
+           DismissKeyboard()
+       }
+    
     
     func loadData() {
         
@@ -63,7 +74,20 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
     
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          
-            return scheduleIDarray.count
+            if searching{
+                
+            return searchGroup.count
+                
+            }
+                
+            else{
+                
+                return scheduleIDarray.count
+
+            }
+            
+            
+            
             
         }
         
@@ -71,19 +95,48 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
     
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "fCell", for: indexPath) as! fCell
+   
+               let cell = tableView.dequeueReusableCell(withIdentifier: "fCell", for: indexPath) as! fCell
             
-            let schedule = scheduleIDarray[indexPath.row]
             
-            cell.name?.text = "\(schedule.name)"
-            cell.id?.text = "\(schedule.documentID)"
-            cell.describ?.text = "\(schedule.description)"
-            cell.city?.text = "\(schedule.city)"
-            cell.language?.text = "\(schedule.language)"
+            if searching {
+                           
+                           let schedule = searchGroup[indexPath.row]
+                           
+                           cell.name?.text = "\(schedule.name)"
+                           cell.id?.text = "\(schedule.documentID)"
+                           cell.describ?.text = "\(schedule.description)"
+                           cell.city?.text = "\(schedule.city)"
+                           cell.language?.text = "\(schedule.language)"
+                           
+                           print("Array is populated \(scheduleIDarray)")
+                
+                
+                
+            }
             
-            print("Array is populated \(scheduleIDarray)")
+            else {
+                
+               
+                           
+                           let schedule = scheduleIDarray[indexPath.row]
+                           
+                           cell.name?.text = "\(schedule.name)"
+                           cell.id?.text = "\(schedule.documentID)"
+                           cell.describ?.text = "\(schedule.description)"
+                           cell.city?.text = "\(schedule.city)"
+                           cell.language?.text = "\(schedule.language)"
+                           
+                           print("Array is populated \(scheduleIDarray)")
+                
+                
+                
+            }
             
+    
             return cell
+            
+            
         }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -113,6 +166,30 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
     }
 }
 
+extension FollowedViewController: UISearchBarDelegate{
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
+           
+           searchGroup = scheduleIDarray.filter({$0.name.localizedCaseInsensitiveContains(searchText)})
+           
+
+           if searchText == "" {
+               searching = false
+
+           }
+           else {
+               searching = true
+
+           }
+           
+           tableView.reloadData()
+           
+       }
+    
+    
+    
+}
         
     /*
     // MARK: - Navigation

@@ -927,9 +927,17 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="1gu-12-tmZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="TqO-uI-WCd" id="bEB-v2-aOm"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="fCell" rowHeight="96" id="7Wq-ae-cv9" customClass="fCell" customModule="FIRSTTRY" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="96"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Wq-ae-cv9" id="sra-01-1Pl">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
@@ -1043,6 +1051,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ude-eg-Vtv"/>
                     <connections>
+                        <outlet property="searchBar" destination="1gu-12-tmZ" id="qPN-rl-lnZ"/>
                         <outlet property="tableView" destination="ybI-yN-NTa" id="Ash-0b-lNN"/>
                         <segue destination="TRo-6e-aoN" kind="show" identifier="fToConvers" id="hhU-dZ-Nzi"/>
                     </connections>
@@ -1355,7 +1364,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="tbJ-4V-qYh"/>
         <segue reference="Vnd-OV-9xr"/>
-        <segue reference="QWs-zl-rKJ"/>
+        <segue reference="hhU-dZ-Nzi"/>
         <segue reference="bWI-5s-jrq"/>
     </inferredMetricsTieBreakers>
 </document>
