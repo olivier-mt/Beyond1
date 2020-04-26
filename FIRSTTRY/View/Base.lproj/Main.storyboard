@@ -582,24 +582,25 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" text="" placeholder="Search groups about your interests" id="V1A-hd-570">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="wAI-Wy-VfK" id="XLa-iC-gj8"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" rowHeight="107" id="9mo-W0-EEc" customClass="groupTableViewCell" customModule="FIRSTTRY" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="107"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" rowHeight="130" id="9mo-W0-EEc" customClass="groupTableViewCell" customModule="FIRSTTRY" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9mo-W0-EEc" id="fFY-Vz-Mn1">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="107"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyt-LK-pz6">
-                                                    <rect key="frame" x="10" y="5" width="396" height="96"/>
+                                                    <rect key="frame" x="10" y="5" width="396" height="119"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="language Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXP-jE-2IS">
-                                                            <rect key="frame" x="258" y="74" width="84" height="14"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="group name Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4i-bz-O7V">
                                                             <rect key="frame" x="90" y="8" width="298" height="21"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -616,9 +617,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="group ID Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ao0-Gd-o2h">
-                                                            <rect key="frame" x="99" y="75" width="125" height="13"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="group ID Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ao0-Gd-o2h">
+                                                            <rect key="frame" x="99" y="99" width="70.5" height="12"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -636,17 +636,28 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="language Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXP-jE-2IS">
+                                                            <rect key="frame" x="262" y="97" width="80" height="14"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="AXP-jE-2IS" secondAttribute="trailing" constant="54" id="2ZO-OB-HEq"/>
                                                         <constraint firstItem="ii0-cO-2gV" firstAttribute="leading" secondItem="fVW-AL-csC" secondAttribute="trailing" constant="12" id="DPf-q8-7bg"/>
                                                         <constraint firstItem="J4i-bz-O7V" firstAttribute="leading" secondItem="fVW-AL-csC" secondAttribute="trailing" constant="12" id="I7N-al-Dtr"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Ao0-Gd-o2h" secondAttribute="bottom" constant="8" id="NEd-Df-nFW"/>
                                                         <constraint firstItem="fVW-AL-csC" firstAttribute="leading" secondItem="eyt-LK-pz6" secondAttribute="leading" constant="8" id="UYe-SD-dDT"/>
                                                         <constraint firstAttribute="trailing" secondItem="ii0-cO-2gV" secondAttribute="trailing" constant="8" id="WJ1-jv-Ibg"/>
+                                                        <constraint firstAttribute="bottom" secondItem="AXP-jE-2IS" secondAttribute="bottom" constant="8" id="go8-UQ-diF"/>
+                                                        <constraint firstAttribute="height" constant="119" id="jre-90-FIm"/>
                                                         <constraint firstItem="J4i-bz-O7V" firstAttribute="top" secondItem="eyt-LK-pz6" secondAttribute="top" constant="8" id="lr1-CG-gEA"/>
                                                         <constraint firstItem="fVW-AL-csC" firstAttribute="top" secondItem="eyt-LK-pz6" secondAttribute="top" constant="8" id="ogo-3V-t5W"/>
                                                         <constraint firstItem="ii0-cO-2gV" firstAttribute="top" secondItem="J4i-bz-O7V" secondAttribute="bottom" constant="4" id="vW7-gV-PaE"/>
                                                         <constraint firstAttribute="trailing" secondItem="J4i-bz-O7V" secondAttribute="trailing" constant="8" id="xfC-rX-VgV"/>
+                                                        <constraint firstItem="Ao0-Gd-o2h" firstAttribute="leading" secondItem="eyt-LK-pz6" secondAttribute="leading" constant="99" id="yNO-Md-2Z0"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -690,6 +701,7 @@
                     <navigationItem key="navigationItem" id="3cV-6C-Xoj"/>
                     <connections>
                         <outlet property="groupTableView" destination="iFO-1l-rjk" id="J6y-fE-bQn"/>
+                        <outlet property="searchBar" destination="V1A-hd-570" id="DGW-M0-GXn"/>
                         <segue destination="TRo-6e-aoN" kind="show" identifier="toConversationControler" id="QWs-zl-rKJ"/>
                         <segue destination="CfJ-pa-3g7" kind="show" identifier="toNewConvVC" id="isn-LU-Egx"/>
                     </connections>
