@@ -30,7 +30,7 @@ extension UIViewController{
 
 
 
-class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
+class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
     @IBOutlet weak var groupNameTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -41,11 +41,16 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
     
     @IBOutlet weak var creationButton: UIButton!
     
+    @IBOutlet weak var groupPicture: UIImageView!
     
+    @IBOutlet weak var tapToChangePicture: UIButton!
     
     var city = ""
     var db : Firestore!
+    
 
+    
+    
   
     
     override func viewDidLoad() {
@@ -64,10 +69,58 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
     self.HideKeyboard()
         
         db = Firestore.firestore()
+        
+        
+        groupPicture.isUserInteractionEnabled = true
+        groupPicture.layer.cornerRadius = groupPicture.bounds.height / 2
+        groupPicture.clipsToBounds = true
+        
+     
+        
     
     }
     
     
+    @IBAction func changeImage(_ sender: Any) {
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        
+        
+        let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
+        
+      
+        
+        
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction) in
+            
+            imagePickerController.sourceType = .photoLibrary
+            self.present(imagePickerController, animated: true, completion: nil)
+            
+        }))
+        
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil ))
+        
+        self.present(actionSheet, animated: true, completion: nil)
+        
+        
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let image = info[.originalImage] as! UIImage
+        
+        groupPicture.image = image
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
     
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -132,6 +185,10 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
     }
 
 }
+
+
+
+
     
     /*// MARK: - Navigation
 

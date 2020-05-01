@@ -20,6 +20,13 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
     var groupName =  ""
     var searchGroup = [fGroup]()
     var searching = false
+    var groupIdFollowed = [String]()
+    var schedule : fGroup!
+    
+    var ref: DatabaseReference!
+    var messageArray : [Message] = [Message]()
+    var messageArray2 : [Message] = [Message]()
+
 
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,15 +67,36 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
                     self.scheduleIDarray = querySnapshot!.documents.compactMap({fGroup(dictionary: $0.data())})
                     DispatchQueue.main.async {
                         
+                        
+
+                        
+                        
                         self.tableView.reloadData()
 
                 }
             }
+                
+                
+                
+                
  print("dans l'array \(self.scheduleIDarray)")
  self.tableView.reloadData()
 
         }
         }
+        
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
     
     
@@ -86,11 +114,14 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
 
             }
             
-            
-            
-            
         }
         
+    
+    
+  
+    
+    
+    
     
     
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -98,46 +129,150 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
    
                let cell = tableView.dequeueReusableCell(withIdentifier: "fCell", for: indexPath) as! fCell
             
+             
+           
+          
+            
             
             if searching {
-                           
-                           let schedule = searchGroup[indexPath.row]
-                           
-                           cell.name?.text = "\(schedule.name)"
-                           cell.id?.text = "\(schedule.documentID)"
-                           cell.describ?.text = "\(schedule.description)"
-                           cell.city?.text = "\(schedule.city)"
-                           cell.language?.text = "\(schedule.language)"
-                           
-                           print("Array is populated \(scheduleIDarray)")
                 
+            
+                    schedule = searchGroup[indexPath.row]
+                           
+         
+                           
+                      //     print("Array is populated \(scheduleIDarray)")
                 
+             
                 
             }
             
             else {
                 
                
-                           
-                           let schedule = scheduleIDarray[indexPath.row]
-                           
-                           cell.name?.text = "\(schedule.name)"
-                           cell.id?.text = "\(schedule.documentID)"
-                           cell.describ?.text = "\(schedule.description)"
-                           cell.city?.text = "\(schedule.city)"
-                           cell.language?.text = "\(schedule.language)"
-                           
-                           print("Array is populated \(scheduleIDarray)")
+                          schedule = scheduleIDarray[indexPath.row]
+                    
+                    
+                         print("Array is populated \(scheduleIDarray)")
+                
+              
                 
                 
                 
             }
             
-    
+            
+            cell.name?.text = "\(schedule.name)"
+            cell.id?.text = "\(schedule.documentID)"
+            cell.describ?.text = "\(schedule.description)"
+            cell.city?.text = "\(schedule.city)"
+            cell.language?.text = "\(schedule.language)"
+            
+            
+           groupIdFollowed.append("\(schedule.documentID)")
+            
+            
+            for (index, element) in groupIdFollowed.enumerated() {
+                           
+                           
+                           let messagesDB = self.ref?.child("conversation").child(element)
+                                  
+                             
+                      messagesDB?.observe(.childAdded, with: { (snapshot) in
+                              
+                              let snapshotValue = snapshot.value as! Dictionary<String,Any>
+                              
+                              let text = snapshotValue["MessageBody"]!
+                              
+                              
+                              
+                              let message = Message()
+                              
+                              message.messageBody = text as! String
+                              message.name =  snapshotValue["name"]! as! String
+                              message.sender = snapshotValue["sender"]! as! String
+                              message.createdAt = snapshotValue["createdAt"]! as! Int
+                              
+                              print("the timestamp is \(message.createdAt)")
+                              
+                              
+                              
+                             
+                                       
+
+                                         
+                          })
+                          
+                                      
+                           
+                       
+                           
+                       }
+            
+            
+            
+            
+            
+           print("Appended array : \(groupIdFollowed)")
+            
+         
             return cell
             
             
         }
+    
+    
+    
+    func lastMessage(){
+        
+        for i in groupIdFollowed{
+            
+            
+            let messagesDB = self.ref?.child("conversation").child(i)
+
+            
+            messagesDB?.observe(.childAdded, with: { (snapshot) in
+                    
+                    let snapshotValue = snapshot.value as! Dictionary<String,Any>
+                    
+                    let text = snapshotValue["MessageBody"]!
+                    
+                    
+                    
+                    let message = Message()
+                    
+                    message.messageBody = text as! String
+                    message.name =  snapshotValue["name"]! as! String
+                    message.sender = snapshotValue["sender"]! as! String
+                    message.createdAt = snapshotValue["createdAt"]! as! Int
+                    
+                    print("the timestamp is \(message.createdAt)")
+                    
+                    
+                    
+                    self.messageArray.append(message)
+                    
+                   
+                                                                                         
+                                 
+                             
+
+                               
+                })
+                
+            
+            
+        }
+       
+        
+            
+        
+        
+    }
+    
+    
+    
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(100)
