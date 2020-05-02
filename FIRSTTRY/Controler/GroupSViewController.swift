@@ -27,6 +27,7 @@ class GroupSViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var searchGroup = [Group]()
     var searching = false
     
+    var storageRef = Storage.storage()
 
     
     var inCellGroupId = ""
@@ -54,6 +55,7 @@ class GroupSViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
         db = Firestore.firestore()
+        
         
         
         
@@ -130,15 +132,39 @@ performSegue(withIdentifier: "toNewConvVC", sender: Any?.self)    }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! groupTableViewCell
     
+        
+        
         if searching{
             
             let group = searchGroup[indexPath.row]
+            
+            
+            let imagePath = self.storageRef.reference(withPath:"\(group.documentID)/resizes/profilImage_150x150.jpg")
+                               
+                               imagePath.getData(maxSize: 10 * 1024 * 1024) { (data, error) in
+                                   if let error = error {
+                                       print("Got an error fetching data : \(error.localizedDescription)")
+                                       return
+                                   }
+                                   if let data = data {
+                                       
+                                       cell.groupImage.image = UIImage(data: data)
+                                       
+                                       //self.groupPicture.image =
+                                   }
+                     
+                     
+                     }
+            
+            
+            
+            
                            
                            cell.groupeNameLabel?.text = "\(group.name)"
                            cell.groupDescriptionLabel?.text = "\(group.description)"
                            cell.groupIDLabel?.text = "\(group.documentID)"
                            cell.languageLabel?.text = "\(group.language)"
-            
+                
             
             var inCellGroupId = group.documentID
             var inCellGroupName = group.name
@@ -148,14 +174,39 @@ performSegue(withIdentifier: "toNewConvVC", sender: Any?.self)    }
             
             
             let group = groupArray[indexPath.row]
+            
+            let imagePath = self.storageRef.reference(withPath:"\(group.documentID)/resizes/profilImage_150x150.jpg")
+                      
+                      imagePath.getData(maxSize: 10 * 1024 * 1024) { (data, error) in
+                          if let error = error {
+                              print("Got an error fetching data : \(error.localizedDescription)")
+                              return
+                          }
+                          if let data = data {
+                              
+                              cell.groupImage.image = UIImage(data: data)
+                              
+                          }
+            
+            
+            }
                  
                  cell.groupeNameLabel?.text = "\(group.name)"
                  cell.groupDescriptionLabel?.text = "\(group.description)"
                  cell.groupIDLabel?.text = "\(group.documentID)"
                  cell.languageLabel?.text = "\(group.language)"
             
+         
+          
+         
+            
+            
+            
+            
+
+            
             var inCellGroupId = group.documentID
-                 var inCellGroupName = group.name
+            var inCellGroupName = group.name
             
         }
         

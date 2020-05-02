@@ -9,7 +9,8 @@
 import UIKit
 import Firebase
 import SPAlert
-
+import FirebaseStorage
+import SVProgressHUD
 
 extension UIViewController{
     
@@ -47,6 +48,8 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
     
     var city = ""
     var db : Firestore!
+    
+    var imageString = ""
     
 
     
@@ -152,12 +155,19 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
     
     @IBAction func creatGroupTapped(_ sender: Any) {
         
+        creationButton.isEnabled = false
+        
+        SVProgressHUD.show(withStatus: "Wait few seconds ... ")
+
+        
          let descritption = descriptionTextView.text
         let name = groupNameTextField.text
         let language = languageTextField.text
         
         let newGroupRef = db.collection("GROUPS").document()
         let documentID = newGroupRef.documentID
+   //     let image = "\(documentID)/profilImage.jpg"
+
        
         
         if name == "" ||
@@ -172,16 +182,62 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
                        "description" : descritption as Any,
                        "language" : language as Any,
                        "name" : name as Any,
-                       "documentID" : documentID
+                       "documentID" : documentID,
                        
                    ])
-            SPAlert.present(title: "Your group is created!", preset: .done)
-            navigationController?.popViewController(animated: true)
+            
+            
+            
+            //send image
+            
+            let uploadRef = Storage.storage().reference().child("\(documentID)").child("profilImage.jpg")
+              
+              
+              guard let imageData = groupPicture.image?.jpegData(compressionQuality: 0.75) else {
+                  
+            return  }
+              
+              let uploadMetadata = StorageMetadata.init()
+              uploadMetadata.contentType = "image/jpeg"
+              uploadRef.putData(imageData, metadata: uploadMetadata) {(downloadMetadata, error) in
+                
 
-            print("Document added with ID: \(newGroupRef.documentID)")
+                
+                  if let error = error {
+                      print("Oh noo got an error! \(error.localizedDescription)")
+                      return
+                  }
+               
+            
+                print("Put is completed and got this back \(String(describing: downloadMetadata))",
+                SVProgressHUD.dismiss()
+
+                )
+                
+                
+                
+                self.navigationController?.popViewController(animated: true)
+                SPAlert.present(title: "Your group is created!", preset: .done)
+
+                          print("Document added with ID: \(newGroupRef.documentID)")
+                self.creationButton.isEnabled = true
+              }
+            
+            
+            
+            
+            
+        
             
         }
 
+        
+        // send picture
+        
+        
+        
+        
+        
     }
 
 }

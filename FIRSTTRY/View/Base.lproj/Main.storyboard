@@ -678,6 +678,7 @@
                                         <connections>
                                             <outlet property="groupDescriptionLabel" destination="ii0-cO-2gV" id="87o-Kj-TQm"/>
                                             <outlet property="groupIDLabel" destination="Ao0-Gd-o2h" id="aB4-hm-1Ra"/>
+                                            <outlet property="groupImage" destination="fVW-AL-csC" id="6Kr-Uq-QjR"/>
                                             <outlet property="groupeNameLabel" destination="J4i-bz-O7V" id="d6X-a7-XP9"/>
                                             <outlet property="languageLabel" destination="AXP-jE-2IS" id="ffY-Y8-jwY"/>
                                         </connections>
@@ -1049,6 +1050,7 @@
                                         <connections>
                                             <outlet property="city" destination="KcM-io-oN5" id="mxM-5I-6Zr"/>
                                             <outlet property="describ" destination="b8f-Zm-Owh" id="8uG-hz-Q0l"/>
+                                            <outlet property="groupImage" destination="ae8-n8-MIA" id="XUY-qB-dbd"/>
                                             <outlet property="id" destination="3J1-s7-TdO" id="iEo-h7-vLH"/>
                                             <outlet property="language" destination="XjQ-FZ-sam" id="PeB-cx-TOA"/>
                                             <outlet property="name" destination="1od-4T-7gY" id="2af-gn-RJy"/>

@@ -10,6 +10,7 @@ import UIKit
 
 class fCell: UITableViewCell {
 
+    @IBOutlet weak var groupImage: UIImageView!
     
     @IBOutlet weak var name: UILabel!
     

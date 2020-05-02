@@ -40,6 +40,6 @@ extension Group : DocumentSerializable {
               let language = dictionary["language"] as? String else {return nil}
         
         
-        self.init(city: city, description: description, language: language, name: name, documentID: documentID )
+        self.init(city: city, description: description, language: language, name: name, documentID: documentID)
     }
 }

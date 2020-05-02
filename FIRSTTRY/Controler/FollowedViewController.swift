@@ -28,6 +28,9 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
     var messageArray2 : [Message] = [Message]()
 
 
+    var storageRef = Storage.storage()
+
+    
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
@@ -141,7 +144,8 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
                            
          
                            
-                      //     print("Array is populated \(scheduleIDarray)")
+             
+                
                 
              
                 
@@ -152,6 +156,10 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
                
                           schedule = scheduleIDarray[indexPath.row]
                     
+                
+             
+                
+                
                     
                          print("Array is populated \(scheduleIDarray)")
                 
@@ -167,6 +175,34 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
             cell.describ?.text = "\(schedule.description)"
             cell.city?.text = "\(schedule.city)"
             cell.language?.text = "\(schedule.language)"
+            
+            
+            
+            let imagePath = self.storageRef.reference(withPath:"\(schedule.documentID)/resizes/profilImage_150x150.jpg")
+                                                
+                                                imagePath.getData(maxSize: 10 * 1024 * 1024) { (data, error) in
+                                                    if let error = error {
+                                                        print("Got an error fetching data : \(error.localizedDescription)")
+                                                        return
+                                                    }
+                                                    if let data = data {
+                                                        
+                                                        cell.groupImage.image = UIImage(data: data)
+                                                        
+                                                        //self.groupPicture.image =
+                                                    }
+                                      
+                                      
+                                      }
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             
            groupIdFollowed.append("\(schedule.documentID)")
