@@ -182,7 +182,12 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
                                                 
                                                 imagePath.getData(maxSize: 10 * 1024 * 1024) { (data, error) in
                                                     if let error = error {
+                                                        
+                                                        
                                                         print("Got an error fetching data : \(error.localizedDescription)")
+                                                        
+                                                        cell.groupImage.image = UIImage(named: "GIO") 
+                                                        
                                                         return
                                                     }
                                                     if let data = data {
@@ -221,7 +226,6 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
                               let text = snapshotValue["MessageBody"]!
                               
                               
-                              
                               let message = Message()
                               
                               message.messageBody = text as! String
@@ -231,11 +235,8 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
                               
                               print("the timestamp is \(message.createdAt)")
                               
-                              
-                              
-                             
-                                       
-
+                        
+                        
                                          
                           })
                           
@@ -342,9 +343,39 @@ extension FollowedViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
            
-           searchGroup = scheduleIDarray.filter({$0.name.localizedCaseInsensitiveContains(searchText)})
+           searchGroup = //scheduleIDarray.filter({$0.name.localizedCaseInsensitiveContains(searchText)})
            
 
+        
+        
+        
+        scheduleIDarray.filter({
+            
+            var filterDescription = $0.description
+            
+            var filterName = $0.name
+            
+            
+            return
+            
+           
+                (filterDescription.range(of: searchText, options: [.diacriticInsensitive, .caseInsensitive]) != nil) ||
+                (filterName.range(of: searchText, options: [.diacriticInsensitive, .caseInsensitive]) != nil)
+        
+            
+        })
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
            if searchText == "" {
                searching = false
 

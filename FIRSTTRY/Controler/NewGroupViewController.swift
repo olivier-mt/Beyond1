@@ -190,37 +190,69 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
             
             //send image
             
-            let uploadRef = Storage.storage().reference().child("\(documentID)").child("profilImage.jpg")
-              
-              
-              guard let imageData = groupPicture.image?.jpegData(compressionQuality: 0.75) else {
-                  
-            return  }
-              
-              let uploadMetadata = StorageMetadata.init()
-              uploadMetadata.contentType = "image/jpeg"
-              uploadRef.putData(imageData, metadata: uploadMetadata) {(downloadMetadata, error) in
-                
-
-                
-                  if let error = error {
-                      print("Oh noo got an error! \(error.localizedDescription)")
-                      return
-                  }
-               
             
-                print("Put is completed and got this back \(String(describing: downloadMetadata))",
-                SVProgressHUD.dismiss()
+            if groupPicture == UIImage(named: "GIO"){
+                
+                
+                
+            SVProgressHUD.dismiss()
 
-                )
-                
-                
-                
-                self.navigationController?.popViewController(animated: true)
-                SPAlert.present(title: "Your group is created!", preset: .done)
+            self.navigationController?.popViewController(animated: true)
+            SPAlert.present(title: "Your group is created!", preset: .done)
 
-                          print("Document added with ID: \(newGroupRef.documentID)")
-                self.creationButton.isEnabled = true
+            print("Document added with ID: \(newGroupRef.documentID)")
+            self.creationButton.isEnabled = true
+                
+                
+            } else {
+                
+                
+                let uploadRef = Storage.storage().reference().child("\(documentID)").child("profilImage.jpg")
+                             
+                             
+                             guard let imageData = groupPicture.image?.jpegData(compressionQuality: 0.75) else {
+                                 
+                           return  }
+                             
+                           
+                             let uploadMetadata = StorageMetadata.init()
+                             uploadMetadata.contentType = "image/jpeg"
+                             uploadRef.putData(imageData, metadata: uploadMetadata) {(downloadMetadata, error) in
+                               
+
+                               
+                                 if let error = error {
+                                     print("Oh noo got an error! \(error.localizedDescription)")
+                                     return
+                                 }
+                              
+                           
+                               print("Put is completed and got this back \(String(describing: downloadMetadata))",
+                               SVProgressHUD.dismiss()
+
+                               )
+                                
+                                
+                                
+                                self.navigationController?.popViewController(animated: true)
+                                               SPAlert.present(title: "Your group is created!", preset: .done)
+
+                                                         print("Document added with ID: \(newGroupRef.documentID)")
+                                               self.creationButton.isEnabled = true
+                
+                
+                
+                
+            }
+            
+            
+            
+            
+            
+           
+                
+                
+               
               }
             
             

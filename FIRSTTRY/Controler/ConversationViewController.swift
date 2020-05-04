@@ -356,8 +356,6 @@ self.messageTextField.endEditing(true)
                              let indexPath = IndexPath(row: numberOfMessages-1 , section: numberOfSections-1)
                                            self.ConvertationTableView.scrollToRow(at: indexPath, at: .middle, animated: false)
                       
-                     
-
                        
         })
         

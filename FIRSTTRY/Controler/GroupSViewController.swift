@@ -53,6 +53,9 @@ class GroupSViewController: UIViewController, UITableViewDelegate, UITableViewDa
         groupTableView.dataSource = self
         groupTableView.delegate = self
         
+        groupTableView.rowHeight = 400
+
+        
         
         db = Firestore.firestore()
         
@@ -322,8 +325,21 @@ extension GroupSViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
         
-        searchGroup = groupArray.filter({$0.description.localizedCaseInsensitiveContains(searchText)}) 
-        
+        searchGroup = groupArray.filter ({
+                
+                var filterDescription = $0.description
+                
+                var filterName = $0.name
+                
+                
+                return
+                
+               
+                    (filterDescription.range(of: searchText, options: [.diacriticInsensitive, .caseInsensitive]) != nil) ||
+                    (filterName.range(of: searchText, options: [.diacriticInsensitive, .caseInsensitive]) != nil)
+            
+                
+            })
 
         if searchText == "" {
             searching = false
@@ -345,4 +361,7 @@ extension GroupSViewController: UISearchBarDelegate {
         groupTableView.reloadData()
     
     }
+    
+    
+   
 }
