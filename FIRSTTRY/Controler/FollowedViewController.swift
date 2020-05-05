@@ -69,10 +69,7 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
                     
                     self.scheduleIDarray = querySnapshot!.documents.compactMap({fGroup(dictionary: $0.data())})
                     DispatchQueue.main.async {
-                        
-                        
-
-                        
+  
                         
                         self.tableView.reloadData()
 
@@ -92,13 +89,7 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         
-        
-        
-        
-        
-        
-        
-        
+
         
     }
     
@@ -121,52 +112,25 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
         
     
     
-  
-    
-    
-    
-    
-    
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
    
                let cell = tableView.dequeueReusableCell(withIdentifier: "fCell", for: indexPath) as! fCell
             
-             
-           
-          
-            
+
             
             if searching {
-                
             
                     schedule = searchGroup[indexPath.row]
                            
-         
-                           
-             
-                
-                
-             
-                
             }
             
             else {
-                
-               
+        
                           schedule = scheduleIDarray[indexPath.row]
-                    
-                
-             
-                
-                
-                    
                          print("Array is populated \(scheduleIDarray)")
                 
-              
-                
-                
-                
+ 
             }
             
             
@@ -177,142 +141,49 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
             cell.language?.text = "\(schedule.language)"
             
             
+            // GET IMAGE
             
             let imagePath = self.storageRef.reference(withPath:"\(schedule.documentID)/resizes/profilImage_150x150.jpg")
                                                 
-                                                imagePath.getData(maxSize: 10 * 1024 * 1024) { (data, error) in
-                                                    if let error = error {
+            imagePath.getData(maxSize: 10 * 1024 * 1024) { (data, error) in
+                    
+                if let error = error {
                                                         
                                                         
-                                                        print("Got an error fetching data : \(error.localizedDescription)")
+             print("Got an error fetching data : \(error.localizedDescription)")
                                                         
-                                                        cell.groupImage.image = UIImage(named: "GIO") 
+            cell.groupImage.image = UIImage(named: "GIO")
                                                         
-                                                        return
-                                                    }
-                                                    if let data = data {
+                        return
+                                }
+                                                   
+                if let data = data {
                                                         
-                                                        cell.groupImage.image = UIImage(data: data)
+                cell.groupImage.image = UIImage(data: data)
                                                         
-                                                        //self.groupPicture.image =
-                                                    }
-                                      
-                                      
-                                      }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-           groupIdFollowed.append("\(schedule.documentID)")
-            
-            
-            for (index, element) in groupIdFollowed.enumerated() {
-                           
-                           
-                           let messagesDB = self.ref?.child("conversation").child(element)
-                                  
-                             
-                      messagesDB?.observe(.childAdded, with: { (snapshot) in
-                              
-                              let snapshotValue = snapshot.value as! Dictionary<String,Any>
-                              
-                              let text = snapshotValue["MessageBody"]!
-                              
-                              
-                              let message = Message()
-                              
-                              message.messageBody = text as! String
-                              message.name =  snapshotValue["name"]! as! String
-                              message.sender = snapshotValue["sender"]! as! String
-                              message.createdAt = snapshotValue["createdAt"]! as! Int
-                              
-                              print("the timestamp is \(message.createdAt)")
-                              
-                        
-                        
-                                         
-                          })
-                          
-                                      
-                           
-                       
-                           
-                       }
-            
-            
-            
-            
-            
-           print("Appended array : \(groupIdFollowed)")
-            
-         
+                }
+                
+            }
+                
+                
             return cell
-            
-            
-        }
-    
-    
-    
-    func lastMessage(){
-        
-        for i in groupIdFollowed{
-            
-            
-            let messagesDB = self.ref?.child("conversation").child(i)
-
-            
-            messagesDB?.observe(.childAdded, with: { (snapshot) in
-                    
-                    let snapshotValue = snapshot.value as! Dictionary<String,Any>
-                    
-                    let text = snapshotValue["MessageBody"]!
-                    
-                    
-                    
-                    let message = Message()
-                    
-                    message.messageBody = text as! String
-                    message.name =  snapshotValue["name"]! as! String
-                    message.sender = snapshotValue["sender"]! as! String
-                    message.createdAt = snapshotValue["createdAt"]! as! Int
-                    
-                    print("the timestamp is \(message.createdAt)")
-                    
-                    
-                    
-                    self.messageArray.append(message)
-                    
-                   
-                                                                                         
-                                 
-                             
-
-                               
-                })
+                
+               
+                
                 
             
-            
-        }
-       
+                
+                
+            }
         
-            
-        
-        
-    }
+    
     
     
     
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(100)
+        return CGFloat(125)
     }
     
     
@@ -343,13 +214,7 @@ extension FollowedViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
            
-           searchGroup = //scheduleIDarray.filter({$0.name.localizedCaseInsensitiveContains(searchText)})
-           
-
-        
-        
-        
-        scheduleIDarray.filter({
+           searchGroup = scheduleIDarray.filter({
             
             var filterDescription = $0.description
             
@@ -365,15 +230,7 @@ extension FollowedViewController: UISearchBarDelegate{
             
         })
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         
         
            if searchText == "" {

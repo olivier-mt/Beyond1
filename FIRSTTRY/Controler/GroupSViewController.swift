@@ -53,7 +53,6 @@ class GroupSViewController: UIViewController, UITableViewDelegate, UITableViewDa
         groupTableView.dataSource = self
         groupTableView.delegate = self
         
-        groupTableView.rowHeight = 400
 
         
         
@@ -249,7 +248,7 @@ performSegue(withIdentifier: "toNewConvVC", sender: Any?.self)    }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(100)
+        return CGFloat(125)
     }
     
     
