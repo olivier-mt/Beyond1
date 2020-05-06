@@ -17,6 +17,10 @@ class GroupSViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var groupSmallView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    let searchController = UISearchController(searchResultsController: nil)
+
+
+    
     var finalCity = ""
     var groupArray = [Group]()
     var db : Firestore!
@@ -44,7 +48,30 @@ class GroupSViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {        super.viewDidLoad()
         
         let addButton = UIBarButtonItem(barButtonSystemItem:.add, target: self, action: #selector(tapButton) )
+       
+        navigationController?.navigationBar.prefersLargeTitles = false
+
+        navigationController!.navigationBar.sizeToFit()
+
+        
         self.navigationItem.rightBarButtonItem = addButton
+        
+        
+        self.navigationItem.searchController = searchController
+            
+        
+        searchController.searchBar.delegate = self
+        searchController.searchBar.sizeToFit()
+
+        
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+
+        
+        searchBar.sizeToFit()
+
+
+        
+
         
         self.title = finalCity
         
@@ -199,13 +226,6 @@ performSegue(withIdentifier: "toNewConvVC", sender: Any?.self)    }
                  cell.languageLabel?.text = "\(group.language)"
             
          
-          
-         
-            
-            
-            
-            
-
             
             var inCellGroupId = group.documentID
             var inCellGroupName = group.name

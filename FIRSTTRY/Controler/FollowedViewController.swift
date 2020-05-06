@@ -27,6 +27,8 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
     var messageArray : [Message] = [Message]()
     var messageArray2 : [Message] = [Message]()
 
+    let searchController = UISearchController(searchResultsController: nil)
+
 
     var storageRef = Storage.storage()
 
@@ -46,6 +48,13 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
         loadData()
         
         self.title = "My groups"
+        
+    //    navigationController!.navigationBar.sizeToFit()
+    //    self.navigationItem.searchController = searchController
+    //           searchController.searchBar.delegate = self
+    //           searchController.searchBar.sizeToFit()
+      //         self.navigationItem.hidesSearchBarWhenScrolling = false
+       //        searchBar.sizeToFit()
         
     }
     

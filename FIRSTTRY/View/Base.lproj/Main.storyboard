@@ -455,7 +455,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9t-1O-f7M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5824.6376811594209" y="2136.1607142857142"/>
+            <point key="canvasLocation" x="7644.9275362318849" y="2136.1607142857142"/>
         </scene>
         <!--CHOOSE A CITY-->
         <scene sceneID="gUy-Kx-ODx">
@@ -563,14 +563,14 @@
                     <navigationItem key="navigationItem" title="CHOOSE A CITY" id="nE2-bC-KSp"/>
                     <connections>
                         <outlet property="collectionView" destination="tea-oy-RBb" id="YTS-yu-94b"/>
-                        <segue destination="wAI-Wy-VfK" kind="show" identifier="toGroupSView" id="oUE-3d-TCl"/>
+                        <segue destination="wAI-Wy-VfK" kind="show" identifier="toGroupSView" id="lNp-JL-ph2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQ3-iL-BLD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2050.7246376811595" y="1785.9375"/>
         </scene>
-        <!--GroupS View Controller-->
+        <!--Item-->
         <scene sceneID="REq-4x-5jd">
             <objects>
                 <viewController id="wAI-Wy-VfK" customClass="GroupSViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
@@ -578,21 +578,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" text="" placeholder="Search a group " id="V1A-hd-570">
+                                <rect key="frame" x="0.0" y="420" width="414" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="wAI-Wy-VfK" id="XLa-iC-gj8"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="160" estimatedRowHeight="160" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iFO-1l-rjk">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" text="" placeholder="Search a group " id="V1A-hd-570">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="wAI-Wy-VfK" id="XLa-iC-gj8"/>
-                                    </connections>
-                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" rowHeight="127" id="9mo-W0-EEc" customClass="groupTableViewCell" customModule="FIRSTTRY" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="127"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="127"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9mo-W0-EEc" id="fFY-Vz-Mn1">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="127"/>
@@ -698,6 +702,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QfY-Xv-HkT"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="g2d-Lw-dOX"/>
                     <navigationItem key="navigationItem" id="3cV-6C-Xoj"/>
                     <connections>
                         <outlet property="groupTableView" destination="iFO-1l-rjk" id="J6y-fE-bQn"/>
@@ -708,7 +713,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kDQ-Eg-XOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2102.898550724638" y="2552.0089285714284"/>
+            <point key="canvasLocation" x="3293" y="2549"/>
         </scene>
         <!--New Group View Controller-->
         <scene sceneID="GLN-XX-xIY">
@@ -843,7 +848,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcY-yc-Ofp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2868.115942028986" y="2548.6607142857142"/>
+            <point key="canvasLocation" x="4688.4057971014499" y="2548.6607142857142"/>
         </scene>
         <!--Conversation View Controller-->
         <scene sceneID="9Iy-AI-V6o">
@@ -1017,7 +1022,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="describ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8f-Zm-Owh">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="describ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8f-Zm-Owh">
                                                             <rect key="frame" x="90" y="33" width="300" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                             <nil key="textColor"/>
@@ -1360,7 +1365,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbX-OB-eVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3786" y="2549"/>
+            <point key="canvasLocation" x="5605.7971014492759" y="2548.6607142857142"/>
         </scene>
         <!--Settings-->
         <scene sceneID="0zK-QG-u5F">
@@ -1385,7 +1390,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="tbJ-4V-qYh"/>
         <segue reference="Vnd-OV-9xr"/>
-        <segue reference="QWs-zl-rKJ"/>
+        <segue reference="hhU-dZ-Nzi"/>
         <segue reference="bWI-5s-jrq"/>
     </inferredMetricsTieBreakers>
     <resources>
