@@ -30,6 +30,7 @@
 		903F997C24240DDC001235F5 /* CancelAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F997B24240DDC001235F5 /* CancelAccountViewController.swift */; };
 		904464C62421615600AAC250 /* resetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904464C52421615600AAC250 /* resetPasswordViewController.swift */; };
 		90885483234D5DE9002B52B1 /* groupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90885482234D5DE9002B52B1 /* groupTableViewCell.swift */; };
+		90CF0ECC2464745D00DFA58D /* groupOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CF0ECB2464745D00DFA58D /* groupOptionsVC.swift */; };
 		90D50FDA234EA532002937C8 /* groupDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D50FD9234EA532002937C8 /* groupDataModel.swift */; };
 		90D7E6C6236EF48B00220908 /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D7E6C4236EF48A00220908 /* CustomMessageCell.swift */; };
 		90D7E6C7236EF48B00220908 /* CustomMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90D7E6C5236EF48A00220908 /* CustomMessageCell.xib */; };
@@ -69,6 +70,7 @@
 		903F997B24240DDC001235F5 /* CancelAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelAccountViewController.swift; sourceTree = "<group>"; };
 		904464C52421615600AAC250 /* resetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resetPasswordViewController.swift; sourceTree = "<group>"; };
 		90885482234D5DE9002B52B1 /* groupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupTableViewCell.swift; sourceTree = "<group>"; };
+		90CF0ECB2464745D00DFA58D /* groupOptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupOptionsVC.swift; sourceTree = "<group>"; };
 		90D50FD9234EA532002937C8 /* groupDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupDataModel.swift; sourceTree = "<group>"; };
 		90D7E6C4236EF48A00220908 /* CustomMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
 		90D7E6C5236EF48A00220908 /* CustomMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomMessageCell.xib; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				90E5C3A8242A8DCC00571D7E /* ReviewVC.swift */,
 				900BF83F2445C6B800F3A26D /* settingsViewController.swift */,
 				900BF8412445CC3B00F3A26D /* settingsTableViewController.swift */,
+				90CF0ECB2464745D00DFA58D /* groupOptionsVC.swift */,
 			);
 			path = Controler;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				903A79E5233651A600F4306D /* FollowedViewController.swift in Sources */,
 				903A79E323361E1200F4306D /* SignUpViewController.swift in Sources */,
 				90DA252823BB6B8900FC1723 /* fCell.swift in Sources */,
+				90CF0ECC2464745D00DFA58D /* groupOptionsVC.swift in Sources */,
 				903F997C24240DDC001235F5 /* CancelAccountViewController.swift in Sources */,
 				903A79E123361C2400F4306D /* LogInViewController.swift in Sources */,
 				90E5C3A7242A8C9600571D7E /* Review.swift in Sources */,

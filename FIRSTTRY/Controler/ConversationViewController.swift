@@ -75,17 +75,19 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         ConvertationTableView.register(UINib(nibName: "CustomMessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
         
         
-        //keyboard
+        //keyboard /////////////////////////////////////////////////////////////
+        /*
         
        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
              NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
+        */
         
     
     
         // hide Time Label
         
         
+
         
         
         
@@ -95,7 +97,11 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
         // Set up righ bar button
         let button1 = UIBarButtonItem(image: UIImage(named: "heart30"), style: .plain, target: self, action: #selector(tapButton)) // action:#selector(Class.MethodName) for swift 3
-            self.navigationItem.rightBarButtonItem = button1
+          //  self.navigationItem.rightBarButtonItem = button1
+        
+        
+        let button2 = UIBarButtonItem(image: UIImage(named: "menu-30"), style: .plain, target: self, action: #selector(tapButton2)) // action:#selector(Class.MethodName) for swift 3
+        self.navigationItem.rightBarButtonItems = [button2, button1]
         
         
         configureTableView()
@@ -104,12 +110,20 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
     }
     
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+          NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+    }
     //keyboard
     
     @objc func keyboardWillShow(notification: NSNotification) {
           if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
               if self.view.frame.origin.y == 0 {
-                  self.view.frame.origin.y -= keyboardSize.height
+                self.view.frame.origin.y -= keyboardSize.height + 0.5
                 
         
 
@@ -128,6 +142,12 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     
     
     let user =  Auth.auth().currentUser?.uid
+    
+    
+    @objc func tapButton2 (){
+        
+        performSegue(withIdentifier: "toGroupOption", sender: Any.self)
+    }
   
     
     @objc func tapButton (){
@@ -232,10 +252,6 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     // CHANGE TEXT ACCORDING TO SENDER
         
         if message.sender == Auth.auth().currentUser?.email{
-            
-   
-            
-            
             
             
             cell.messageBubble.backgroundColor = UIColor(red:0.53, green:0.68, blue:0.94, alpha:1.0)
@@ -423,8 +439,26 @@ self.messageTextField.endEditing(true)
             
     }
     
-        
-        
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           
+           
+           guard let identifier = segue.identifier else {
+               assertionFailure("Segue had no idientifier")
+               return
+           }
+           
+           if identifier == "toGroupOption" {
+               
+               let vc = segue.destination as! groupOptionsVC
+              
+            vc.groupName = groupName
+            vc.groupID = finalGroup
+            
+            
+           }
+    }
         
     /*
     // MARK: - Navigation

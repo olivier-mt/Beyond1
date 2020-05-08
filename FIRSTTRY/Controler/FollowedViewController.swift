@@ -59,6 +59,9 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
+    
+    
+    
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
            
            DismissKeyboard()

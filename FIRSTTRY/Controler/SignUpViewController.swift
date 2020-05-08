@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SPAlert
 
 
 class SignUpViewController: UIViewController {
@@ -40,6 +41,9 @@ class SignUpViewController: UIViewController {
         
         Auth.auth().createUser(withEmail: email.text! , password: password.text!) { (user, error) in
             if error != nil {
+                
+                SPAlert.present(message: "Email or Password invalid")
+
                 print (error!)
             } else {
     
@@ -59,6 +63,8 @@ class SignUpViewController: UIViewController {
                      "uid": uid]) {
                         (error:Error?, ref:DatabaseReference) in
                         if let error = error {
+                            
+                            
                             print("Data could not be saved: \(error).")
                         } else {
                             let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
