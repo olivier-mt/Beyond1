@@ -194,6 +194,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
                     "city" : self.city,
                     "description" : self.info,
                     "language" : self.language,
+                    "notif" : "YES"
                     
                     ], merge: true
                 ) { err in

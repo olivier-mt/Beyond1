@@ -27,6 +27,14 @@ class groupOptionsVC: UIViewController {
     var groupName = ""
     var groupID = ""
     var storageRef = Storage.storage()
+    var theNotif = ""
+    let user = Auth.auth().currentUser?.uid
+    
+    var YesOrNot = ""
+
+
+    
+    var db : Firestore!
 
     
     
@@ -42,6 +50,11 @@ class groupOptionsVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        db = Firestore.firestore()
+
+        self.loadData()
+
         
         groupImage.layer.cornerRadius = groupImage.bounds.height / 2
               groupImage.clipsToBounds = true
@@ -67,8 +80,14 @@ class groupOptionsVC: UIViewController {
                                               
                 self.groupImage.image = UIImage(data: data)
         
+                        
+                        
+                        
         
     }
+            
+
+            
     
 
     /*
@@ -83,15 +102,73 @@ class groupOptionsVC: UIViewController {
 
 }
         
+      
+ 
+        
+        
         
     }
     
     @IBAction func notifButtonTap(_ sender: Any) {
         
+
+        
+       
+        
+        if theNotif == "YES"{
+            
+            
+            
+            Messaging.messaging().unsubscribe(fromTopic: self.groupID) { err in
+                if let err = err {
+                    
+                    SPAlert.present(message: "error")
+                    
+                }
+                
+                else {
+                    self.db.collection("FOLLOWING").document("\(self.user!)").collection("GROUP FOLLOWED").document("\(self.groupID)").setData([ "notif": "NO" ], merge: true)
+                    
+                    SPAlert.present(message: "UNsubscribe")
+                    
+                      print("unsubscribed from \(self.groupID) topic")
+                }
+                
+                
+            }
+            
+        }
+        
+        else {
+            
+        
+            
+            Messaging.messaging().subscribe(toTopic: self.groupID) { err in
+                        if let err = err {
+                            
+                            SPAlert.present(message: "error")
+                            
+                        }
+                        
+                        else {
+                            
+                            self.db.collection("FOLLOWING").document("\(self.user!)").collection("GROUP FOLLOWED").document("\(self.groupID)").setData([ "notif": "YES" ], merge: true)
+                            
+                            SPAlert.present(message: "subscribe")
+                            
+                              print("unsubscribed from \(self.groupID) topic")
+                        }
+                        
+                        
+                    }
+            
+            
+            
+            
+        }
         
         
-        
-        Messaging.messaging().unsubscribe(fromTopic: self.groupID) { err in
+    /*    Messaging.messaging().unsubscribe(fromTopic: self.groupID) { err in
             if let err = err {
                 
                 SPAlert.present(message: "subscribe")
@@ -106,11 +183,46 @@ class groupOptionsVC: UIViewController {
             }
             
             
+        }*/
+        
+        
+        
+        
+    }
+    
+    func loadData() {
+        
+        
+        db.collection("FOLLOWING").document("\(user!)").collection("GROUP FOLLOWED").document("\(self.groupID)").addSnapshotListener(includeMetadataChanges: true) { documentSnapshot, error in
+
+            print("on est la")
+            
+           guard let document = documentSnapshot else {
+                   print("Error fetching document: \(error!)")
+                   return
+                 }
+                 guard let data = document.data() else {
+                   print("Document data was empty.")
+                   return
+                 }
+                 print("Current data: \(data)")
+            
+            self.theNotif = data["notif"] as! String
+            
+            print("the notif \(self.theNotif)")
+            
         }
         
         
         
         
+        
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+
     }
     
     

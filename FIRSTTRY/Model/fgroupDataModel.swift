@@ -20,7 +20,7 @@ struct fGroup {
     var city : String
     var language : String
     var description : String
-
+    var notif : String
 
 
     
@@ -31,7 +31,8 @@ struct fGroup {
             "documentID" : documentID,
             "city" : city,
             "language" : language,
-            "description" : description
+            "description" : description,
+            "notif" : notif
         ]
     }
 }
@@ -43,11 +44,12 @@ extension fGroup : DocumentSerializables {
             let documentID = dictionary["documentID"] as? String,
             let city = dictionary["city"] as? String,
             let language = dictionary["language"] as? String,
-            let description = dictionary["description"] as? String
+            let description = dictionary["description"] as? String,
+            let notif = dictionary["notif"] as? String
 
             else {return nil}
         
         
-        self.init( name: name, documentID: documentID, city: city, language: language, description: description )
+        self.init( name: name, documentID: documentID, city: city, language: language, description: description, notif: notif )
     }
 }
