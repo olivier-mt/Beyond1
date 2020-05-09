@@ -29,17 +29,17 @@ class groupOptionsVC: UIViewController {
     var storageRef = Storage.storage()
     var theNotif = ""
     let user = Auth.auth().currentUser?.uid
+    var Thelistener : ListenerRegistration?
+
+    @IBOutlet weak var labelButton: UILabel!
     
-    var YesOrNot = ""
-
-
     
     var db : Firestore!
 
     
     
     
-    
+
     
                                         
                                         
@@ -50,8 +50,8 @@ class groupOptionsVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
         db = Firestore.firestore()
+
 
         self.loadData()
 
@@ -63,10 +63,14 @@ class groupOptionsVC: UIViewController {
         groupNameLabel.text = groupName
         
         
-        
         notifButton.contentMode = .center
         notifButton.imageView?.contentMode = .scaleAspectFit
         notifButton.layer.cornerRadius = notifButton.bounds.height / 2
+        
+     
+        
+        
+        
 
         
         let imagePath = storageRef.reference(withPath:"\(groupID)/resizes/profilImage_300x300.jpg")
@@ -79,14 +83,10 @@ class groupOptionsVC: UIViewController {
                     if let data = data {
                                               
                 self.groupImage.image = UIImage(data: data)
-        
-                        
-                        
-                        
+    
         
     }
             
-
             
     
 
@@ -102,8 +102,7 @@ class groupOptionsVC: UIViewController {
 
 }
         
-      
- 
+
         
         
         
@@ -129,7 +128,9 @@ class groupOptionsVC: UIViewController {
                 else {
                     self.db.collection("FOLLOWING").document("\(self.user!)").collection("GROUP FOLLOWED").document("\(self.groupID)").setData([ "notif": "NO" ], merge: true)
                     
-                    SPAlert.present(message: "UNsubscribe")
+                  //  SPAlert.present(message: "UNsubscribe")
+                    
+                     self.notifButton.backgroundColor = .systemBlue
                     
                       print("unsubscribed from \(self.groupID) topic")
                 }
@@ -152,48 +153,94 @@ class groupOptionsVC: UIViewController {
                         
                         else {
                             
+
+                            
                             self.db.collection("FOLLOWING").document("\(self.user!)").collection("GROUP FOLLOWED").document("\(self.groupID)").setData([ "notif": "YES" ], merge: true)
                             
-                            SPAlert.present(message: "subscribe")
+                           // SPAlert.present(message: "subscribe")
+                            
+                            
+                            if #available(iOS 13.0, *) {
+                                                          self.notifButton.backgroundColor = .systemGray5
+                                                                  } else {
+                                                          self.notifButton.backgroundColor = .lightGray
+                                                                  }
+                            
                             
                               print("unsubscribed from \(self.groupID) topic")
                         }
-                        
-                        
                     }
-            
             
             
             
         }
         
         
-    /*    Messaging.messaging().unsubscribe(fromTopic: self.groupID) { err in
-            if let err = err {
-                
-                SPAlert.present(message: "subscribe")
-                
-            }
-            
-            else {
-                
-                SPAlert.present(message: "UNsubscribe")
-                
-                  print("unsubscribed from \(self.groupID) topic")
-            }
-            
-            
-        }*/
-        
-        
-        
-        
     }
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+
+    }
+    
+    
+    func buttonAspect(){
+           
+           if theNotif == "YES"{
+               
+               if #available(iOS 13.0, *) {
+                   notifButton.backgroundColor = .systemGray5
+               } else {
+                   notifButton.backgroundColor = .lightGray
+               }
+               
+            self.labelButton.text = "mute notifications"
+            if #available(iOS 13.0, *) {
+                let buttonImage = UIImage(systemName: "bell.fill" )
+                self.notifButton.setImage(buttonImage, for: .normal)
+                self.notifButton.tintColor = .black
+
+
+            } else {
+              
+            }
+            
+           }
+               
+           else {
+               
+               notifButton.backgroundColor = .systemBlue
+            
+            self.labelButton.text = "activate notifications"
+
+            
+            if #available(iOS 13.0, *) {
+                let buttonImage = UIImage(systemName: "bell.slash.fill" )
+                
+                self.notifButton.setImage(buttonImage, for: .normal)
+                
+                self.notifButton.tintColor = .black
+
+            } else {
+            
+            }
+
+        
+               
+               
+           }
+           
+       }
+    
+    
+    
+    
     
     func loadData() {
         
         
-        db.collection("FOLLOWING").document("\(user!)").collection("GROUP FOLLOWED").document("\(self.groupID)").addSnapshotListener(includeMetadataChanges: true) { documentSnapshot, error in
+        self.Thelistener =  db.collection("FOLLOWING").document("\(user!)").collection("GROUP FOLLOWED").document("\(self.groupID)").addSnapshotListener(includeMetadataChanges: true) { documentSnapshot, error in
 
             print("on est la")
             
@@ -209,20 +256,21 @@ class groupOptionsVC: UIViewController {
             
             self.theNotif = data["notif"] as! String
             
+            self.buttonAspect()
+
+            
             print("the notif \(self.theNotif)")
             
         }
-        
-        
-        
-        
-        
+    
         
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        
 
+        self.Thelistener!.remove()
+        
+        print("listener removed")
     }
     
     

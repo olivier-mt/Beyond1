@@ -879,7 +879,9 @@
                                     <constraint firstAttribute="height" constant="40" id="ZRs-OH-bJh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="51"/>
-                                <state key="normal" image="heart-tab-icon"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="notifButtonTap:" destination="XS6-ky-xrE" eventType="touchUpInside" id="EUx-lD-AFs"/>
                                 </connections>
@@ -911,6 +913,7 @@
                     <connections>
                         <outlet property="groupImage" destination="3eK-dn-Le4" id="Ym2-ed-byC"/>
                         <outlet property="groupNameLabel" destination="dEs-tX-pCs" id="j2s-hM-b3a"/>
+                        <outlet property="labelButton" destination="vUy-4W-s9n" id="omw-N3-vyH"/>
                         <outlet property="notifButton" destination="kpR-3d-TK6" id="ldv-s8-22a"/>
                     </connections>
                 </viewController>
@@ -1470,7 +1473,6 @@
         <image name="GIO" width="319" height="158"/>
         <image name="backarrow" width="100" height="100"/>
         <image name="group30" width="30" height="30"/>
-        <image name="heart-tab-icon" width="25" height="25"/>
         <image name="heart30" width="30" height="30"/>
         <image name="profil30" width="30" height="30"/>
         <image name="settings30" width="30" height="30"/>
