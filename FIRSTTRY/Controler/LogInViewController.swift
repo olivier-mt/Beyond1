@@ -16,7 +16,9 @@ class LogInViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var logInButton: UIButton!
     // SAVE EMAIL AND PASSWORD
+    
     let userDefault = UserDefaults.standard
 
                  
@@ -24,6 +26,40 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        emailTextField.backgroundColor = UIColor.clear
+        
+        emailTextField.layer.borderWidth = 1
+        emailTextField.layer.borderColor = UIColor.white.cgColor
+        
+        emailTextField.layer.cornerRadius = emailTextField.frame.height / 2
+        emailTextField.layer.shadowColor = UIColor.black.cgColor
+        emailTextField.layer.shadowRadius = 3
+        emailTextField.layer.shadowOpacity = 0.5
+        emailTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "Email",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+        passwordTextField.backgroundColor = UIColor.clear
+        passwordTextField.layer.borderWidth = 1
+        passwordTextField.layer.borderColor = UIColor.white.cgColor
+        passwordTextField.layer.cornerRadius = emailTextField.frame.height / 2
+        passwordTextField.layer.shadowColor = UIColor.black.cgColor
+        passwordTextField.layer.shadowRadius = 3
+        passwordTextField.layer.shadowOpacity = 0.5
+        passwordTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+        
+        logInButton.layer.cornerRadius = emailTextField.frame.height / 2
+        logInButton.layer.shadowColor = UIColor.black.cgColor
+        logInButton.layer.shadowRadius = 3
+        logInButton.layer.shadowOpacity = 0.5
+        logInButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        
+        
+        
         // Do any additional setup after loading the view.
     }
     

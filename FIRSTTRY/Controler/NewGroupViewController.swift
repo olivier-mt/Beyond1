@@ -80,6 +80,10 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
         
      
         
+        creationButton.layer.cornerRadius = 5
+        creationButton.layer.borderWidth = 2
+        creationButton.layer.borderColor = UIColor.lightGray.cgColor
+        
     
     }
     

@@ -34,12 +34,17 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     var info = ""
     var language = ""
     var city = ""
-    
+
     var fromNotif = ""
     
     
     var ref: DatabaseReference!
     
+    
+    
+    
+    
+
     
     
     //keyboard pb
@@ -67,6 +72,12 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         tabBarController?.tabBar.isHidden = true
         
         messageTextField.delegate = self
+        
+        
+        messageTextField.layer.cornerRadius = 10
+       // messageTextField.layer.borderWidth = 2
+       // messageTextField.layer.borderColor = UIColor.lightGray.cgColor
+        
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped)  )
         
@@ -123,11 +134,11 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     @objc func keyboardWillShow(notification: NSNotification) {
           if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
               if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height + 0.5
+                 self.view.frame.origin.y = 0 - keyboardSize.height
                 
-        
-
               }
+            
+             
           }
       }
 
@@ -139,14 +150,40 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
           }
       }
     
+
     
     
     let user =  Auth.auth().currentUser?.uid
     
     
+    
     @objc func tapButton2 (){
         
-        performSegue(withIdentifier: "toGroupOption", sender: Any.self)
+        
+        
+      let thePath = self.db.collection("FOLLOWING").document("\(self.user!)").collection("GROUP FOLLOWED").document("\(self.finalGroup)")
+        
+        thePath.getDocument { (document, error) in
+        if let document = document, document.exists {
+            let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+            print("Document data: \(dataDescription)")
+            self.performSegue(withIdentifier: "toGroupOption", sender: (Any).self)
+
+            
+        } else {
+            print("Document does not exist")
+            SPAlert.present(title: "Access Denied", message: "Follow this group to get access to options", preset: .error)
+            
+            
+        }
+    
+    }
+        
+        
+        
+        
+
+        
     }
   
     
@@ -185,7 +222,6 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
                 Messaging.messaging().subscribe(toTopic: self.finalGroup) { error in
                     print("Subscribed to \(self.finalGroup) topic")
                 }
-                
                 
                 
                 docRef.setData([
@@ -255,14 +291,19 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         if message.sender == Auth.auth().currentUser?.email{
             
             
-            cell.messageBubble.backgroundColor = UIColor(red:0.53, green:0.68, blue:0.94, alpha:1.0)
+           
+            cell.messageBubble.backgroundColor = UIColor(red:0.30, green:0.68, blue:1.5, alpha:1.0)
+           
             cell.messageBody.textColor = UIColor.white
             cell.timeLabel.textColor = UIColor.white
             cell.messageBody.backgroundColor = cell.messageBubble.backgroundColor
             
             print("\(message.sender) et \(Auth.auth().currentUser?.email)")
         } else {
+            
             cell.messageBubble.backgroundColor = UIColor(red:0.94, green:0.94, blue:0.94, alpha:1.0)
+            
+            cell.messageBubble.layer.borderColor = UIColor.lightGray.cgColor
             cell.messageBody.textColor = UIColor.black
             cell.timeLabel.textColor = UIColor.black
             cell.messageBody.backgroundColor = cell.messageBubble.backgroundColor
@@ -283,11 +324,6 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         cell.usernameLabel.text = messageArray[indexPath.row].name
         cell.timeLabel.text = dateToShow
         
-        
-        
-        
-        
-      
         
       //  print("\(dateToShow)")
         
@@ -317,8 +353,10 @@ self.messageTextField.endEditing(true)
     }
     
     
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
+        self.view.frame.origin.y = 0
         UIView.animate(withDuration: 0.5){
      
     /*self.heightConstraint.constant = 350
@@ -380,8 +418,6 @@ self.messageTextField.endEditing(true)
         })
         
         
-        
-
     }
     
     

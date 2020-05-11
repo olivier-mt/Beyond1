@@ -48,6 +48,11 @@ class ProfilViewController: UIViewController, UITextFieldDelegate{
         
         currentNameLabel.text = (Auth.auth().currentUser!.displayName as! String)
 
+        
+        saveButton.layer.cornerRadius = 5
+        saveButton.layer.borderWidth = 2
+        saveButton.layer.borderColor = UIColor.lightGray.cgColor
+        
         self.title = "Profil settings"
         // Do any additional setup after loading the view.
         

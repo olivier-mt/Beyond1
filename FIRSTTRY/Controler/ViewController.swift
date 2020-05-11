@@ -10,11 +10,35 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var logInButton: UIButton!
+    
+    @IBOutlet weak var signUpButton: UIButton!
+    
+    
+    
     let userDefault = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        logInButton.layer.cornerRadius = logInButton.frame.height / 2
+        logInButton.layer.shadowColor = UIColor.black.cgColor
+        logInButton.layer.shadowRadius = 3
+        logInButton.layer.shadowOpacity = 0.5
+        logInButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        
+        
+        
+        
+        
+        
+        
+        
+        signUpButton.layer.cornerRadius = logInButton.frame.height / 2
+        signUpButton.layer.shadowColor = UIColor.black.cgColor
+               signUpButton.layer.shadowRadius = 3
+               signUpButton.layer.shadowOpacity = 0.5
+               signUpButton.layer.shadowOffset = CGSize(width: 2, height: 2)
         // Do any additional setup after loading the view.
     }
   

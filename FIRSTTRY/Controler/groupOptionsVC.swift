@@ -30,6 +30,7 @@ class groupOptionsVC: UIViewController {
     var theNotif = ""
     let user = Auth.auth().currentUser?.uid
     var Thelistener : ListenerRegistration?
+    var buttonImage: UIImage?
 
     @IBOutlet weak var labelButton: UILabel!
     
@@ -117,20 +118,18 @@ class groupOptionsVC: UIViewController {
         if theNotif == "YES"{
             
             
-            
             Messaging.messaging().unsubscribe(fromTopic: self.groupID) { err in
                 if let err = err {
                     
                     SPAlert.present(message: "error")
-                    
                 }
                 
                 else {
                     self.db.collection("FOLLOWING").document("\(self.user!)").collection("GROUP FOLLOWED").document("\(self.groupID)").setData([ "notif": "NO" ], merge: true)
                     
-                  //  SPAlert.present(message: "UNsubscribe")
-                    
-                     self.notifButton.backgroundColor = .systemBlue
+                  if #available(iOS 13.0, *) {
+                    self.notifButton.backgroundColor = .systemBlue }
+                                            else {   self.notifButton.backgroundColor = .blue   }
                     
                       print("unsubscribed from \(self.groupID) topic")
                 }
@@ -161,10 +160,8 @@ class groupOptionsVC: UIViewController {
                             
                             
                             if #available(iOS 13.0, *) {
-                                                          self.notifButton.backgroundColor = .systemGray5
-                                                                  } else {
-                                                          self.notifButton.backgroundColor = .lightGray
-                                                                  }
+                    self.notifButton.backgroundColor = .systemGray5 }
+                            else {   self.notifButton.backgroundColor = .lightGray   }
                             
                             
                               print("unsubscribed from \(self.groupID) topic")
@@ -191,44 +188,62 @@ class groupOptionsVC: UIViewController {
                
                if #available(iOS 13.0, *) {
                    notifButton.backgroundColor = .systemGray5
+                   
+                self.buttonImage = UIImage(systemName:"bell.fill" )
+                self.notifButton.setImage(buttonImage, for: .normal)
+                notifButton.backgroundColor = .systemGray5
+
+                
                } else {
-                   notifButton.backgroundColor = .lightGray
+                let image = UIImage(named:"iconBell")
+                self.notifButton.setBackgroundImage(image, for: .normal)
+                notifButton.backgroundColor = .lightGray
+
                }
                
+
             self.labelButton.text = "mute notifications"
-            if #available(iOS 13.0, *) {
-                let buttonImage = UIImage(systemName: "bell.fill" )
-                self.notifButton.setImage(buttonImage, for: .normal)
+          
+              //  self.buttonImage = UIImage(systemName: "hear30" )
+              //  self.notifButton.setImage(buttonImage, for: .normal)
+                
+               
+                
                 self.notifButton.tintColor = .black
 
 
-            } else {
-              
-            }
+            
             
            }
                
            else {
                
-               notifButton.backgroundColor = .systemBlue
             
             self.labelButton.text = "activate notifications"
 
             
             if #available(iOS 13.0, *) {
-                let buttonImage = UIImage(systemName: "bell.slash.fill" )
                 
+                self.buttonImage = UIImage(systemName: "bell.slash.fill" )
                 self.notifButton.setImage(buttonImage, for: .normal)
-                
-                self.notifButton.tintColor = .black
+                notifButton.backgroundColor = .systemBlue
+
+               
 
             } else {
-            
-            }
+                
 
-        
-               
-               
+                let image = UIImage(named:"iconBellSlash")
+                self.notifButton.setBackgroundImage(image, for: .normal)
+                notifButton.backgroundColor = .magenta
+
+                
+            }
+            
+                           
+                           self.notifButton.tintColor = .black
+            
+
            }
            
        }

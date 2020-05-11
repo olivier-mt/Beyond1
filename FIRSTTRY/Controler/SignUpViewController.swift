@@ -18,6 +18,8 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var UserNameTextfield: UITextField!
     
+    @IBOutlet weak var signUpButton: UIButton!
+   
     var ref: DatabaseReference!
     
     
@@ -27,6 +29,61 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
         
          ref = Database.database().reference()
+        
+        
+        signUpButton.layer.cornerRadius = signUpButton.frame.height / 2
+        signUpButton.layer.shadowColor = UIColor.black.cgColor
+        signUpButton.layer.shadowRadius = 3
+        signUpButton.layer.shadowOpacity = 0.5
+        signUpButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        
+        
+        
+        email.backgroundColor = UIColor.clear
+        email.layer.borderWidth = 1
+        email.layer.borderColor = UIColor.white.cgColor
+        email.layer.cornerRadius = email.frame.height / 2
+        email.layer.shadowColor = UIColor.black.cgColor
+        email.layer.shadowRadius = 3
+        email.layer.shadowOpacity = 0.5
+        email.layer.shadowOffset = CGSize(width: 2, height: 2)
+        email.attributedPlaceholder = NSAttributedString(string: "Email address",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+        password.backgroundColor = UIColor.clear
+        password.layer.borderWidth = 1
+        password.layer.borderColor = UIColor.white.cgColor
+        password.layer.cornerRadius = email.frame.height / 2
+        password.layer.shadowColor = UIColor.black.cgColor
+        password.layer.shadowRadius = 3
+        password.layer.shadowOpacity = 0.5
+        password.layer.shadowOffset = CGSize(width: 2, height: 2)
+        password.attributedPlaceholder = NSAttributedString(string: "New Password",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+        UserNameTextfield.backgroundColor = UIColor.clear
+        UserNameTextfield.layer.borderWidth = 1
+        UserNameTextfield.layer.borderColor = UIColor.white.cgColor
+        UserNameTextfield.layer.cornerRadius = email.frame.height / 2
+        UserNameTextfield.layer.shadowColor = UIColor.black.cgColor
+        UserNameTextfield.layer.shadowRadius = 3
+        UserNameTextfield.layer.shadowOpacity = 0.5
+        UserNameTextfield.layer.shadowOffset = CGSize(width: 2, height: 2)
+        UserNameTextfield.attributedPlaceholder = NSAttributedString(string: "New Username",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
        
 
