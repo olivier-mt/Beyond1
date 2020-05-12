@@ -10,6 +10,17 @@ import UIKit
 import Firebase
 import SPAlert
 
+
+
+
+
+
+
+
+
+
+
+
 class LogInViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
@@ -18,14 +29,18 @@ class LogInViewController: UIViewController {
     
     @IBOutlet weak var logInButton: UIButton!
     // SAVE EMAIL AND PASSWORD
+    @IBOutlet weak var returnButton: UIButton!
     
     let userDefault = UserDefaults.standard
 
                  
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        HideKeyboard()
         
         emailTextField.backgroundColor = UIColor.clear
         
@@ -58,6 +73,16 @@ class LogInViewController: UIViewController {
         logInButton.layer.shadowOpacity = 0.5
         logInButton.layer.shadowOffset = CGSize(width: 2, height: 2)
         
+        
+        
+        let origImage = UIImage(named: "backarrow")
+        let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
+        returnButton.setImage(tintedImage, for: .normal)
+        returnButton.tintColor = .white
+        returnButton.layer.shadowColor = UIColor.black.cgColor
+        returnButton.layer.shadowOpacity = 0.5
+        returnButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+               
         
         
         // Do any additional setup after loading the view.

@@ -23,9 +23,9 @@ class cityViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         UIImage(named: "london")!,
         UIImage(named: "manchester")!,
         UIImage(named: "amsterdam")!,
-        UIImage(named: "utrecht")!,
+        UIImage(named: "utrecht2")!,
         UIImage(named: "barcelona")!,
-        UIImage(named: "madrid")!,
+        UIImage(named: "madrid-Night")!,
          ]
     
     

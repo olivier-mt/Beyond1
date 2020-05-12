@@ -20,6 +20,7 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var signUpButton: UIButton!
    
+    @IBOutlet weak var returnButton: UIButton!
     var ref: DatabaseReference!
     
     
@@ -27,6 +28,9 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        HideKeyboard()
+        
         
          ref = Database.database().reference()
         
@@ -75,7 +79,13 @@ class SignUpViewController: UIViewController {
         
         
         
-        
+        let origImage = UIImage(named: "backarrow")
+        let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
+        returnButton.setImage(tintedImage, for: .normal)
+        returnButton.tintColor = .white
+        returnButton.layer.shadowColor = UIColor.black.cgColor
+        returnButton.layer.shadowOpacity = 0.5
+        returnButton.layer.shadowOffset = CGSize(width: 2, height: 2)
         
         
         

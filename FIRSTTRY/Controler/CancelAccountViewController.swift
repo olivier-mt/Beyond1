@@ -25,7 +25,8 @@ class CancelAccountViewController: UIViewController {
         super.viewDidLoad()
         
 
-        
+        HideKeyboard()
+
 
         // Do any additional setup after loading the view.
     }

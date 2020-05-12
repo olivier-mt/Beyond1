@@ -37,6 +37,9 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
 
     var fromNotif = ""
     
+  //  var Gdescription = ""
+    var Glanguage = ""
+    var Gcity = ""
     
     var ref: DatabaseReference!
     
@@ -64,6 +67,8 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         self.title = groupName
 
         
+        self.loadData()
+
        // self.ref?.child("conversation").child(finalGroup).childByAutoId().setValue("premier message")
          print("here Is the final group \(finalGroup)")
          print("the groupe name is \(groupName)")
@@ -74,8 +79,12 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         messageTextField.delegate = self
         
         
-        messageTextField.layer.cornerRadius = 10
-       // messageTextField.layer.borderWidth = 2
+        messageTextField.layer.borderWidth = 1
+        messageTextField.layer.borderColor = UIColor.gray.cgColor
+         
+        messageTextField.layer.cornerRadius = messageTextField.frame.height / 2
+        
+        // messageTextField.layer.borderWidth = 2
        // messageTextField.layer.borderColor = UIColor.lightGray.cgColor
         
         
@@ -107,12 +116,28 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
                
         
         // Set up righ bar button
-        let button1 = UIBarButtonItem(image: UIImage(named: "heart30"), style: .plain, target: self, action: #selector(tapButton)) // action:#selector(Class.MethodName) for swift 3
-          //  self.navigationItem.rightBarButtonItem = button1
         
+        
+      
+        
+        
+    //    let barButton = UIBarButtonItem(customView: iconButton)
+   //     iconButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+
+    //    navigationItem.rightBarButtonItem = barButton
+       
+        
+        
+        
+      //  let button1 = UIBarButtonItem(image: UIImage(named: "icons8-coeurs-30"), style: .plain, //target:self, action: #selector(tapButton))
+            //    action:#selector(Class.MethodName) for swift 3
+      //      self.navigationItem.rightBarButtonItem = button1
+        
+        
+        let button1 = UIBarButtonItem(image: UIImage(named: "icons8-coeurs-30"), style: .plain, target: self, action: #selector(tapButton))
         
         let button2 = UIBarButtonItem(image: UIImage(named: "menu-30"), style: .plain, target: self, action: #selector(tapButton2)) // action:#selector(Class.MethodName) for swift 3
-        self.navigationItem.rightBarButtonItems = [button2, button1]
+        self.navigationItem.rightBarButtonItems = [button2,button1]
         
         
         configureTableView()
@@ -157,6 +182,39 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     
     
     
+    
+    
+    func loadData() {
+        
+        
+        self.db.collection("GROUPS").document("\(self.finalGroup)").getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("ICI Document data: \(dataDescription)")
+                
+                let data = document.data()
+                
+                self.info = data?["description"] as! String
+                
+                self.city = data?["city"] as! String
+                
+                self.language = data?["language"] as! String
+               
+                
+            } else {
+                print("Document does not exist")
+            }
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     @objc func tapButton2 (){
         
         
@@ -178,6 +236,22 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         }
     
     }
+        
+        
+    // GET GROUP DATA
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -218,13 +292,18 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
             else {
                 print("Document does not exist")
                 
+
+                
                 //TOPIC subscription
                 Messaging.messaging().subscribe(toTopic: self.finalGroup) { error in
                     print("Subscribed to \(self.finalGroup) topic")
+                    
                 }
                 
                 
-                docRef.setData([
+                
+                docRef.setData(
+                    [
                     "name": self.groupName,
                     "documentID": self.finalGroup,
                     "city" : self.city,

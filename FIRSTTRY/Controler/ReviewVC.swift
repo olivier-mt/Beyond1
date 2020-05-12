@@ -24,6 +24,9 @@ class ReviewVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
         
+        HideKeyboard()
+
+        
         Textview.delegate = self
       
         Textview.text = "Feel free to write your message"
