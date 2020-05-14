@@ -74,14 +74,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
    func goAnotherVC() {
       
-  
        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                  let conversationVC = storyboard.instantiateViewController(withIdentifier: "conversationVC") as! ConversationViewController
                  let navigationController = UINavigationController.init(rootViewController: conversationVC)
                  self.window?.rootViewController = navigationController
                  self.window?.makeKeyAndVisible()
     
-       
    }
     
 

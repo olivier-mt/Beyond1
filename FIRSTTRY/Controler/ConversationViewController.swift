@@ -18,12 +18,14 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     var db : Firestore!
 
   
+    @IBOutlet weak var beautifulView: UIView!
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var ConvertationTableView: UITableView!
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
     
+    @IBOutlet weak var writtingView: UIView!
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
@@ -79,10 +81,15 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         messageTextField.delegate = self
         
         
-        messageTextField.layer.borderWidth = 1
-        messageTextField.layer.borderColor = UIColor.gray.cgColor
+        
+        messageTextField.layer.borderColor = UIColor.lightGray.cgColor
          
-        messageTextField.layer.cornerRadius = messageTextField.frame.height / 2
+        beautifulView.layer.cornerRadius = messageTextField.frame.height / 2
+        
+        
+        writtingView.layer.borderColor = UIColor.lightGray.cgColor
+        
+         writtingView.layer.borderWidth = 1
         
         // messageTextField.layer.borderWidth = 2
        // messageTextField.layer.borderColor = UIColor.lightGray.cgColor

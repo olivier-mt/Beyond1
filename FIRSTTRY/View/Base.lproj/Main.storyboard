@@ -21,7 +21,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dna-XG-nLr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1538" y="152"/>
+            <point key="canvasLocation" x="-1652" y="-102"/>
         </scene>
         <!--login_signup-->
         <scene sceneID="tne-QT-ifu">
@@ -1060,24 +1060,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dP1-5u-M9g" userLabel="writting view">
                                 <rect key="frame" x="0.0" y="799" width="414" height="63"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your message ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LZL-q0-6AU">
-                                        <rect key="frame" x="8" y="8" width="314" height="40"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="314" id="Hbp-Up-fwh"/>
-                                            <constraint firstAttribute="height" constant="40" id="Nhf-rF-GAt"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDT-Di-icg">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDT-Di-icg" userLabel="ButtonView">
                                         <rect key="frame" x="325" y="0.0" width="86" height="63"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shc-KL-Ucy">
-                                                <rect key="frame" x="21" y="14.5" width="44" height="34"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="44" id="RcU-AY-Jrk"/>
-                                                </constraints>
+                                                <rect key="frame" x="23" y="14.5" width="40" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="send">
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1089,8 +1076,30 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="Shc-KL-Ucy" firstAttribute="centerX" secondItem="LDT-Di-icg" secondAttribute="centerX" id="RY1-L6-qbP"/>
+                                            <constraint firstItem="Shc-KL-Ucy" firstAttribute="centerX" secondItem="LDT-Di-icg" secondAttribute="centerX" id="Jq2-5W-9ct"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="86" id="fi1-D2-B5I"/>
                                             <constraint firstItem="Shc-KL-Ucy" firstAttribute="centerY" secondItem="LDT-Di-icg" secondAttribute="centerY" id="x3F-UZ-7jB"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fmi-sF-3ra" userLabel="greenView">
+                                        <rect key="frame" x="8" y="14.5" width="317" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chat " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C84-Na-FcZ">
+                                                <rect key="frame" x="12" y="0.0" width="293" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="Jii-yR-CDG"/>
+                                                    <constraint firstAttribute="width" constant="293" id="Nii-g5-1Jb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="C84-Na-FcZ" firstAttribute="centerY" secondItem="Fmi-sF-3ra" secondAttribute="centerY" id="1aq-fr-jST"/>
+                                            <constraint firstItem="C84-Na-FcZ" firstAttribute="leading" secondItem="Fmi-sF-3ra" secondAttribute="leading" constant="12" id="7dx-Nb-UfY"/>
+                                            <constraint firstAttribute="height" constant="34" id="D6h-7Z-qtc"/>
+                                            <constraint firstAttribute="trailing" secondItem="C84-Na-FcZ" secondAttribute="trailing" constant="12" id="r0h-hF-hog"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1098,12 +1107,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="0zZ-YV-qjE"/>
                                     <constraint firstAttribute="trailing" secondItem="LDT-Di-icg" secondAttribute="trailing" constant="3" id="8F0-AK-NbI"/>
-                                    <constraint firstAttribute="bottom" secondItem="LZL-q0-6AU" secondAttribute="bottom" constant="15" id="DY9-Nf-kiT"/>
                                     <constraint firstAttribute="bottom" secondItem="LDT-Di-icg" secondAttribute="bottom" id="EW3-Co-sb6"/>
-                                    <constraint firstItem="LDT-Di-icg" firstAttribute="leading" secondItem="LZL-q0-6AU" secondAttribute="trailing" constant="3" id="SRs-ah-iRk"/>
                                     <constraint firstItem="LDT-Di-icg" firstAttribute="top" secondItem="dP1-5u-M9g" secondAttribute="top" id="aza-BJ-DOS"/>
-                                    <constraint firstItem="LZL-q0-6AU" firstAttribute="leading" secondItem="dP1-5u-M9g" secondAttribute="leading" constant="8" id="u5z-nO-OPy"/>
-                                    <constraint firstItem="LZL-q0-6AU" firstAttribute="top" secondItem="dP1-5u-M9g" secondAttribute="top" constant="8" id="yYB-Cn-AV7"/>
+                                    <constraint firstItem="LDT-Di-icg" firstAttribute="leading" secondItem="Fmi-sF-3ra" secondAttribute="trailing" id="gTm-HD-xOG"/>
+                                    <constraint firstItem="Fmi-sF-3ra" firstAttribute="centerY" secondItem="dP1-5u-M9g" secondAttribute="centerY" id="uQq-9H-PcN"/>
+                                    <constraint firstItem="Fmi-sF-3ra" firstAttribute="leading" secondItem="dP1-5u-M9g" secondAttribute="leading" constant="8" id="whA-6c-Xq0"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1125,9 +1133,11 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="ConvertationTableView" destination="xOW-YE-dQ0" id="9H4-a7-TGb"/>
+                        <outlet property="beautifulView" destination="Fmi-sF-3ra" id="8iO-2s-72N"/>
                         <outlet property="heightConstraint" destination="0zZ-YV-qjE" id="6LH-s0-Q3j"/>
-                        <outlet property="messageTextField" destination="LZL-q0-6AU" id="LAf-j1-ftv"/>
+                        <outlet property="messageTextField" destination="C84-Na-FcZ" id="jw6-IL-7Qd"/>
                         <outlet property="sendButton" destination="Shc-KL-Ucy" id="owi-32-w4w"/>
+                        <outlet property="writtingView" destination="dP1-5u-M9g" id="MTp-lS-n9t"/>
                         <segue destination="XS6-ky-xrE" kind="show" identifier="toGroupOption" id="SEW-26-1v0"/>
                     </connections>
                 </viewController>
@@ -1668,7 +1678,7 @@
         <segue reference="tbJ-4V-qYh"/>
         <segue reference="Vnd-OV-9xr"/>
         <segue reference="QWs-zl-rKJ"/>
-        <segue reference="fQt-iI-CP2"/>
+        <segue reference="bWI-5s-jrq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="GIO" width="319" height="158"/>
