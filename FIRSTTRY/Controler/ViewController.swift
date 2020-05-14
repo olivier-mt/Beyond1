@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     
     
-    let userDefault = UserDefaults.standard
+//    let userDefault = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,14 +44,14 @@ class ViewController: UIViewController {
   
     // LOGGED IN 
     
-    override func viewDidAppear(_ animated: Bool) {
+  //  override func viewDidAppear(_ animated: Bool) {
         
-        if userDefault.bool(forKey: "usersignedin") {
-                   performSegue(withIdentifier: "firstToTab", sender: self)
-                   }
-        else {}
+     //   if userDefault.bool(forKey: "usersignedin") {
+      //             performSegue(withIdentifier: "firstToTab", sender: self)
+         //          }
+  //      else {}
     
-}
+//}
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

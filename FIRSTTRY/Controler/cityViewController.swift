@@ -27,7 +27,7 @@ class cityViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         UIImage(named: "barcelona")!,
         UIImage(named: "madrid-Night")!,
          ]
-    
+    let userDefault = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()

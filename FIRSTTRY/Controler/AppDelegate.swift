@@ -50,22 +50,83 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 
         
+        // USER DEFAULT
+        
+        
+     
+        
         
         if let option = launchOptions {
             let info = option[UIApplication.LaunchOptionsKey.remoteNotification]
             if (info != nil) {
         }}
         
+
+        
+        FirebaseApp.configure()
+        
+        // OPEN CITY VC  IF USER IS LOGGED IN 
+        
+        if userDefault.bool(forKey: "usersignedin") {
+                                    
+                                    
+                                    let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                       
+                                        let cityVC = storyboard.instantiateViewController(withIdentifier: "cityViewController") as! cityViewController
+                                           
+                                       let tabBarVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC") as! UITabBarController
+                                           
+                                       
+                                       window?.rootViewController = tabBarVC
+                                       
+                                       
+                                        tabBarVC.selectedViewController = tabBarVC.viewControllers![0]
+
+                                       
+                                       let navController = tabBarVC.selectedViewController as? UINavigationController
+                                           
+                                      
+
+                                    navController?.pushViewController(cityVC, animated: false)
+                                           
+                                    
+                                                 }
+                                       else {}
+             
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        let myDatabase = Database.database().reference()
+        return true
+   
         
       
         
         
         
-        FirebaseApp.configure()
         
-        let myDatabase = Database.database().reference()
-        return true
-   
+        // test
+        
+        
+     
+        
+        
+        
+        
+        
+        
+        
         
         
     }
@@ -95,10 +156,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
+     
+        
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        
+        
+        
+        
+        // MOVE TO CITYVC IF SIGNED IN
+                    
+         /*           if userDefault.bool(forKey: "usersignedin") {
+                        
+                        
+                        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                           
+                            let cityVC = storyboard.instantiateViewController(withIdentifier: "cityViewController") as! cityViewController
+                               
+                           let tabBarVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC") as! UITabBarController
+                               
+                           
+                           window?.rootViewController = tabBarVC
+                           
+                           
+                            tabBarVC.selectedViewController = tabBarVC.viewControllers![0]
+
+                           
+                           let navController = tabBarVC.selectedViewController as? UINavigationController
+                               
+                          
+
+                        navController?.pushViewController(cityVC, animated: false)
+                               
+                        
+                                     }
+                           else {}  */
+        
+        
+        
+        
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -179,6 +279,8 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     // Change this to your preferred presentation option
     completionHandler([])
   }
+    
+    
 
   func userNotificationCenter(_ center: UNUserNotificationCenter,
                               didReceive response: UNNotificationResponse,
@@ -208,28 +310,22 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     
     let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
-   // let navigationVC = storyboard.instantiateViewController(withIdentifier: "ROOTVC") as? UINavigationController
+  
     
      let conversationVC = storyboard.instantiateViewController(withIdentifier: "conversationVC") as! ConversationViewController
         
-  //  let secondNavController = storyboard.instantiateViewController(withIdentifier: "secondNavController") as! UINavigationController
-
-  //  let firstNavController = storyboard.instantiateViewController(withIdentifier: "ROOTVC") as! UINavigationController
+ 
     
      let secondNavController = storyboard.instantiateViewController(withIdentifier: "secondNavController") as! UINavigationController
     
     let tabBarVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC") as! UITabBarController
         
-          //  conversationVC.finalGroup = gid
-        //    conversationVC.groupName = gname
     
     window?.rootViewController = tabBarVC
     
     
     tabBarVC.selectedViewController = tabBarVC.viewControllers![1]
 
-
-    //secondNavController.pushViewController(conversationVC, animated: false)
     
     let navController = tabBarVC.selectedViewController as? UINavigationController
         
@@ -243,50 +339,15 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
 
        completionHandler()
     
- //   for child in (firstNavController.children) {
- //       child.restorationIdentifier = "secondNavController"/*{
- //       let FollowedViewController = (child.children[0]) as! FollowedViewController
- //       let conversationVC = storyboard.instantiateViewController(withIdentifier: "conversationVC") as! ConversationViewController
-        
-
-  //     conversationVC.finalGroup = gid
-
-       // FollowedViewController.navigationController!.pushViewController(conversationVC, animated: false)
-        
-   //     print("done")*/
+ 
         
        }
-        
-
-    
-    
-  // secondNavController.pushViewController(conversationVC, animated: false)
-
-    
-    
-    
-    
+ 
     }
     
 
         
-        //navController.pushViewController(conversationVC, animated: true)
-    
-
-
-    
-    
-    
-                 //  let navigationController = UINavigationController.init(rootViewController: conversationVC)
-                 //  self.window?.rootViewController = navigationController
-                 //  self.window?.makeKeyAndVisible()
-    
-    // SPECIFIED VC FROM PUSH NOTIFICATION
-    
-
- 
-   
-//}
+      
   
 
 
@@ -312,16 +373,7 @@ extension AppDelegate : MessagingDelegate {
     
 }
 
-/* extension AppDelegate : MessagingDelegate {
-      
-      func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        print("Firebase registration token: \(fcmToken)")
 
-        let dataDict:[String: String] = ["token": fcmToken]
-        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-        // TODO: If necessary send token to application server.
-        // Note: This callback is fired at each app startup and whenever a new token is generated.
-      }*/
 
 
 
