@@ -37,6 +37,8 @@ class GroupSViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var inCellGroupId = ""
     var inCellGroupName = ""
     
+    var fromNGVC: Bool?
+    
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
         loadData()
@@ -86,6 +88,12 @@ class GroupSViewController: UIViewController, UITableViewDelegate, UITableViewDa
         db = Firestore.firestore()
         
         
+        
+        if fromNGVC == true {
+            print("I confirme its true")
+        } else {
+            print("it's WRONG")
+        }
         
         
         

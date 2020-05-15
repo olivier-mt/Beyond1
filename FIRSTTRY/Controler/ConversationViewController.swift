@@ -10,9 +10,10 @@ import UIKit
 import FirebaseDatabase
 import Firebase
 import SPAlert
+import UserNotificationsUI
 
 
-class ConversationViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
+class ConversationViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, UNUserNotificationCenterDelegate {
     
     var messageArray : [Message] = [Message]()
     var db : Firestore!
@@ -30,18 +31,28 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     
+    @IBOutlet weak var emptyArrayView: UIView!
+    
+    
+  //  @IBOutlet weak var emptyArrayLabel: UILabel!
+    
+    
+    
+    
     
     var finalGroup = ""
-    var groupName = ""
-    var info = ""
-    var language = ""
-    var city = ""
+       var groupName = ""
+       var info = ""
+       var language = ""
+       var city = ""
 
-    var fromNotif = ""
+       var fromNotif = ""
+       
+     //  var Gdescription = ""
+       var Glanguage = ""
+       var Gcity = ""
+       
     
-  //  var Gdescription = ""
-    var Glanguage = ""
-    var Gcity = ""
     
     var ref: DatabaseReference!
     
@@ -69,9 +80,14 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         self.title = groupName
 
         
+       
+        
         self.loadData()
 
        // self.ref?.child("conversation").child(finalGroup).childByAutoId().setValue("premier message")
+        
+         
+        
          print("here Is the final group \(finalGroup)")
          print("the groupe name is \(groupName)")
         
@@ -100,6 +116,16 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         ConvertationTableView.addGestureRecognizer(tapGesture)
         
         ConvertationTableView.register(UINib(nibName: "CustomMessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         //keyboard /////////////////////////////////////////////////////////////
@@ -151,6 +177,20 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         retrieveMessages()
         
         
+        
+        
+        
+        if messageArray.isEmpty{
+            
+            ConvertationTableView.backgroundView = emptyArrayView
+            // emptyArrayLabel.text = "CETTE ARRAY NE CONTIENT PAS DE MESSAGES "
+            
+        }
+        else {
+            
+        }
+        
+        
     }
     
     
@@ -189,7 +229,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     
     
     
-    
+    // Load data from
     
     func loadData() {
         
@@ -247,22 +287,6 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
     // GET GROUP DATA
         
-        
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
 
         
     }
@@ -300,6 +324,33 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
                 print("Document does not exist")
                 
 
+                
+                //Test demande notification
+                
+                
+              
+                
+                let center = UNUserNotificationCenter.current()
+                center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                    
+                    if let error = error {
+                        // Handle the error here.
+                    }
+                    
+                    // Enable or disable features based on the authorization.
+                }
+                
+                
+                
+                
+                
+
+                    
+                
+                
+                
+                
+                
                 
                 //TOPIC subscription
                 Messaging.messaging().subscribe(toTopic: self.finalGroup) { error in
@@ -365,13 +416,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
        let message = messageArray[indexPath.row]
         
-        
-    
-        
-        
-        
-        
-        
+
     // CHANGE TEXT ACCORDING TO SENDER
         
         if message.sender == Auth.auth().currentUser?.email{
@@ -471,13 +516,11 @@ self.messageTextField.endEditing(true)
             
             let snapshotValue = snapshot.value as! Dictionary<String,Any>
             
-            let text = snapshotValue["MessageBody"]!
             
-            
-            
+          
             let message = Message()
             
-            message.messageBody = text as! String
+            message.messageBody = snapshotValue["MessageBody"]! as! String
             message.name =  snapshotValue["name"]! as! String
             message.sender = snapshotValue["sender"]! as! String
             message.createdAt = snapshotValue["createdAt"]! as! Int
@@ -485,11 +528,12 @@ self.messageTextField.endEditing(true)
             print("the timestamp is \(message.createdAt)")
             
             
-            
             self.messageArray.append(message)
+
+  
+           self.configureTableView()
+           self.ConvertationTableView.reloadData()
             
-            self.configureTableView()
-            self.ConvertationTableView.reloadData()
             
             // Scroll down when receive a message
                   
@@ -545,22 +589,25 @@ self.messageTextField.endEditing(true)
             }
             
      //Scroll down when you send a message
-            
-    
-                
+  
                 let numberOfSections = self.ConvertationTableView.numberOfSections
                                   
                                   let numberOfMessages = self.messageArray.count
                            
                        let indexPath = IndexPath(row: numberOfMessages-1 , section: numberOfSections-1)
                                      self.ConvertationTableView.scrollToRow(at: indexPath, at: .middle, animated: true)
-                
-                
-           
+  
             
             }
             
     }
+    
+    
+        
+        
+        
+        
+    
     
     
     

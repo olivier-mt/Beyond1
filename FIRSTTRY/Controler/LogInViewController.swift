@@ -93,8 +93,7 @@ class LogInViewController: UIViewController {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if error != nil {
                 print (error!)
-                SPAlert.present(title: "Email or Password error", preset: .error)
-
+                SPAlert.present(message: "Email or Password error")
             } else {
                 print("sign in successful")
 

@@ -140,6 +140,8 @@ class SignUpViewController: UIViewController {
                             }
                             print("Data saved successfully! \(String(describing: user.displayName))")
             
+
+                            
                         }
                     }
                     

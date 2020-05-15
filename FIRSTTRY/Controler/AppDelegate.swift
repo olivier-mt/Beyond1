@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         UNUserNotificationCenter.current().delegate = self
-        
+        /*
         
         if #available(iOS 10.0, *) {
         // For iOS 10 display notification (sent via APNS)
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
           application.registerUserNotificationSettings(settings)
         }
-        
+        */
     
         Messaging.messaging().delegate = self
     
@@ -61,11 +61,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if (info != nil) {
         }}
         
+        
 
         
         FirebaseApp.configure()
         
-        // OPEN CITY VC  IF USER IS LOGGED IN 
+        // OPEN CITY VC  IF USER IS LOGGED IN
         
         if userDefault.bool(forKey: "usersignedin") {
                                     
@@ -94,35 +95,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                        else {}
              
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         
         let myDatabase = Database.database().reference()
         return true
    
-        
-      
-        
-        
-        
+ 
         
         // test
         
-        
-     
-        
-        
-        
+
         
         
         

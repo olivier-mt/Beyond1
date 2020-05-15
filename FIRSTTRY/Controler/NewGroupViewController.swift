@@ -51,7 +51,7 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
     
     var imageString = ""
     
-
+    var fromNGVC: Bool?
     
     
   
@@ -114,6 +114,10 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
         
         
     }
+    
+    
+
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
@@ -197,10 +201,10 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
             
             if groupPicture == UIImage(named: "GIO"){
                 
-                
+
                 
             SVProgressHUD.dismiss()
-
+       // goToConvVC()
             self.navigationController?.popViewController(animated: true)
             SPAlert.present(title: "Your group is created!", preset: .done)
 
@@ -232,13 +236,14 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
                               
                            
                                print("Put is completed and got this back \(String(describing: downloadMetadata))",
+                               
+                                
                                SVProgressHUD.dismiss()
 
                                )
-                                
-                                
-                                
-                                self.navigationController?.popViewController(animated: true)
+
+                              //  self.goToConvVC()
+                              self.navigationController?.popViewController(animated: true)
                                                SPAlert.present(title: "Your group is created!", preset: .done)
 
                                                          print("Document added with ID: \(newGroupRef.documentID)")
@@ -275,6 +280,42 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
         
         
     }
+    
+    
+    func goToConvVC(){
+        
+        
+        
+         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+         let newViewController = storyBoard.instantiateViewController(withIdentifier: "conversationVC") as! ConversationViewController
+                 self.present(newViewController, animated: true, completion: nil)
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        
+        
+            
+            print("YEAH ITS TRUE")
+            
+            let groupsVC = segue.destination as! GroupSViewController
+            groupsVC.fromNGVC = self.fromNGVC
+            
+        
+        
+        
+        
+    }
+    
+    
+    
 
 }
 
