@@ -54,14 +54,12 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
        
     
     
-    var ref: DatabaseReference!
-    
-    
-    
-    
-    
+    var pasteBoard = UIPasteboard.general
 
     
+    var ref: DatabaseReference!
+    
+
     
     //keyboard pb
 
@@ -117,16 +115,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
         ConvertationTableView.register(UINib(nibName: "CustomMessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         
         //keyboard /////////////////////////////////////////////////////////////
         /*
@@ -139,12 +128,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     
         // hide Time Label
         
-        
 
-        
-        
-        
-        
         //let messageNumber = self.messageArray.count
                
         
@@ -176,9 +160,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         configureTableView()
         retrieveMessages()
         
-        
-        
-        
+
         
         if messageArray.isEmpty{
             
@@ -191,6 +173,10 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         }
         
         
+        
+
+        
+        
     }
     
     
@@ -198,13 +184,13 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     override func viewWillAppear(_ animated: Bool) {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-          NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
     //keyboard
     
     @objc func keyboardWillShow(notification: NSNotification) {
-          if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+          if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
               if self.view.frame.origin.y == 0 {
                  self.view.frame.origin.y = 0 - keyboardSize.height
                 
@@ -255,12 +241,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
     }
     
-    
-    
-    
-    
-    
-    
+
     
     @objc func tapButton2 (){
         
@@ -326,9 +307,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
 
                 
                 //Test demande notification
-                
-                
-              
+   
                 
                 let center = UNUserNotificationCenter.current()
                 center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
@@ -340,17 +319,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
                     // Enable or disable features based on the authorization.
                 }
                 
-                
-                
-                
-                
-
-                    
-                
-                
-                
-                
-                
+ 
                 
                 //TOPIC subscription
                 Messaging.messaging().subscribe(toTopic: self.finalGroup) { error in
@@ -414,9 +383,15 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
         
+        
+        
+     cell.selectionStyle = .none
+        
+        
        let message = messageArray[indexPath.row]
         
-
+        
+        
     // CHANGE TEXT ACCORDING TO SENDER
         
         if message.sender == Auth.auth().currentUser?.email{
@@ -425,9 +400,12 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
            
             cell.messageBubble.backgroundColor = UIColor(red:0.30, green:0.68, blue:1.5, alpha:1.0)
            
-            cell.messageBody.textColor = UIColor.white
+            cell.messageBodyTextView.textColor = UIColor.white
             cell.timeLabel.textColor = UIColor.white
-            cell.messageBody.backgroundColor = cell.messageBubble.backgroundColor
+            cell.messageBodyTextView.backgroundColor = cell.messageBubble.backgroundColor
+            
+            cell.messageBodyTextView.linkTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            cell.messageBodyTextView.linkTextAttributes = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
             
             print("\(message.sender) et \(Auth.auth().currentUser?.email)")
         } else {
@@ -435,9 +413,12 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
             cell.messageBubble.backgroundColor = UIColor(red:0.94, green:0.94, blue:0.94, alpha:1.0)
             
             cell.messageBubble.layer.borderColor = UIColor.lightGray.cgColor
-            cell.messageBody.textColor = UIColor.black
+            cell.messageBodyTextView.textColor = UIColor.black
             cell.timeLabel.textColor = UIColor.black
-            cell.messageBody.backgroundColor = cell.messageBubble.backgroundColor
+            cell.messageBodyTextView.backgroundColor = cell.messageBubble.backgroundColor
+            
+            cell.messageBodyTextView.linkTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+                      cell.messageBodyTextView.linkTextAttributes = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
 
             print("not the same sender \(message.sender)voila ")
             
@@ -451,7 +432,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
 
         
-        cell.messageBody.text = messageArray[indexPath.row].messageBody
+        cell.messageBodyTextView.text = messageArray[indexPath.row].messageBody
         cell.usernameLabel.text = messageArray[indexPath.row].name
         cell.timeLabel.text = dateToShow
         
@@ -488,7 +469,7 @@ self.messageTextField.endEditing(true)
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         self.view.frame.origin.y = 0
-        UIView.animate(withDuration: 0.5){
+        UIView.animate(withDuration: 0){
      
     /*self.heightConstraint.constant = 350
         self.view.layoutIfNeeded()*/
@@ -499,7 +480,7 @@ self.messageTextField.endEditing(true)
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        UIView.animate(withDuration: 0.5){
+        UIView.animate(withDuration: 0){
     
        /* self.heightConstraint.constant = 50
             self.view.layoutIfNeeded()*/
@@ -630,6 +611,37 @@ self.messageTextField.endEditing(true)
            }
     }
         
+    
+    
+    
+    
+    // test copy
+    
+    
+    func tableView(_ tableView: UITableView, canPerformAction action:
+    Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        if (action.description == "copy:") {
+            return true
+        } else {
+            return false
+        }
+    }
+
+func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
+    
+
+        if (action.description == "copy:") {
+         
+            pasteBoard.string = messageArray[indexPath.row].messageBody
+        }
+    }
+
+func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

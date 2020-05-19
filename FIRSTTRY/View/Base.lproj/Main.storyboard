@@ -57,12 +57,58 @@
                                                 <constraint firstAttribute="width" constant="286" id="MnS-wD-knu"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUP-on-zLZ">
+                                            <rect key="frame" x="207" y="843" width="0.0" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gr-jv-oK2">
+                                            <rect key="frame" x="207" y="847" width="0.0" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpj-3B-qZg">
+                                            <rect key="frame" x="169" y="831" width="30" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="16" id="ZWT-uk-Nbn"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <state key="normal">
+                                                <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="tapToTerms:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XX9-Oo-fiO"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceo-h4-KnQ">
+                                            <rect key="frame" x="215" y="831" width="30" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="16" id="gwE-Y2-P7G"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <state key="normal">
+                                                <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="tapToPrivacy:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Hv-No-SoV"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="DTK-Xl-x9Z" firstAttribute="top" secondItem="yQS-aP-hNd" secondAttribute="top" constant="350" id="1tq-H9-YbP"/>
+                                        <constraint firstItem="ceo-h4-KnQ" firstAttribute="leading" secondItem="6gr-jv-oK2" secondAttribute="trailing" constant="8" id="2kW-RQ-5o1"/>
+                                        <constraint firstAttribute="bottom" secondItem="6gr-jv-oK2" secondAttribute="bottom" constant="49" id="3m4-vE-ROK"/>
+                                        <constraint firstItem="PUP-on-zLZ" firstAttribute="centerX" secondItem="yQS-aP-hNd" secondAttribute="centerX" id="6v7-kG-emz"/>
+                                        <constraint firstItem="6gr-jv-oK2" firstAttribute="centerX" secondItem="yQS-aP-hNd" secondAttribute="centerX" id="9Qt-iH-1r3"/>
+                                        <constraint firstAttribute="bottom" secondItem="Vpj-3B-qZg" secondAttribute="bottom" constant="49" id="Aoc-y9-Dpx"/>
+                                        <constraint firstItem="6gr-jv-oK2" firstAttribute="leading" secondItem="Vpj-3B-qZg" secondAttribute="trailing" constant="8" id="BCm-Jv-bHx"/>
                                         <constraint firstItem="Zgl-BT-hsg" firstAttribute="top" secondItem="yQS-aP-hNd" secondAttribute="top" constant="104" id="F9f-9w-o6l"/>
                                         <constraint firstItem="Zgl-BT-hsg" firstAttribute="centerX" secondItem="yQS-aP-hNd" secondAttribute="centerX" id="Kfi-TI-oPo"/>
+                                        <constraint firstAttribute="bottom" secondItem="ceo-h4-KnQ" secondAttribute="bottom" constant="49" id="aHX-VG-Rot"/>
                                         <constraint firstItem="DTK-Xl-x9Z" firstAttribute="centerX" secondItem="yQS-aP-hNd" secondAttribute="centerX" id="ilq-KM-Ftr"/>
+                                        <constraint firstItem="6gr-jv-oK2" firstAttribute="top" secondItem="PUP-on-zLZ" secondAttribute="bottom" constant="4" id="wJR-vQ-XBx"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="regular"/>
@@ -115,6 +161,8 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="PrivacyButton" destination="ceo-h4-KnQ" id="hT6-g5-ONJ"/>
+                        <outlet property="TermsButton" destination="Vpj-3B-qZg" id="bu1-TH-hsZ"/>
                         <outlet property="logInButton" destination="rbY-VN-IrP" id="S1l-MZ-Lew"/>
                         <outlet property="signUpButton" destination="0RZ-Mg-HKO" id="Elw-Lh-yLM"/>
                         <segue destination="oDc-vi-hy8" kind="show" identifier="firstToTab" id="Vnd-OV-9xr"/>

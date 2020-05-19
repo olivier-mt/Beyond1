@@ -15,6 +15,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     
     
+    @IBOutlet weak var TermsButton: UIButton!
+    
+    
+    @IBOutlet weak var PrivacyButton: UIButton!
+    
     
 //    let userDefault = UserDefaults.standard
 
@@ -33,9 +38,34 @@ class ViewController: UIViewController {
                signUpButton.layer.shadowRadius = 0.5
                signUpButton.layer.shadowOpacity = 0.3
                signUpButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        
+        
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    @IBAction func tapToTerms(_ sender: Any) {
+        
+        
+        
+        if let url = URL(string: "https://www.google.com") {
+            UIApplication.shared.open(url)
+        }
+        
+        
+    }
+    
   
+    
+    
+    
+    @IBAction func tapToPrivacy(_ sender: Any) {
+        
+        
+        
+    }
+    
     // LOGGED IN 
     
   //  override func viewDidAppear(_ animated: Bool) {
