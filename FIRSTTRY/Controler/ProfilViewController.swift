@@ -40,7 +40,7 @@ class ProfilViewController: UIViewController, UITextFieldDelegate{
     
     var db : Firestore!
     
-
+    var usernameString = "Username changed succefully!"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +55,7 @@ class ProfilViewController: UIViewController, UITextFieldDelegate{
         
         self.title = "Profil settings"
         // Do any additional setup after loading the view.
-        
+        setupTranslation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,12 +76,24 @@ class ProfilViewController: UIViewController, UITextFieldDelegate{
         currentNameLabel.text = username
         
         
-        SPAlert.present(title: "Username changed succefully!", preset: .done)
+        
+        SPAlert.present(message: usernameString)
         changeRequest?.commitChanges { (error) in
         }
         
         
     }
+    
+    
+    
+     func setupTranslation(){
+        
+      usernameString = NSLocalizedString("changedUsername", comment: "changedUsername")
+            
+            
+  }
+
+
     
 
     /*

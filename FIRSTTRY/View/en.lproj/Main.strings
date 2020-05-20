@@ -1,0 +1,228 @@
+
+/* Class = "UIButton"; normalTitle = "SIGN UP"; ObjectID = "0RZ-Mg-HKO"; */
+"0RZ-Mg-HKO.normalTitle" = "SIGN UP";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "17M-nO-pie"; */
+"17M-nO-pie.normalTitle" = "Button";
+
+/* Class = "UISearchBar"; placeholder = "Search a group in your favorites"; ObjectID = "1gu-12-tmZ"; */
+"1gu-12-tmZ.placeholder" = "Search a group in your favorites";
+
+/* Class = "UISearchBar"; 1gu-12-tmZ.scopeButtonTitles[0] = "Title"; ObjectID = "1gu-12-tmZ"; */
+"1gu-12-tmZ.scopeButtonTitles[0]" = "Title";
+
+/* Class = "UISearchBar"; 1gu-12-tmZ.scopeButtonTitles[1] = "Title"; ObjectID = "1gu-12-tmZ"; */
+"1gu-12-tmZ.scopeButtonTitles[1]" = "Title";
+
+/* Class = "UILabel"; text = "name"; ObjectID = "1od-4T-7gY"; */
+"1od-4T-7gY.text" = "name";
+
+/* Class = "UIButton"; normalTitle = "Cancel "; ObjectID = "2gr-Bn-Gce"; */
+"2gr-Bn-Gce.normalTitle" = "Cancel ";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "2x5-7Q-bxo"; */
+"2x5-7Q-bxo.normalTitle" = "Sign Up";
+
+/* Class = "UILabel"; text = "Do you want to cancel your account ? "; ObjectID = "3wr-6q-RSZ"; */
+"3wr-6q-RSZ.text" = "Do you want to cancel your account ? ";
+
+/* Class = "UINavigationItem"; title = "Log out"; ObjectID = "6VW-pX-qRa"; */
+"6VW-pX-qRa.title" = "Log out";
+
+/* Class = "UINavigationItem"; title = "Settings "; ObjectID = "8Ta-sN-3JS"; */
+"8Ta-sN-3JS.title" = "Settings ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8if-nU-M7D"; */
+"8if-nU-M7D.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "A1x-gv-Ddf"; */
+"A1x-gv-Ddf.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "language Label"; ObjectID = "AXP-jE-2IS"; */
+"AXP-jE-2IS.text" = "language Label";
+
+/* Class = "UILabel"; text = "Language "; ObjectID = "Akc-Ri-dE0"; */
+"Akc-Ri-dE0.text" = "Language ";
+
+/* Class = "UIButton"; normalTitle = "password lost ? "; ObjectID = "BRK-Yz-nD1"; */
+"BRK-Yz-nD1.normalTitle" = "password lost ? ";
+
+/* Class = "UIViewController"; title = "login_signup"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "login_signup";
+
+/* Class = "UITextField"; placeholder = "Chat "; ObjectID = "C84-Na-FcZ"; */
+"C84-Na-FcZ.placeholder" = "Chat ";
+
+/* Class = "UILabel"; text = "City"; ObjectID = "ClM-7Q-HVn"; */
+"ClM-7Q-HVn.text" = "City";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "DTK-Xl-x9Z"; */
+"DTK-Xl-x9Z.text" = "Welcome";
+
+/* Class = "UIButton"; normalTitle = "Create the group"; ObjectID = "GN6-rI-V19"; */
+"GN6-rI-V19.normalTitle" = "Create the group";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "Gs1-dy-cht"; */
+"Gs1-dy-cht.normalTitle" = "Save";
+
+/* Class = "UIButton"; normalTitle = "send"; ObjectID = "HDL-cG-p8m"; */
+"HDL-cG-p8m.normalTitle" = "send";
+
+/* Class = "UILabel"; text = "Group Name"; ObjectID = "IDh-fc-4Fl"; */
+"IDh-fc-4Fl.text" = "Group Name";
+
+/* Class = "UITextField"; placeholder = "Give a name to your group "; ObjectID = "ILF-rM-CgQ"; */
+"ILF-rM-CgQ.placeholder" = "Give a name to your group ";
+
+/* Class = "UITableViewSection"; headerTitle = "CONTACT"; ObjectID = "Igw-wv-en3"; */
+"Igw-wv-en3.headerTitle" = "CONTACT";
+
+/* Class = "UILabel"; text = "group name Label"; ObjectID = "J4i-bz-O7V"; */
+"J4i-bz-O7V.text" = "group name Label";
+
+/* Class = "UITextField"; placeholder = "Email adresse"; ObjectID = "JiC-Y0-YfT"; */
+"JiC-Y0-YfT.placeholder" = "Email adresse";
+
+/* Class = "UILabel"; text = "A link to reset your password will be send to you by email "; ObjectID = "KC2-Mx-MNV"; */
+"KC2-Mx-MNV.text" = "A link to reset your password will be send to you by email ";
+
+/* Class = "UILabel"; text = "city"; ObjectID = "KcM-io-oN5"; */
+"KcM-io-oN5.text" = "city";
+
+/* Class = "UITextField"; placeholder = "Change Your Username"; ObjectID = "Kn3-xs-WJP"; */
+"Kn3-xs-WJP.placeholder" = "Change Your Username";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "Mme-16-efN"; */
+"Mme-16-efN.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "Enter your password"; ObjectID = "Oy6-9J-hKE"; */
+"Oy6-9J-hKE.placeholder" = "Enter your password";
+
+/* Class = "UINavigationItem"; title = "Contact "; ObjectID = "Pnt-MH-KTN"; */
+"Pnt-MH-KTN.title" = "Contact ";
+
+/* Class = "UILabel"; text = "Contact us "; ObjectID = "PqX-q1-xGn"; */
+"PqX-q1-xGn.text" = "Contact us ";
+
+/* Class = "UINavigationItem"; title = "Cancel my account"; ObjectID = "Q65-ig-D1j"; */
+"Q65-ig-D1j.title" = "Cancel my account";
+
+/* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "RAv-PE-WYH"; */
+"RAv-PE-WYH.normalTitle" = "Log In";
+
+/* Class = "UIButton"; normalTitle = "send"; ObjectID = "Shc-KL-Ucy"; */
+"Shc-KL-Ucy.normalTitle" = "send";
+
+/* Class = "UILabel"; text = "Do you want to log out ? "; ObjectID = "TWd-np-2xM"; */
+"TWd-np-2xM.text" = "Do you want to log out ? ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "UEN-qT-VBu"; */
+"UEN-qT-VBu.text" = "Label";
+
+/* Class = "UILabel"; text = "Group desciption"; ObjectID = "UJw-hz-pF4"; */
+"UJw-hz-pF4.text" = "Group desciption";
+
+/* Class = "UILabel"; text = "Cancel Account "; ObjectID = "UNe-Dt-fC1"; */
+"UNe-Dt-fC1.text" = "Cancel Account ";
+
+/* Class = "UISearchBar"; placeholder = "Search a group "; ObjectID = "V1A-hd-570"; */
+"V1A-hd-570.placeholder" = "Search a group ";
+
+/* Class = "UISearchBar"; V1A-hd-570.scopeButtonTitles[0] = "Title"; ObjectID = "V1A-hd-570"; */
+"V1A-hd-570.scopeButtonTitles[0]" = "Title";
+
+/* Class = "UISearchBar"; V1A-hd-570.scopeButtonTitles[1] = "Title"; ObjectID = "V1A-hd-570"; */
+"V1A-hd-570.scopeButtonTitles[1]" = "Title";
+
+/* Class = "UITableViewSection"; headerTitle = "ACCOUNT SETTINGS"; ObjectID = "XQw-Cf-4Ed"; */
+"XQw-Cf-4Ed.headerTitle" = "ACCOUNT SETTINGS";
+
+/* Class = "UILabel"; text = "language"; ObjectID = "XjQ-FZ-sam"; */
+"XjQ-FZ-sam.text" = "language";
+
+/* Class = "UIButton"; normalTitle = "send"; ObjectID = "YOF-am-syp"; */
+"YOF-am-syp.normalTitle" = "send";
+
+/* Class = "UIViewController"; title = "login"; ObjectID = "Yd1-7G-PTw"; */
+"Yd1-7G-PTw.title" = "login";
+
+/* Class = "UIButton"; normalTitle = "BackFirstScreenButtonLogin"; ObjectID = "ZOl-yo-d2N"; */
+"ZOl-yo-d2N.normalTitle" = "BackFirstScreenButtonLogin";
+
+/* Class = "UILabel"; text = "Contact Us"; ObjectID = "a9T-Df-NLl"; */
+"a9T-Df-NLl.text" = "Contact Us";
+
+/* Class = "UILabel"; text = "describ"; ObjectID = "b8f-Zm-Owh"; */
+"b8f-Zm-Owh.text" = "describ";
+
+/* Class = "UITableViewSection"; headerTitle = "SETTINGS"; ObjectID = "bFr-2r-Ka5"; */
+"bFr-2r-Ka5.headerTitle" = "SETTINGS";
+
+/* Class = "UITabBarItem"; title = "New Groups"; ObjectID = "bhi-O3-QM4"; */
+"bhi-O3-QM4.title" = "New Groups";
+
+/* Class = "UILabel"; text = "The Group Name "; ObjectID = "dEs-tX-pCs"; */
+"dEs-tX-pCs.text" = "The Group Name ";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "dS4-Ef-xC2"; */
+"dS4-Ef-xC2.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Thank you for contacting, we will give you an answer as soon as possible "; ObjectID = "ddn-Vm-qdI"; */
+"ddn-Vm-qdI.text" = "Thank you for contacting, we will give you an answer as soon as possible ";
+
+/* Class = "UILabel"; text = "Log out "; ObjectID = "ewl-0L-WNF"; */
+"ewl-0L-WNF.text" = "Log out ";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "g2d-Lw-dOX"; */
+"g2d-Lw-dOX.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "ShowFirstScreenButtonSignup"; ObjectID = "hGd-pp-cm8"; */
+"hGd-pp-cm8.normalTitle" = "ShowFirstScreenButtonSignup";
+
+/* Class = "UILabel"; text = "group Description Label"; ObjectID = "ii0-cO-2gV"; */
+"ii0-cO-2gV.text" = "group Description Label";
+
+/* Class = "UITextField"; placeholder = "Enter your email"; ObjectID = "kAg-qJ-rbA"; */
+"kAg-qJ-rbA.placeholder" = "Enter your email";
+
+/* Class = "UITextField"; placeholder = "choose a language"; ObjectID = "mEZ-va-Afr"; */
+"mEZ-va-Afr.placeholder" = "choose a language";
+
+/* Class = "UIViewController"; title = "sign up"; ObjectID = "mvI-vi-0Ss"; */
+"mvI-vi-0Ss.title" = "sign up";
+
+/* Class = "UINavigationItem"; title = "CHOOSE A CITY"; ObjectID = "nE2-bC-KSp"; */
+"nE2-bC-KSp.title" = "CHOOSE A CITY";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "oWB-74-lhf"; */
+"oWB-74-lhf.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "New password "; ObjectID = "pGp-8e-5vD"; */
+"pGp-8e-5vD.placeholder" = "New password ";
+
+/* Class = "UIButton"; normalTitle = "LOG IN "; ObjectID = "rbY-VN-IrP"; */
+"rbY-VN-IrP.normalTitle" = "LOG IN ";
+
+/* Class = "UITabBarItem"; title = "My groups"; ObjectID = "uH1-1U-jf1"; */
+"uH1-1U-jf1.title" = "My groups";
+
+/* Class = "UILabel"; text = "(un)mute notifications"; ObjectID = "vUy-4W-s9n"; */
+"vUy-4W-s9n.text" = "(un)mute notifications";
+
+/* Class = "UITextField"; placeholder = "email"; ObjectID = "vZE-ha-LQt"; */
+"vZE-ha-LQt.placeholder" = "email";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "wgY-Iz-FAn"; */
+"wgY-Iz-FAn.title" = "Settings";
+
+/* Class = "UITextField"; placeholder = "New Username"; ObjectID = "xe9-Q4-Vj6"; */
+"xe9-Q4-Vj6.placeholder" = "New Username";
+
+/* Class = "UIButton"; normalTitle = "Log out "; ObjectID = "xkN-Qk-sCy"; */
+"xkN-Qk-sCy.normalTitle" = "Log out ";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "yeq-ee-PxP"; */
+"yeq-ee-PxP.title" = "Profile";
+
+/* Class = "UILabel"; text = "Current Username :"; ObjectID = "zhk-TY-ZaV"; */
+"zhk-TY-ZaV.text" = "Current Username :";

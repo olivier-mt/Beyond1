@@ -52,6 +52,10 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
        var Glanguage = ""
        var Gcity = ""
        
+       var stringGroupSaved = "group successfully saved as favorit!"
+       var stringGroupCanceled = "You removed this group to your favorit"
+       var stringAccessDeniedTittle = "Access Denied"
+       var stringAccessDeniedString = "Follow this group to get access to options"
     
     
     var pasteBoard = UIPasteboard.general
@@ -175,7 +179,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
         
 
-        
+        setupTranslation()
         
     }
     
@@ -258,7 +262,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
             
         } else {
             print("Document does not exist")
-            SPAlert.present(title: "Access Denied", message: "Follow this group to get access to options", preset: .error)
+            SPAlert.present(title: self.stringAccessDeniedTittle, message: self.stringAccessDeniedString, preset: .error)
             
             
         }
@@ -297,7 +301,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
                         Messaging.messaging().unsubscribe(fromTopic: self.finalGroup) { error in
                             print("unsubscribed from \(self.finalGroup) topic")
                                        }
-                        SPAlert.present(message: "You removed this group to your favorit")                    }
+                        SPAlert.present(message: self.stringGroupCanceled )                    }
                 }
             }
                 
@@ -344,7 +348,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
                         print("Error writing document: \(err)")
                     } else {
                         print("Document successfully written!")
-                        SPAlert.present(title: " group successfully saved as favorit!", preset: .done)
+                        SPAlert.present(title: self.stringGroupSaved, preset: .done)
                     }
                 }
             }
@@ -537,49 +541,73 @@ self.messageTextField.endEditing(true)
     @IBAction func send(_ sender: Any) {
         
         
-        messageTextField.endEditing(true)
-        
-        messageTextField.isEnabled = false
-        sendButton.isEnabled = false
-        
-        let messagesDB = self.ref?.child("conversation").child(finalGroup)
-        
-        var user = Auth.auth().currentUser?.displayName
-        
-        var sender = Auth.auth().currentUser?.email
-        
-        let currentDate = Date()
-        let timeInterval = currentDate.timeIntervalSince1970
-        let timeInt = Int(timeInterval)
         
         
-        let messageDictionary = ["MessageBody": messageTextField.text,"name": user, "sender": sender, "groupName": groupName as Any, "createdAt": timeInt as Any ]
-        
-        messagesDB?.childByAutoId().setValue(messageDictionary){
-            (error, reference) in
+        if messageTextField.text?.isEmpty ?? true {
             
-            if error != nil{
-                print("error")
-            } else {
-                print("message saved successfully")
-                
-                self.messageTextField.isEnabled = true
-                self.sendButton.isEnabled = true
-                self.messageTextField.text = ""
-                
-            }
+            print("textField is empty")
             
-     //Scroll down when you send a message
-  
-                let numberOfSections = self.ConvertationTableView.numberOfSections
-                                  
-                                  let numberOfMessages = self.messageArray.count
-                           
-                       let indexPath = IndexPath(row: numberOfMessages-1 , section: numberOfSections-1)
-                                     self.ConvertationTableView.scrollToRow(at: indexPath, at: .middle, animated: true)
-  
             
-            }
+        } else {
+            
+            
+            messageTextField.endEditing(true)
+                  
+                  messageTextField.isEnabled = false
+                  sendButton.isEnabled = false
+                  
+                  let messagesDB = self.ref?.child("conversation").child(finalGroup)
+                  
+                  var user = Auth.auth().currentUser?.displayName
+                  
+                  var sender = Auth.auth().currentUser?.email
+                  
+                  let currentDate = Date()
+                  let timeInterval = currentDate.timeIntervalSince1970
+                  let timeInt = Int(timeInterval)
+                  
+                  
+                  let messageDictionary = ["MessageBody": messageTextField.text,"name": user, "sender": sender, "groupName": groupName as Any, "createdAt": timeInt as Any ]
+                  
+                  messagesDB?.childByAutoId().setValue(messageDictionary){
+                      (error, reference) in
+                      
+                      if error != nil{
+                          print("error")
+                      } else {
+                          print("message saved successfully")
+                          
+                          self.messageTextField.isEnabled = true
+                          self.sendButton.isEnabled = true
+                          self.messageTextField.text = ""
+                          
+                      }
+                      
+               //Scroll down when you send a message
+            
+                          let numberOfSections = self.ConvertationTableView.numberOfSections
+                                            
+                                            let numberOfMessages = self.messageArray.count
+                                     
+                                 let indexPath = IndexPath(row: numberOfMessages-1 , section: numberOfSections-1)
+                                               self.ConvertationTableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+            
+                      
+                      }
+            
+            
+            
+           
+            print("textField has some text")
+            
+        }
+        
+        
+        
+        
+        
+        
+      
             
     }
     
@@ -641,6 +669,18 @@ func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: Index
     }
     
     
+    
+    func setupTranslation(){
+          
+       
+        stringGroupSaved =  NSLocalizedString("groupSaved", comment: "alert group saved in favorit")
+        stringGroupCanceled =  NSLocalizedString("GroupCanceled", comment: "alert group cancelled from fav  ")
+        stringAccessDeniedTittle =  NSLocalizedString("AccessDeniedTittle", comment: "alert option not accessible")
+        stringAccessDeniedString =  NSLocalizedString("AccessDeniedString", comment: "alert option not accessible string")
+           
+        
+        
+    }
     
     /*
     // MARK: - Navigation

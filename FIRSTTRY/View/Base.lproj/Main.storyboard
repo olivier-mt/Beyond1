@@ -539,9 +539,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9T-Df-NLl">
-                                <rect key="frame" x="20" y="124" width="149" height="32"/>
+                                <rect key="frame" x="20" y="124" width="195" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="149" id="Omu-Ey-A7c"/>
+                                    <constraint firstAttribute="width" constant="195" id="Omu-Ey-A7c"/>
                                     <constraint firstAttribute="height" constant="32" id="gbn-oP-eBc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>

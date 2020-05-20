@@ -1,0 +1,20 @@
+/*
+  Localizable.strings
+  BEYOND
+
+  Created by Olivier Mountou on 20/05/2020.
+  Copyright © 2020 Olivier Mountou MT. All rights reserved.
+*/
+
+
+"changedUsername" = "Username modifié avec succès!";
+
+"groupSaved" = "Groupe ajouté aux favoris!";
+"GroupCanceled" = "Retiré des favorits";
+"AccessDeniedTittle" = "Accès refusé";
+"AccessDeniedString" = "Ajoute ce groupe à tes favoris pour avoir accès aux options";
+
+"createdGroupAlert" = "Félicitation, ton groupe est créé!";
+"emptyFieldAlert" = "Tout les champs doivent être rempli";
+"placeholdCreationGroup" = "Décris le groupe en quelques mots";
+"NewGroupTitleView" = "Créer un nouveau groupe";

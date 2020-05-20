@@ -73,7 +73,8 @@ class GroupSViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
 
         
-
+        
+        
         
         self.title = finalCity
         

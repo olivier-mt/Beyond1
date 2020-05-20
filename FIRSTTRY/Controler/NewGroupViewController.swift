@@ -53,21 +53,27 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
     
     var fromNGVC: Bool?
     
-    
-  
-    
+    var groupCreatedString = "Your group is created!"
+    var emptyField = "All field have to be fullfielded"
+    var groupDescriptionstring = "Describ the group purpose in few words"
+    var viewTitle = "Creat a new group"
+        
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "Creat a new group"
+        self.navigationItem.title = viewTitle
        
         cityLabel.text = city
         
     descriptionTextView.delegate = self
     groupNameTextField.delegate = self
         
-    descriptionTextView.text = "Describ the group purpose in few words"
+    descriptionTextView.text = groupDescriptionstring
     descriptionTextView.textColor = UIColor.lightGray
+        
+        
+         setupTranslation()
         
     self.HideKeyboard()
         
@@ -79,12 +85,11 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
         groupPicture.clipsToBounds = true
         
      
-        
         creationButton.layer.cornerRadius = 5
         creationButton.layer.borderWidth = 2
         creationButton.layer.borderColor = UIColor.lightGray.cgColor
         
-    
+
     }
     
     
@@ -143,7 +148,7 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
         
         func textViewDidEndEditing(_ textView: UITextView) {
             if descriptionTextView.text.isEmpty {
-                descriptionTextView.text = "Describ the group purpose in few words"
+                descriptionTextView.text = groupDescriptionstring
                 descriptionTextView.textColor = UIColor.lightGray
             }
         }
@@ -183,7 +188,10 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
             language == ""
              { //let err = err
                 print("Error adding document")
-                SPAlert.present(message: "All field have to be fullfielded")
+                SVProgressHUD.dismiss()
+
+                SPAlert.present(message: emptyField )
+                self.creationButton.isEnabled = true
         } else {
             newGroupRef.setData([
                        "city" : city,
@@ -206,7 +214,7 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
             SVProgressHUD.dismiss()
        // goToConvVC()
             self.navigationController?.popViewController(animated: true)
-            SPAlert.present(title: "Your group is created!", preset: .done)
+            SPAlert.present(title: groupCreatedString, preset: .done)
 
             print("Document added with ID: \(newGroupRef.documentID)")
             self.creationButton.isEnabled = true
@@ -230,6 +238,8 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
 
                                
                                  if let error = error {
+                                    SVProgressHUD.dismiss()
+
                                      print("Oh noo got an error! \(error.localizedDescription)")
                                      return
                                  }
@@ -244,7 +254,7 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
 
                               //  self.goToConvVC()
                               self.navigationController?.popViewController(animated: true)
-                                               SPAlert.present(title: "Your group is created!", preset: .done)
+                                SPAlert.present(title: self.groupCreatedString, preset: .done)
 
                                                          print("Document added with ID: \(newGroupRef.documentID)")
                                                self.creationButton.isEnabled = true
@@ -290,10 +300,7 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
          let newViewController = storyBoard.instantiateViewController(withIdentifier: "conversationVC") as! ConversationViewController
                  self.present(newViewController, animated: true, completion: nil)
         
-        
-        
-        
-        
+ 
     }
     
     
@@ -301,22 +308,29 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
     
     func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         
-        
-            
+  
             print("YEAH ITS TRUE")
             
             let groupsVC = segue.destination as! GroupSViewController
             groupsVC.fromNGVC = self.fromNGVC
             
-        
-        
-        
-        
+ 
     }
     
     
     
+       func setupTranslation(){
+             
+          
+       groupCreatedString =  NSLocalizedString("createdGroupAlert", comment: "createdGroupAlert")
+       emptyField =  NSLocalizedString("emptyFieldAlert", comment: "emptyFieldAlert")
+       groupDescriptionstring =  NSLocalizedString("placeholdCreationGroup", comment: "placeholdCreationGroup")
+        
+       viewTitle =  NSLocalizedString("NewGroupTitleView", comment: "NewGroupTitleView")
+        
+       }
 
+    
 }
 
 
