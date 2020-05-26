@@ -42,6 +42,8 @@ class ProfilViewController: UIViewController, UITextFieldDelegate{
     
     var usernameString = "Username changed succefully!"
     
+    var profilTitle = "Profile"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userNameTextField.delegate = self
@@ -60,7 +62,7 @@ class ProfilViewController: UIViewController, UITextFieldDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         currentNameLabel.text = (Auth.auth().currentUser!.displayName as! String)
-        self.title = "Profil settings"
+        self.title = profilTitle
         
         self.HidenKeyboard()
 
@@ -88,8 +90,9 @@ class ProfilViewController: UIViewController, UITextFieldDelegate{
     
      func setupTranslation(){
         
-      usernameString = NSLocalizedString("changedUsername", comment: "changedUsername")
-            
+      usernameString = NSLocalizedString("Username changed succefully!", comment: "changedUsername")
+        
+       profilTitle = NSLocalizedString("Profile", comment: "Profile")
             
   }
 

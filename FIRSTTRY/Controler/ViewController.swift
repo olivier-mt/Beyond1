@@ -21,6 +21,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var PrivacyButton: UIButton!
     
     
+    
+    
+    
+    
+    
+    
+    
+    
 //    let userDefault = UserDefaults.standard
 
     override func viewDidLoad() {
@@ -51,7 +59,7 @@ class ViewController: UIViewController {
         
         
         
-        if let url = URL(string: "https://www.google.com") {
+        if let url = URL(string: "https://www.app-beyondworld.com/terms") {
             UIApplication.shared.open(url)
         }
         
@@ -65,6 +73,9 @@ class ViewController: UIViewController {
     @IBAction func tapToPrivacy(_ sender: Any) {
         
         
+        if let url = URL(string: "https://www.app-beyondworld.com/privacy-policy") {
+            UIApplication.shared.open(url)
+        }
         
     }
     

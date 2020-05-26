@@ -87,17 +87,34 @@ class SignUpViewController: UIViewController {
         returnButton.layer.shadowOpacity = 0.5
         returnButton.layer.shadowOffset = CGSize(width: 2, height: 2)
         
-        
-        
-        
-        
-        
-        
-        
-        
-       
-
     }
+    
+    
+    
+    
+    
+    @IBAction func privacyPressed(_ sender: Any) {
+        
+        
+        if let url = URL(string: "https://www.google.com") {
+            UIApplication.shared.open(url)
+            
+        }
+        
+    }
+    
+    
+    
+    
+    @IBAction func TermsPressed(_ sender: Any) {
+        
+        if let url = URL(string: "https://www.google.com") {
+                   UIApplication.shared.open(url)
+        }
+        
+    }
+    
+    
     
 
     
@@ -139,9 +156,7 @@ class SignUpViewController: UIViewController {
                             changeRequest?.commitChanges { (error) in
                             }
                             print("Data saved successfully! \(String(describing: user.displayName))")
-            
-
-                            
+              
                         }
                     }
                     

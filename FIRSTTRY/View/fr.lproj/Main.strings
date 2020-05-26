@@ -126,7 +126,7 @@
 "UNe-Dt-fC1.text" = "Supprimer le compte ";
 
 /* Class = "UISearchBar"; placeholder = "Search a group "; ObjectID = "V1A-hd-570"; */
-"V1A-hd-570.placeholder" = "Chercher un groupe";
+"V1A-hd-570.placeholder" = "Recherche";
 
 /* Class = "UISearchBar"; V1A-hd-570.scopeButtonTitles[0] = "Title"; ObjectID = "V1A-hd-570"; */
 "V1A-hd-570.scopeButtonTitles[0]" = "Title";
@@ -226,3 +226,7 @@
 
 /* Class = "UILabel"; text = "Current Username :"; ObjectID = "zhk-TY-ZaV"; */
 "zhk-TY-ZaV.text" = "Username actuel :";
+
+
+
+

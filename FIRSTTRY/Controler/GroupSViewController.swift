@@ -8,6 +8,9 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
+import SPAlert
+
 
 class GroupSViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
@@ -47,7 +50,9 @@ class GroupSViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     
-    override func viewDidLoad() {        super.viewDidLoad()
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
         
         let addButton = UIBarButtonItem(barButtonSystemItem:.add, target: self, action: #selector(tapButton) )
        
@@ -72,10 +77,6 @@ class GroupSViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchBar.sizeToFit()
 
 
-        
-        
-        
-        
         self.title = finalCity
         
         print(finalCity)
@@ -84,11 +85,8 @@ class GroupSViewController: UIViewController, UITableViewDelegate, UITableViewDa
         groupTableView.delegate = self
         
 
-        
-        
         db = Firestore.firestore()
-        
-        
+
         
         if fromNGVC == true {
             print("I confirme its true")
@@ -124,12 +122,15 @@ performSegue(withIdentifier: "toNewConvVC", sender: Any?.self)    }
 
     
     func loadData() {
-        
+        SVProgressHUD.show()
+
         
     db.collection("GROUPS").whereField("city", isEqualTo: finalCity )
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {
+                    SVProgressHUD.dismiss()
                     print("Error getting documents: \(err)")
+                    SPAlert.present(message: "An error occured, please try again")
                 } else {
                     for document in querySnapshot!.documents {
                         print("c'est chargé \(document.documentID) => \(document.data())")
@@ -143,6 +144,8 @@ performSegue(withIdentifier: "toNewConvVC", sender: Any?.self)    }
                     }
                     print(self.groupArray)
                     self.groupTableView.reloadData()
+                    SVProgressHUD.dismiss()
+
                 }
                
         }
@@ -268,16 +271,13 @@ performSegue(withIdentifier: "toNewConvVC", sender: Any?.self)    }
             [ "documentID": groupId,
               "name": groupName
             ])
-        
-      
-     
-        
+ 
         
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(125)
+        return CGFloat(130)
     }
     
     

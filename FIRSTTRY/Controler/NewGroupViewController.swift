@@ -55,7 +55,7 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
     
     var groupCreatedString = "Your group is created!"
     var emptyField = "All field have to be fullfielded"
-    var groupDescriptionstring = "Describ the group purpose in few words"
+    var groupDescriptionstring = "Describ the group purpose in a few words"
     var viewTitle = "Creat a new group"
         
         
@@ -322,9 +322,9 @@ class NewGroupViewController: UIViewController, UITextViewDelegate, UITextFieldD
        func setupTranslation(){
              
           
-       groupCreatedString =  NSLocalizedString("createdGroupAlert", comment: "createdGroupAlert")
-       emptyField =  NSLocalizedString("emptyFieldAlert", comment: "emptyFieldAlert")
-       groupDescriptionstring =  NSLocalizedString("placeholdCreationGroup", comment: "placeholdCreationGroup")
+       groupCreatedString =  NSLocalizedString("Your group is created!", comment: "createdGroupAlert")
+       emptyField =  NSLocalizedString("All field have to be fullfielded", comment: "emptyFieldAlert")
+       groupDescriptionstring =  NSLocalizedString("Describ the group purpose in a few words", comment: "placeholdCreationGroup")
         
        viewTitle =  NSLocalizedString("NewGroupTitleView", comment: "NewGroupTitleView")
         

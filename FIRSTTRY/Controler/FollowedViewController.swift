@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
+import SPAlert
 
 class FollowedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -22,6 +24,7 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
     var searching = false
     var groupIdFollowed = [String]()
     var schedule : fGroup!
+    var viewTitle =  "Favorites"
     
     var ref: DatabaseReference!
     var messageArray : [Message] = [Message]()
@@ -46,8 +49,10 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         db = Firestore.firestore()
         loadData()
+        setupTranslation()
+
         
-        self.title = "My groups"
+        self.title = viewTitle
         
     //    navigationController!.navigationBar.sizeToFit()
     //    self.navigationItem.searchController = searchController
@@ -70,27 +75,36 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
     
     func loadData() {
         
+        SVProgressHUD.show()
+
+        
         let user = Auth.auth().currentUser?.uid
+        
         
         db.collection("FOLLOWING").document("\(user!)").collection("GROUP FOLLOWED").getDocuments() { (querySnapshot, err) in
             if let err = err {
+                SVProgressHUD.dismiss()
                 print("Error getting documents: \(err)")
+                SPAlert.present(message: "An error occured, please try again")
             } else {
                 for document in querySnapshot!.documents {
-                    print("Cest chargé \(document.documentID) => \(document.data())")
                     
+                    print("Cest chargé \(document.documentID) => \(document.data())")
                     self.scheduleIDarray = querySnapshot!.documents.compactMap({fGroup(dictionary: $0.data())})
                     DispatchQueue.main.async {
   
-                        
+
                         self.tableView.reloadData()
 
+
                 }
+
             }
                 
                 
                 
-                
+                SVProgressHUD.dismiss()
+
  print("dans l'array \(self.scheduleIDarray)")
  self.tableView.reloadData()
 
@@ -255,10 +269,19 @@ extension FollowedViewController: UISearchBarDelegate{
            }
            
            tableView.reloadData()
+        SVProgressHUD.dismiss()
+
            
        }
     
     
+    
+     func setupTranslation(){
+          
+        viewTitle = NSLocalizedString("Favorites", comment: "changedUsername")
+          
+              
+    }
     
 }
         

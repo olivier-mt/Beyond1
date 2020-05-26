@@ -15,17 +15,17 @@ class cityViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let cities = ["Paris","Lyon","London","Manchester","Amsterdam","Utrecht","Barcelona","Madrid"]
+    let cities = ["Paris","Lyon","London","Berlin","Amsterdam","Dublin","Barcelona","Helsinki"]
     
     let cityImages : [UIImage] = [
         UIImage(named: "paris")!,
         UIImage(named: "lyon")!,
         UIImage(named: "london")!,
-        UIImage(named: "manchester")!,
+        UIImage(named: "berlin")!,
         UIImage(named: "amsterdam")!,
-        UIImage(named: "utrecht2")!,
+        UIImage(named: "dublin")!,
         UIImage(named: "barcelona")!,
-        UIImage(named: "madrid-Night")!,
+        UIImage(named: "helsinki2")!,
          ]
     let userDefault = UserDefaults.standard
     

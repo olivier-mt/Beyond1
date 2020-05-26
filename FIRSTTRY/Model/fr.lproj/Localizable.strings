@@ -7,14 +7,25 @@
 */
 
 
-"changedUsername" = "Username modifié avec succès!";
 
-"groupSaved" = "Groupe ajouté aux favoris!";
-"GroupCanceled" = "Retiré des favorits";
-"AccessDeniedTittle" = "Accès refusé";
-"AccessDeniedString" = "Ajoute ce groupe à tes favoris pour avoir accès aux options";
 
-"createdGroupAlert" = "Félicitation, ton groupe est créé!";
-"emptyFieldAlert" = "Tout les champs doivent être rempli";
-"placeholdCreationGroup" = "Décris le groupe en quelques mots";
+// Conversation vc
+"group successfully added to favorites!" = "Groupe ajouté aux favoris!";
+"You removed this group from favorites" = "Retiré des favorits";
+"Access Denied" = "Accès refusé";
+"Follow this group to get access to options" = "Ajoute ce groupe à tes favoris pour avoir accès aux options";
+
+//New group VC 
+
+"Your group is created!" = "Félicitation, ton groupe a été créé!";
+"All field have to be fullfielded" = "Tout les champs doivent être rempli";
+"Describ the group purpose in a few words" = "Décris le groupe en quelques mots";
 "NewGroupTitleView" = "Créer un nouveau groupe";
+
+// Profil VC
+"Profile" = "Profil";
+"Username changed succefully!" = "Username modifié avec succès!";
+
+// Favorites VC
+
+"Favorites"= "Favoris";

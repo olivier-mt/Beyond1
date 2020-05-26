@@ -52,10 +52,10 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
        var Glanguage = ""
        var Gcity = ""
        
-       var stringGroupSaved = "group successfully saved as favorit!"
-       var stringGroupCanceled = "You removed this group to your favorit"
+       var stringGroupSaved = "group successfully added to favorites!"
+       var stringGroupCanceled = "You removed this group from favorites"
        var stringAccessDeniedTittle = "Access Denied"
-       var stringAccessDeniedString = "Follow this group to get access to options"
+       var stringAccessDeniedString = ""
     
     
     var pasteBoard = UIPasteboard.general
@@ -673,12 +673,11 @@ func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: Index
     func setupTranslation(){
           
        
-        stringGroupSaved =  NSLocalizedString("groupSaved", comment: "alert group saved in favorit")
-        stringGroupCanceled =  NSLocalizedString("GroupCanceled", comment: "alert group cancelled from fav  ")
-        stringAccessDeniedTittle =  NSLocalizedString("AccessDeniedTittle", comment: "alert option not accessible")
-        stringAccessDeniedString =  NSLocalizedString("AccessDeniedString", comment: "alert option not accessible string")
+        stringGroupSaved =  NSLocalizedString("group successfully saved in favorites!", comment: "alert group saved in favorit")
+        stringGroupCanceled =  NSLocalizedString("You removed this group from favorites", comment: "alert group cancelled from fav  ")
+        stringAccessDeniedTittle =  NSLocalizedString("Access Denied", comment: "alert option not accessible")
+        stringAccessDeniedString =  NSLocalizedString("Follow this group to get access to options", comment: "alert option not accessible string")
            
-        
         
     }
     
