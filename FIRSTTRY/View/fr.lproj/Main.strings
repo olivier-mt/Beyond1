@@ -159,7 +159,7 @@
 "bFr-2r-Ka5.headerTitle" = "SETTINGS";
 
 /* Class = "UITabBarItem"; title = "New Groups"; ObjectID = "bhi-O3-QM4"; */
-"bhi-O3-QM4.title" = "Chercher Groupe";
+"bhi-O3-QM4.title" = "Recherche";
 
 /* Class = "UILabel"; text = "The Group Name "; ObjectID = "dEs-tX-pCs"; */
 "dEs-tX-pCs.text" = "The Group Name ";
@@ -171,7 +171,7 @@
 "ddn-Vm-qdI.text" = "Merci pour votre message, nous vous recontacterons dans les plus brefs delais ";
 
 /* Class = "UILabel"; text = "Log out "; ObjectID = "ewl-0L-WNF"; */
-"ewl-0L-WNF.text" = "Quitter ";
+"ewl-0L-WNF.text" = "Quitter";
 
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "g2d-Lw-dOX"; */
 "g2d-Lw-dOX.title" = "Item";
