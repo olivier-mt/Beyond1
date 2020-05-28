@@ -10,7 +10,7 @@
 
 
 // Conversation vc
-"group successfully added to favorites!" = "Groupe ajouté aux favoris!";
+"group successfully saved in favorites!" = "Groupe ajouté aux favoris!";
 "You removed this group from favorites" = "Retiré des favorits";
 "Access Denied" = "Accès refusé";
 "Follow this group to get access to options" = "Ajoute ce groupe à tes favoris pour avoir accès aux options";

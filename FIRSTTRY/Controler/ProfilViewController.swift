@@ -46,6 +46,12 @@ class ProfilViewController: UIViewController, UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if #available(iOS 13.0, *) {
+               // Always adopt a light interface style.
+               overrideUserInterfaceStyle = .light
+           }
+        
         userNameTextField.delegate = self
         
         currentNameLabel.text = (Auth.auth().currentUser!.displayName as! String)

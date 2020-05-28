@@ -6,7 +6,7 @@
 "17M-nO-pie.normalTitle" = "Button";
 
 /* Class = "UISearchBar"; placeholder = "Search a group in your favorites"; ObjectID = "1gu-12-tmZ"; */
-"1gu-12-tmZ.placeholder" = "Trouve un groupe dans tes favorits";
+"1gu-12-tmZ.placeholder" = "Trouve un groupe dans tes favoris";
 
 /* Class = "UISearchBar"; 1gu-12-tmZ.scopeButtonTitles[0] = "Title"; ObjectID = "1gu-12-tmZ"; */
 "1gu-12-tmZ.scopeButtonTitles[0]" = "Title";
@@ -24,7 +24,7 @@
 "2x5-7Q-bxo.normalTitle" = "Créer le compte";
 
 /* Class = "UILabel"; text = "Do you want to cancel your account ? "; ObjectID = "3wr-6q-RSZ"; */
-"3wr-6q-RSZ.text" = "Souhaites tu supprimer ton compte? ";
+"3wr-6q-RSZ.text" = "Souhaitez-vous supprimer votre compte? ";
 
 /* Class = "UINavigationItem"; title = "Log out"; ObjectID = "6VW-pX-qRa"; */
 "6VW-pX-qRa.title" = "Quitter";
@@ -84,7 +84,7 @@
 "JiC-Y0-YfT.placeholder" = "Adresse Email";
 
 /* Class = "UILabel"; text = "A link to reset your password will be send to you by email "; ObjectID = "KC2-Mx-MNV"; */
-"KC2-Mx-MNV.text" = "Un lien pour changer ton mot de passe va être envoyé par email ";
+"KC2-Mx-MNV.text" = "Un lien pour changer votre mot de passe va être envoyé par email ";
 
 /* Class = "UILabel"; text = "city"; ObjectID = "KcM-io-oN5"; */
 "KcM-io-oN5.text" = "ville";
@@ -96,7 +96,7 @@
 "Mme-16-efN.title" = "Item";
 
 /* Class = "UITextField"; placeholder = "Enter your password"; ObjectID = "Oy6-9J-hKE"; */
-"Oy6-9J-hKE.placeholder" = "Entrer votre mot de passe";
+"Oy6-9J-hKE.placeholder" = "Entrez votre mot de passe";
 
 /* Class = "UINavigationItem"; title = "Contact "; ObjectID = "Pnt-MH-KTN"; */
 "Pnt-MH-KTN.title" = "Contact ";
@@ -114,7 +114,7 @@
 "Shc-KL-Ucy.normalTitle" = "send";
 
 /* Class = "UILabel"; text = "Do you want to log out ? "; ObjectID = "TWd-np-2xM"; */
-"TWd-np-2xM.text" = "Souhaites-tu quitter l'application? ";
+"TWd-np-2xM.text" = "Souhaitez-vous quitter l'application? ";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "UEN-qT-VBu"; */
 "UEN-qT-VBu.text" = "Label";
@@ -186,13 +186,13 @@
 "kAg-qJ-rbA.placeholder" = "Adresse email";
 
 /* Class = "UITextField"; placeholder = "choose a language"; ObjectID = "mEZ-va-Afr"; */
-"mEZ-va-Afr.placeholder" = "Choisi une langue";
+"mEZ-va-Afr.placeholder" = "Choisis seulement une langue";
 
 /* Class = "UIViewController"; title = "sign up"; ObjectID = "mvI-vi-0Ss"; */
 "mvI-vi-0Ss.title" = "sign up";
 
 /* Class = "UINavigationItem"; title = "CHOOSE A CITY"; ObjectID = "nE2-bC-KSp"; */
-"nE2-bC-KSp.title" = "CHOISI UN VILLE";
+"nE2-bC-KSp.title" = "CHOISIS UNE VILLE";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "oWB-74-lhf"; */
 "oWB-74-lhf.text" = "Label";

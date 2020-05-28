@@ -26,7 +26,7 @@
         <!--login_signup-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LOGINOUT" title="login_signup" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LOGINOUT" title="login_signup" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="BEYOND" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,7 +163,7 @@
         <!--sign up-->
         <scene sceneID="Ru8-59-JQo">
             <objects>
-                <viewController title="sign up" id="mvI-vi-0Ss" customClass="SignUpViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="sign up" id="mvI-vi-0Ss" customClass="SignUpViewController" customModule="BEYOND" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yba-lh-7Gk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -412,7 +412,7 @@
         <!--Log out-->
         <scene sceneID="pRm-VE-mJr">
             <objects>
-                <viewController id="eq2-WS-ygm" customClass="LogOutViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eq2-WS-ygm" customClass="LogOutViewController" customModule="BEYOND" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wPa-zN-faJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -454,7 +454,7 @@
         <!--Cancel my account-->
         <scene sceneID="6pI-5n-sID">
             <objects>
-                <viewController id="oUQ-bw-4mG" customClass="CancelAccountViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oUQ-bw-4mG" customClass="CancelAccountViewController" customModule="BEYOND" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oS3-vl-Iow">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -521,7 +521,7 @@
         <!--Contact -->
         <scene sceneID="R03-Li-pJm">
             <objects>
-                <viewController id="dBK-0b-xFq" customClass="ReviewVC" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dBK-0b-xFq" customClass="ReviewVC" customModule="BEYOND" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="46b-Oj-Uxz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -594,7 +594,7 @@
         <!--CHOOSE A CITY-->
         <scene sceneID="gUy-Kx-ODx">
             <objects>
-                <viewController storyboardIdentifier="cityViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M4S-5c-00x" customClass="cityViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cityViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M4S-5c-00x" customClass="cityViewController" customModule="BEYOND" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PxW-PO-QD0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -609,7 +609,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="W1k-mA-yyV" customClass="CollectionViewCell" customModule="FIRSTTRY" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="W1k-mA-yyV" customClass="CollectionViewCell" customModule="BEYOND" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="178" height="265"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -707,7 +707,7 @@
         <!--Item-->
         <scene sceneID="REq-4x-5jd">
             <objects>
-                <viewController id="wAI-Wy-VfK" customClass="GroupSViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wAI-Wy-VfK" customClass="GroupSViewController" customModule="BEYOND" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zWf-ha-gIg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -729,7 +729,7 @@
                                 <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" rowHeight="127" id="9mo-W0-EEc" customClass="groupTableViewCell" customModule="FIRSTTRY" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" rowHeight="127" id="9mo-W0-EEc" customClass="groupTableViewCell" customModule="BEYOND" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="127"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9mo-W0-EEc" id="fFY-Vz-Mn1">
@@ -769,7 +769,10 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="language Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXP-jE-2IS">
-                                                            <rect key="frame" x="257" y="94" width="85" height="14"/>
+                                                            <rect key="frame" x="270" y="94" width="72" height="14"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="72" id="2ma-FT-bno"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                                             <color key="textColor" red="0.91346763959390853" green="0.71107658780464555" blue="0.37071310684148018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -843,7 +846,7 @@
         <!--New Group View Controller-->
         <scene sceneID="GLN-XX-xIY">
             <objects>
-                <viewController storyboardIdentifier="NewGroupViewController" id="CfJ-pa-3g7" customClass="NewGroupViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewGroupViewController" id="CfJ-pa-3g7" customClass="NewGroupViewController" customModule="BEYOND" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fkg-iJ-bV0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -905,7 +908,7 @@
                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="choose a language" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mEZ-va-Afr">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="choose a single language" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mEZ-va-Afr">
                                 <rect key="frame" x="27" y="341.5" width="353" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -913,7 +916,7 @@
                                 </constraints>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <connections>
                                     <action selector="languageChosenTextField:" destination="CfJ-pa-3g7" eventType="editingDidEnd" id="5vm-iz-H6b"/>
                                 </connections>
@@ -994,7 +997,7 @@
         <!--Group OptionsVC-->
         <scene sceneID="KoK-Iz-bzo">
             <objects>
-                <viewController id="XS6-ky-xrE" customClass="groupOptionsVC" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XS6-ky-xrE" customClass="groupOptionsVC" customModule="BEYOND" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BnK-6V-vY3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1065,7 +1068,7 @@
         <!--Conversation View Controller-->
         <scene sceneID="9Iy-AI-V6o">
             <objects>
-                <viewController storyboardIdentifier="conversationVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TRo-6e-aoN" customClass="ConversationViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="conversationVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TRo-6e-aoN" customClass="ConversationViewController" customModule="BEYOND" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y8E-Ad-A1n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1175,7 +1178,7 @@
         <!--Followed View Controller-->
         <scene sceneID="ruE-67-5F0">
             <objects>
-                <viewController storyboardIdentifier="FollowedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TqO-uI-WCd" customClass="FollowedViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FollowedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TqO-uI-WCd" customClass="FollowedViewController" customModule="BEYOND" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tM8-9X-Ry6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1198,7 +1201,7 @@
                                     </connections>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="fCell" rowHeight="125" id="7Wq-ae-cv9" customClass="fCell" customModule="FIRSTTRY" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="fCell" rowHeight="125" id="7Wq-ae-cv9" customClass="fCell" customModule="BEYOND" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="84" width="414" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Wq-ae-cv9" id="sra-01-1Pl">
@@ -1333,7 +1336,7 @@
         <!--Profil View Controller-->
         <scene sceneID="C7a-Zb-WQz">
             <objects>
-                <viewController id="BiV-xs-Ics" customClass="ProfilViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BiV-xs-Ics" customClass="ProfilViewController" customModule="BEYOND" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P2X-gb-DnR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1424,7 +1427,7 @@
         <!--login-->
         <scene sceneID="4FK-Iz-fu9">
             <objects>
-                <viewController title="login" id="Yd1-7G-PTw" customClass="LogInViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="login" id="Yd1-7G-PTw" customClass="LogInViewController" customModule="BEYOND" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Cx-EN-FBY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1545,7 +1548,7 @@
         <!--Reset Password View Controller-->
         <scene sceneID="k8Y-ge-7uM">
             <objects>
-                <viewController id="ZXp-x9-uf0" customClass="resetPasswordViewController" customModule="FIRSTTRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZXp-x9-uf0" customClass="resetPasswordViewController" customModule="BEYOND" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XmQ-iw-Gbf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1694,7 +1697,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="tbJ-4V-qYh"/>
         <segue reference="Vnd-OV-9xr"/>
-        <segue reference="hhU-dZ-Nzi"/>
+        <segue reference="QWs-zl-rKJ"/>
         <segue reference="fQt-iI-CP2"/>
     </inferredMetricsTieBreakers>
     <resources>

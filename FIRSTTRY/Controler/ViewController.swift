@@ -34,6 +34,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        if #available(iOS 13.0, *) {
+               // Always adopt a light interface style.
+               overrideUserInterfaceStyle = .light
+           }
+        
+        
         logInButton.layer.cornerRadius = logInButton.frame.height / 2
         logInButton.layer.shadowColor = UIColor.black.cgColor
         logInButton.layer.shadowRadius = 0.5

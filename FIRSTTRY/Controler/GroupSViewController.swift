@@ -54,6 +54,13 @@ class GroupSViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         super.viewDidLoad()
         
+        
+        
+        if #available(iOS 13.0, *) {
+               // Always adopt a light interface style.
+               overrideUserInterfaceStyle = .light
+           }
+        
         let addButton = UIBarButtonItem(barButtonSystemItem:.add, target: self, action: #selector(tapButton) )
        
         navigationController?.navigationBar.prefersLargeTitles = false

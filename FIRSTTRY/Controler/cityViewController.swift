@@ -32,6 +32,13 @@ class cityViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        if #available(iOS 13.0, *) {
+               // Always adopt a light interface style.
+               overrideUserInterfaceStyle = .light
+           }
+        
+        
         collectionView.dataSource = self
         collectionView.delegate = self
         

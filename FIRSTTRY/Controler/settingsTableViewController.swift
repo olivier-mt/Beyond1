@@ -16,6 +16,13 @@ class settingsTableViewController: UITableViewController {
 
         
         
+        if #available(iOS 13.0, *) {
+               // Always adopt a light interface style.
+               overrideUserInterfaceStyle = .light
+           }
+        
+        
+        
         var db : Firestore!
 
            

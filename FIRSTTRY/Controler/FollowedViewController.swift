@@ -45,6 +45,14 @@ class FollowedViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+        if #available(iOS 13.0, *) {
+               // Always adopt a light interface style.
+               overrideUserInterfaceStyle = .light
+           }
+        
+        
         tableView.dataSource = self
         tableView.delegate = self
         db = Firestore.firestore()

@@ -20,6 +20,11 @@ class resetPasswordViewController: UIViewController {
         super.viewDidLoad()
 
         
+        if #available(iOS 13.0, *) {
+               // Always adopt a light interface style.
+               overrideUserInterfaceStyle = .light
+           }
+        
         HideKeyboard()
         
         emailTextField.backgroundColor = UIColor.clear

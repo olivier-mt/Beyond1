@@ -52,7 +52,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
        var Glanguage = ""
        var Gcity = ""
        
-       var stringGroupSaved = "group successfully added to favorites!"
+       var stringGroupSaved = ""
        var stringGroupCanceled = "You removed this group from favorites"
        var stringAccessDeniedTittle = "Access Denied"
        var stringAccessDeniedString = ""
@@ -71,6 +71,13 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        if #available(iOS 13.0, *) {
+               // Always adopt a light interface style.
+               overrideUserInterfaceStyle = .light
+           }
         
         ConvertationTableView.delegate = self
         ConvertationTableView.dataSource = self
